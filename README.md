@@ -1,5 +1,13 @@
 # Combo-packs
 
-This is a repository for "packs", which are several addons with similar subjects grouped together into one. These are installed just like the other bookmarklets are (see their repositories for detailed instructions).
+This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
-I can't confirm that these work with all versions of GeoFS, so if they don't work don't be surprised.
+- AP++
+- Spoiler arming
+- Carrier catapults
+- You black out when you pull more than 9 Gs
+- A bug fix for the F-14 and XB-70
+
+Make sure you use the latest version of this; I update this addon rather frequently.
+
+Also, AP++ is sorta bugged with GeoFS 3.0, you kinda have to fiddle with it and it doesn't work all the time.
