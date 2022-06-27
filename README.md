@@ -6,6 +6,9 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Carrier catapults
 - You black out when you pull more than 9 Gs
 - A bug fix for the F-14 and XB-70
+- F-14 swing wing physics
+- Falcon 9 control fix
+- Other minor improvements
 
 Make sure you use the latest version of this; I update this addon rather frequently.
 
