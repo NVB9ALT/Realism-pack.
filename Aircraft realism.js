@@ -1,3 +1,4 @@
+function runRealism() {
 var notifiedTrue = new Boolean(0)
 function fixAircraft() {
 //F-14 swing wing physics fix
@@ -161,3 +162,4 @@ if (geofs.aircraft.instance.id != 21 || geofs.aircraft.instance.id != 2 || geofs
 checkPropInterval = setInterval(function(){
    checkAircraft()
 }, 1000);
+}
