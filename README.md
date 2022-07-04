@@ -13,6 +13,8 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Lag reduction
 - Other minor improvements
 
+If anti-aliasing is off, the flight recorder cache is cleared every 100 milliseconds, making the flight recorder unusable. To re-enable the flight recorder, turn on anti-aliasing.
+
 Make sure you use the latest version of this; I update this addon rather frequently.
 
 Also, AP++ is sorta bugged with GeoFS 3.0, you kinda have to fiddle with it and it doesn't work all the time.
