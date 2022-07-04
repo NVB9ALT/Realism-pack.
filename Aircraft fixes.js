@@ -1,6 +1,25 @@
-function runRealism() {
 var notifiedTrue = new Boolean(0)
 function fixAircraft() {
+if (geofs.aircraft.instance.id == 18){
+   geofs.aircraft.instance.definition.parts[46].animations[2] = {};
+	geofs.aircraft.instance.definition.parts[46].animations[2].type = "rotate";
+	geofs.aircraft.instance.definition.parts[46].animations[2].axis = "Z";
+	geofs.aircraft.instance.definition.parts[46].animations[2].value = "roll";
+	geofs.aircraft.instance.definition.parts[46].animations[2].ratio = -15;
+	geofs.aircraft.instance.definition.parts[46].animations[2].currentValue = null;
+	geofs.aircraft.instance.definition.parts[46].animations[2].rotationMethod = function(a) {
+      this._rotation = M33.rotationZ(this._rotation, a)
+   };
+   geofs.aircraft.instance.definition.parts[51].animations[2] = {};
+	geofs.aircraft.instance.definition.parts[51].animations[2].type = "rotate";
+	geofs.aircraft.instance.definition.parts[51].animations[2].axis = "Z";
+	geofs.aircraft.instance.definition.parts[51].animations[2].value = "roll";
+	geofs.aircraft.instance.definition.parts[51].animations[2].ratio = -15;
+	geofs.aircraft.instance.definition.parts[51].animations[2].currentValue = null;
+	geofs.aircraft.instance.definition.parts[51].animations[2].rotationMethod = function(a) {
+      this._rotation = M33.rotationZ(this._rotation, a)
+   };
+}
 //F-14 swing wing physics fix
 if (geofs.aircraft.instance.id == 2581) {
    if (geofs.animation.values.optionalAnimatedPartPosition == 0) {
@@ -162,4 +181,3 @@ if (geofs.aircraft.instance.id != 21 || geofs.aircraft.instance.id != 2 || geofs
 checkPropInterval = setInterval(function(){
    checkAircraft()
 }, 1000);
-}
