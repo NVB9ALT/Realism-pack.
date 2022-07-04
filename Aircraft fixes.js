@@ -1,3 +1,4 @@
+function realismify() {
 var notifiedTrue = new Boolean(0)
 function fixAircraft() {
 if (geofs.aircraft.instance.id == 18){
@@ -181,3 +182,4 @@ if (geofs.aircraft.instance.id != 21 || geofs.aircraft.instance.id != 2 || geofs
 checkPropInterval = setInterval(function(){
    checkAircraft()
 }, 1000);
+}
