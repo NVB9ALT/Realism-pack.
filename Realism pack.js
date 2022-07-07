@@ -16,6 +16,6 @@ function gBlackout() {if (geofs.animation.values.accZ >= 90) {ui.showCrashNotifi
 
 function fixSpin() {var pitch = geofs.animation.values.atilt;setTimeout(() => {if ((geofs.animation.values.atilt + 50 < pitch) || (geofs.animation.values.atilt - 50 > pitch)) {geofs.aircraft.instance.definition.minimumSpeed = 600;console.log("Spin detected");geofs.flyToCamera();console.log("Spin fixed");setTimeout(() => {geofs.aircraft.instance.definition.minimumSpeed = 250}, 5000)}}, 500)};let fixyFixy = setInterval(function(){fixSpin()}, 1000);
 
-var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesO.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
+var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesF.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
 
 })();
