@@ -9,7 +9,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - F-14 swing wing physics
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
-- Propeller torque and propwash (doesn't work, will try to fix)
+- Propeller torque and propwash (may or may not work properly, small single-engine propeller aircraft may be unflyable)
 - Mach buffet
 - Lag reduction
 - Other minor improvements
