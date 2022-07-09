@@ -1,3 +1,6 @@
+//smooth gear tilt
+//787 rework
+
 javascript: (() => {
 
 lagReductionInterval = setInterval(function(){geofs.api.renderingSettings.degradedCollisions = true;geofs.api.renderingSettings.lowResRunways = true;if (geofs.preferences.graphics.advanced.fxaa = false) {flight.recorder.clear()};}, 100);
@@ -22,5 +25,7 @@ if (geofs.aircraft.instance.id == 2988) {var pitch = geofs.animation.values.atil
 let fixyFixy = setInterval(function(){fixSpin()}, 1000);
 
 var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesA.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
+
+function showTheStars() {if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {geofs.api.viewer.scene.skyBox.show = 1}else {geofs.api.viewer.scene.skybox.show = 0}};starsInterval = setInterval(function(){showTheStars()}, 1000);
 
 })();
