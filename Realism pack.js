@@ -5,7 +5,7 @@ lagReductionInterval = setInterval(function(){geofs.api.renderingSettings.degrad
 var script1 = document.createElement('script'); script1.src="https://cdn.jsdelivr.net/gh/NVB9ALT/Bookmarklet_AP-Plus-Plus@main/ap++.js"; document.body.appendChild(script1);script1.onload = function(){runAPplusplus()};
 
 function runBladeCollisions() {if (geofs.aircraft.instance.id == 9 || geofs.aircraft.instance.id == 52 || geofs.aircraft.instance.id == 4090) {
-/*code here*/ 
+/*code here*/
 }};bladeCollisionInterval = setInterval(function(){runBladeCollisions()}, 1000);
 
 function runCarrierCatapults() {
@@ -28,6 +28,6 @@ let fixyFixy = setInterval(function(){fixSpin()}, 1000);
 /*audio.init(geofs.aircraft.instance.definition.sounds)*/
 var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixes.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
 
-function showTheStars() {if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {geofs.api.viewer.scene.skyBox.show = 1}else {geofs.api.viewer.scene.skybox.show = 0}};starsInterval = setInterval(function(){showTheStars()}, 1000);
+function showTheStars() {if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {geofs.api.viewer.scene.skyBox.show = 1}else {geofs.api.viewer.scene.skyBox.show = 0}};starsInterval = setInterval(function(){showTheStars()}, 1000);
 
 })();
