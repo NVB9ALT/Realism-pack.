@@ -25,8 +25,7 @@ if (geofs.aircraft.instance.id == 2988) {var pitch = geofs.animation.values.atil
 }
 let fixyFixy = setInterval(function(){fixSpin()}, 1000);
 
-/*audio.init(geofs.aircraft.instance.definition.sounds)*/
-var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixes.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
+var script2 = document.createElement('script'); script2.src="https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesE.js";document.body.appendChild(script2);script2.onload = function(){realismify()};
 
 function showTheStars() {if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {geofs.api.viewer.scene.skyBox.show = 1}else {geofs.api.viewer.scene.skyBox.show = 0}};starsInterval = setInterval(function(){showTheStars()}, 1000);
 
