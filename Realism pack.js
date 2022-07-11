@@ -4,7 +4,7 @@ lagReductionInterval = setInterval(function(){geofs.api.renderingSettings.degrad
 
 var script1 = document.createElement('script'); script1.src="https://cdn.jsdelivr.net/gh/NVB9ALT/Bookmarklet_AP-Plus-Plus@main/ap++.js"; document.body.appendChild(script1);script1.onload = function(){runAPplusplus()};
 
-function runBladeCollisions() {if (geofs.aircraft.instance.id == || geofs.aircraft.instance.id == || geofs.aircraft.instance.id == ) {
+function runBladeCollisions() {if (geofs.aircraft.instance.id == 9 || geofs.aircraft.instance.id == 52 || geofs.aircraft.instance.id == 4090) {
 /*code here*/
 }};bladeCollisionInterval = setInterval(function(){runBladeCollisions()}, 1000);
 
