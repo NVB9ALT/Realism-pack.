@@ -2,17 +2,17 @@
 This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
 - AP++
-- Spoiler arming (doesn't work, will try to fix)
-- Carrier catapults (doesn't work, will try to fix)
 - You black out when you pull more than 9 Gs
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
+- Lift-based wingflex for most CC airliners
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
-- Propeller torque and propwash (has been removed for now until I can get it to work properly)
 - Mach buffet
 - Lag reduction
 - Other minor improvements
+
+There are a few things that have been removed, they will be added back when I can get them to work. You may also notice incomplete stuff in the code; that's going to be finished at some point as well.
 
 If anti-aliasing is off, the flight recorder cache is cleared every 100 milliseconds, making the flight recorder unusable. To re-enable the flight recorder, turn on anti-aliasing. (I haven't confirmed that this works lol)
 
