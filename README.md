@@ -13,7 +13,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
 - Automatic control presets (better yaw control on ground, coordinated flight in air) (toggleable)
-- Mach buffet
+- Mach buffet (only works with manual weather on, somewhat superfluous since AP++ contains forced Mach tuck. I'll be working on that.)
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Lag reduction
 - Other minor improvements
@@ -26,4 +26,4 @@ If anti-aliasing is off, the flight recorder cache is cleared every 100 millisec
 
 Make sure you use the latest version of this; I update this addon rather frequently.
 
-Also, AP++ is sorta bugged with GeoFS 3.0, you kinda have to fiddle with it and it doesn't work all the time.
+Also, the autopilot portion of AP++ is sorta bugged with GeoFS 3.0, you kinda have to fiddle with it and it doesn't work all the time.
