@@ -11,8 +11,9 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Lift-based wingflex for most CC airliners
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
-- Automatic control presets (better yaw control on ground, coordinated flight in air)
+- Automatic control presets (better yaw control on ground, coordinated flight in air) (toggleable)
 - Mach buffet
+- Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Lag reduction
 - Other minor improvements
 
