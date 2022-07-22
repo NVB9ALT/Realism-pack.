@@ -1,5 +1,6 @@
 # Realism-pack
-This is a bookmarklet addon. A tutorial on how to install and run bookmarklets is on my YouTube (channel name is NVB9 2).
+This is a bookmarklet addon. A tutorial on how to install and run bookmarklets is on my YouTube (channel name is NVB9 2).</br>
+**Note:** please wait until GeoFS has fully loaded before clicking on the bookmarklet. If it is clicked before GeoFS is fully loaded, it will not work since it contains a 'ui.notification', and if 'ui' is not defined (which it isn't until GeoFS loads fully), the addon will break.
 
 This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
