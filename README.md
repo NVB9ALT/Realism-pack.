@@ -16,7 +16,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Mach buffet (only works with manual weather on, somewhat superfluous since AP++ contains forced Mach tuck. I'll be working on that.)
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
-- Autospoilers
+- Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
 - Lag reduction
 - Other minor improvements
 
