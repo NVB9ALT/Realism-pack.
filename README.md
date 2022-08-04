@@ -4,7 +4,7 @@ This is a bookmarklet addon. A tutorial on how to install and run bookmarklets i
 
 This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
-- AP++
+- COMING SOON TO REPLACE AP++: Realistic KIAS with altitude, ILS autoland, realistic Mach buffet and Mach tuck
 - You black out when you pull more than 9 Gs
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A bug fix for the F-14 and XB-70
