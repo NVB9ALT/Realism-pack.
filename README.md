@@ -28,6 +28,4 @@ There are a few things that have been removed, they will be added back when I ca
 
 Make sure you use the latest version of this; I update this addon rather frequently.
 
-Also, the autopilot portion of AP++ is sorta bugged with GeoFS 3.0, you kinda have to fiddle with it and it doesn't work all the time.
-
 Other parts of this addon may also be buggy or broken, please let me know if you've discovered a problem. I use this addon myself and so a lot of the bugs are ironed out before updates, but there may still be things I missed.
