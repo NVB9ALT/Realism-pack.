@@ -4,7 +4,7 @@ This is a bookmarklet addon. Here's a tutorial on bookmarklets: https://www.yout
 
 This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
-- COMING SOON TO REPLACE AP++: Realistic KIAS with altitude, realistic Mach buffet and Mach tuck
+- Realistic KIAS for exterior instruments
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - You black out when you pull more than 9 Gs
 - If you strike the rotor blades of a helicopter on the ground, it crashes
