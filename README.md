@@ -37,6 +37,6 @@ There is also a bookmarklet version of FMC available seperately.
 
 There are a few things that have been removed, they will be added back when I can get them to work. You may also notice incomplete stuff in the code; that's going to be finished at some point as well.
 
-Make sure you use the latest version of this; I update this addon **probably never because if it's size**.
+Make sure you use the latest version of this; I update this addon **probably never because of it's size**.
 
 Other parts of this addon may also be buggy or broken, please let me know if you've discovered a problem. I use this addon myself and so a lot of the bugs are ironed out before updates, but there may still be things I missed.
