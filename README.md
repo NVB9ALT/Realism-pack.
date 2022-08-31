@@ -6,6 +6,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 
 - Realistic KIAS for exterior instruments
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
+- A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A bug fix for the F-14 and XB-70
@@ -14,6 +15,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
 - A similar fix for the F-15
+- Basic fly-by-wire for the F-16's pitch
 - Automatic control presets (better yaw control on ground, coordinated flight in air) (toggleable)
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
