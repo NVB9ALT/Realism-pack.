@@ -1,6 +1,7 @@
 # Realism-pack
 This is a bookmarklet addon. Here's a tutorial on bookmarklets: https://www.youtube.com/watch?v=TNDEesTbKc4.</br>
-**Note:** please wait until GeoFS has fully loaded before clicking on the bookmarklet. If it is clicked before GeoFS is fully loaded, it will not work since it contains a 'ui.notification', and if 'ui' is not defined (which it isn't until GeoFS loads fully), the addon will break.
+**Note:** please wait until GeoFS has fully loaded before clicking on the bookmarklet. If it is clicked before GeoFS is fully loaded, it will not work since it contains a 'ui.notification', and if 'ui' is not defined (which it isn't until GeoFS loads fully), the addon will break.</br>
+**HOW TO USE THE CARRIER CATAPULTS:** Go to the flight deck of the USS John C. Stennis and taxi to the front end of the deck, then use "q" to lock/unlock the launch bar. Once the launch bar is locked, use "~" to launch the catapult. It is recommended to apply full power before launching.
 
 This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
 
@@ -11,6 +12,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
+- Carrier catapults
 - Lift-based wingflex for most CC airliners
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
@@ -23,8 +25,6 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Ejection seats for fighter jets
 - Lag reduction
 - Other minor improvements
-
-There is also a bookmarklet version of FMC available seperately.
 
 There are a few things that have been removed, they will be added back when I can get them to work. You may also notice incomplete stuff in the code; that's going to be finished at some point as well.
 
