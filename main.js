@@ -157,21 +157,4 @@ document.body.appendChild(script2);
 script2.onload = function () {
     runCatapults();
 };
-function checkOverlays() {
-if (Object.values(geofs.runways.nearRunways)[0].icao == "VNLK") {
-   void(0)
-} else {
-geofs.runways.setRunwayModelVisibility(0)
-}
-};checkOverlayInt = setInterval(function(){checkOverlays()},1000)
-
-function addCockpitLighting() {
-   if (geofs.camera.currentModeName == "cockpit" && geofs.isNight == 1) {
-geofs.api.viewer.scene.light.intensity = 4;
-geofs.api.viewer.scene.light.color = {red: 0.8, green: 0.63, blue: 0.52, alpha: 1};
-	} else if (geofs.isNight == 1) {
-geofs.api.viewer.scene.light.intensity = 0.2
-	}
-}
-cockpitLightingInt = setInterval(function(){addCockpitLighting()},100)
 }
