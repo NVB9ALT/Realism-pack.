@@ -1,5 +1,6 @@
 function runRealismPack() {
-geofs.api.waterDetection.create();
+//this breaks things if its run before terrain has loaded
+//geofs.api.waterDetection.create();
 lagReductionInterval = setInterval(function () {
     geofs.savePreferencesPanel();
     geofs.api.renderingSettings.degradedCollisions = true;
