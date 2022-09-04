@@ -1,4 +1,3 @@
-function runRealismPack() {
 //this breaks things if its run before terrain has loaded
 //geofs.api.waterDetection.create();
 lagReductionInterval = setInterval(function () {
@@ -158,4 +157,3 @@ document.body.appendChild(script2);
 script2.onload = function () {
     runCatapults();
 };
-}
