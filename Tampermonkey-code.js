@@ -3,7 +3,7 @@
 // @namespace http://tampermonkey.net/
 // @version 1
 // @description An addon for GeoFS that adds new features and fixes realism issues
-// @author FakeElonMusk
+// @author NVB9
 // @match http:///geofs.php
 // @match https:///geofs.php
 // @run-at document-end
@@ -19,5 +19,5 @@ clearInterval(itv);}
 }
 ,500);
 function main() {
-var realismScript = document.createElement('script'); realismScript.src="https://raw.githubusercontent.com/NVB9ALT/Realism-pack./main/main.js";document.body.appendChild(realismScript);realismScript.onload = function(){runRealismPack()};
+var realismScript = document.createElement('script'); realismScript.src="https://raw.githack.com/NVB9ALT/Realism-pack./main/main.js";document.body.appendChild(realismScript);realismScript.onload = function(){runRealismPack()};
 };
