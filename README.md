@@ -1,7 +1,4 @@
 # Realism-pack
-***PLEASE NOTE: THIS IS CURRENTLY BROKEN AND I DON'T KNOW WHY. CHECK BACK ON IT IN A FEW DAYS.***
-
-
 This is a bookmarklet addon. Here's a tutorial on bookmarklets: https://www.youtube.com/watch?v=TNDEesTbKc4.</br>
 
 You'll never have to worry about updating your copy of the addon; the bookmarklet will automatically call the latest version of the addon.
