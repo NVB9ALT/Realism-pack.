@@ -97,7 +97,6 @@ function runBladeCollisions() {
 bladeCollisionInterval = setInterval(function () {
     runBladeCollisions();
 }, 1000);
-/*
 function runTurbAccel() {
     if (geofs.aircraft.instance.definition.maxRPM == 10000) {
         if (geofs.animation.values.rpm < 5999) {
@@ -114,7 +113,6 @@ function runTurbAccel() {
 turbAccelInt = setInterval(function () {
     runTurbAccel();
 }, 100);
-*/
 var scriptC = document.createElement("script");
 scriptC.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Weather-Mods@main/Advanced-2d-CloudsD.js";
 document.body.appendChild(scriptC);
