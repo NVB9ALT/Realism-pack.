@@ -158,4 +158,11 @@ document.body.appendChild(script2);
 script2.onload = function () {
     runCatapults();
 };
+function checkOverlays() {
+if (Object.values(geofs.runways.nearRunways)[0].icao == "VNLK") {
+   void(0)
+} else {
+geofs.runways.setRunwayModelVisibility(0)
+}
+};checkOverlayInt = setInterval(function(){checkOverlays()},1000)
 }
