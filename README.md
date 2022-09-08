@@ -20,6 +20,8 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
 - A similar fix for the F-15
+- F-22 fix
+- *Tricky Corsair startup* (you'll need to advance the throttle a little bit to get the engine to start)
 - Basic fly-by-wire for the F-16's pitch
 - Automatic control presets (better yaw control on ground, coordinated flight in air) (toggleable)
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
