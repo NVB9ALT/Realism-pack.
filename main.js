@@ -70,7 +70,7 @@ fixyFixy = setInterval(function () {
 geofs.aircraftList["1000"].dir = "|models|aircraft|generics|c182|";
 var aircraftChecked = new Boolean(0);
 var script2 = document.createElement("script");
-script2.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesS.js";
+script2.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Aircraft-Changes@main/Aircraft-fixesE.js";
 document.body.appendChild(script2);
 script2.onload = function () {
     realismify();
