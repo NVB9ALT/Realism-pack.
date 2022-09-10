@@ -27,7 +27,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
 - Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
-- Ejection seats for fighter jets
+- Ejection seats for fighter jets (press E while airborne)
 - Lag reduction
 - Other minor improvements
 
