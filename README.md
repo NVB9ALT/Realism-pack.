@@ -12,6 +12,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
+- AriakimTaiyo's 737 and 777 immersion sound effects
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
