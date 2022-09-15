@@ -173,6 +173,7 @@ console.log("Modified by NVB9");
 var b737Sounds = new Boolean(0)
 soundInt = null;
 tcasIntervalAnnounce = null;
+effectInterval = null;
 
 function checkForBoeing737() {
 if (geofs.aircraft.instance.id == 4) { //if the aircraft currently being flown is a 737
