@@ -194,7 +194,9 @@ else {
 //clearing the script when the aircraft isn't a 737 to avoid filling up the console with errors
 if (typeof soundInt != undefined) {
    clearInterval(soundInt)
-	clearInterval(tcasIntervalAnnounce)
+   clearInterval(tcasIntervalAnnounce)
+   clearInterval(accelInt)
+   clearInterval(flexInterval)
 } else {
 void(0)
 };
