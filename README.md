@@ -28,6 +28,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Advanced 2d Clouds Generation V1
 - Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
 - Ejection seats for fighter jets (press E while airborne)
+- A machmeter on the HUD
 - Lag reduction
 - Other minor improvements
 
