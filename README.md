@@ -1,5 +1,6 @@
 # Realism-pack
 This is a bookmarklet addon. Here's a tutorial on bookmarklets: https://www.youtube.com/watch?v=TNDEesTbKc4.</br>
+bookmarklet.js is the one that you paste as the URL of the bookmark.
 
 You'll never have to worry about updating your copy of the addon; the bookmarklet will automatically call the latest version of the addon.
 
