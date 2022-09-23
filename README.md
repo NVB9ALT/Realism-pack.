@@ -31,6 +31,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Ejection seats for fighter jets (press E while airborne)
 - A machmeter on the HUD
 - Lag reduction
+- **If you use the second version of the addon, Kolos26's Livery Selector (with more liveries than Multiliveries and a better selection system) will be included. This makes it incompatible with other addons that need a UI, like FakeElonMusk's Challenges Addon.**
 - Other minor improvements
 
 There are a few things that have been removed, they will be added back when I can get them to work. You may also notice incomplete stuff in the code; that's going to be finished at some point as well.
