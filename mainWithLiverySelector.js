@@ -435,7 +435,7 @@ instruments.renderers.genericHUD = function (a) {
     }
 function checkNightStuff() {
    if (geofs.isNight == 1 && geofs.api.renderingSettings.advancedAtmosphere == 0 && geofs.camera.currentModeName !== "cockpit") {
-geofs.api.setImageryBrightness(75);
+geofs.api.setImageryBrightness(150);
    };
    if (geofs.isNight == 1 && geofs.api.renderingSettings.advancedAtmosphere == 0 && geofs.camera.currentModeName == "cockpit") {
 geofs.api.setImageryBrightness(50);
