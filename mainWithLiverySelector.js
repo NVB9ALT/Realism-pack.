@@ -186,6 +186,7 @@ if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
 var script737 = document.createElement('script'); 
 script737.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
 document.body.appendChild(script737);
+script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
 
 //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
 //this avoids massive lag
