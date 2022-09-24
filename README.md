@@ -13,6 +13,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
+- Condensation effects
 - AriakimTaiyo's 737 and 777 immersion sound effects
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A bug fix for the F-14 and XB-70
@@ -25,7 +26,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - A similar fix for the F-15
 - F-22 fix
 - *Tricky Corsair startup* (you'll need to advance the throttle a little bit to get the engine to start)
-- Basic fly-by-wire for the F-16's pitch
+- Basic fly-by-wire for the F-16's pitch, and a brake parachute
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
 - Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
