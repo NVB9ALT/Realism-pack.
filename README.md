@@ -19,7 +19,7 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
 - Carrier catapults
-- Night scenery and cockpit lighting
+- Night scenery and cockpit lighting (please note, this is sorta bugged for some reason with advanced atmosphere and METAR weather both on)
 - Lift-based wingflex for most CC airliners
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
