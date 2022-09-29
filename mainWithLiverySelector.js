@@ -571,9 +571,6 @@ geofs.debug.update = function (a) {
         geofs.debug.placingObjectId &&
             $(".geofs-debugObjectLlaHtr").text(geofs.objects.getLla(geofs.debug.placingObjectId) + " " + geofs.objects.getHtr(geofs.debug.placingObjectId) + " " + geofs.objects.getScale(geofs.debug.placingObjectId));
     }
-  if (geofs.aircraft.instance.id == 7) {
-     geofs.debug.loadF16Tank()
-  }
 	 // brake parachute
 	 if (geofs.aircraft.instance.id == 7) { //compile database
   if (geofs.animation.values.airbrakesTarget > 0 && geofs.animation.values.kias >= 10 && geofs.animation.values.kias <= 200) {
