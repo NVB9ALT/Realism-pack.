@@ -51,7 +51,7 @@ What the Realism Pack adds:
 - A similar fix for the F-15
 - F-22 fix
 - *Tricky Corsair startup* (you'll need to advance the throttle a little bit to get the engine to start)
-- Basic fly-by-wire for the F-16's pitch, and a brake parachute
+- A brake parachute for the F-16
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
 - Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
