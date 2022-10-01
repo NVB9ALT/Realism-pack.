@@ -1,25 +1,50 @@
 # Realism-pack
-This is a bookmarklet addon. Here's a tutorial on bookmarklets: https://www.youtube.com/watch?v=TNDEesTbKc4.</br>
-bookmarklet.js is the one that you paste as the URL of the bookmark.
+This massive addon adds tons of new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
+You can review the full list of additional features and changes below.
+
+
+**HOW TO INSTALL:**</br>
+*If you want to run the bookmarklet version:*
+- Watch this YouTube video: https://www.youtube.com/watch?v=TNDEesTbKc4.
+- Follow that tutorial, but set the contents of bookmarklet.js as the URL.
+
+*If you want to run the Tampermonkey version:*
+- Make sure you have Tampermonkey installed
+- Add tampermonkey-code.js as a new userscript
 
 You'll never have to worry about updating your copy of the addon; the bookmarklet will automatically call the latest version of the addon.
 
-**Note:** please wait until the instruments have loaded before clicking on the bookmarklet. If it is clicked before GeoFS is running, it will not run.</br>
-**HOW TO USE THE CARRIER CATAPULTS:** Go to the flight deck of the USS John C. Stennis and taxi to the front end of the deck, then use "q" to lock/unlock the launch bar. Once the launch bar is locked, use "~" to launch the catapult. It is recommended to apply full power before launching.
+**HOW TO USE:**</br>
+If you run the bookmarklet version, please wait until the terrain has loaded before clicking on the bookmarklet. Otherwise you might have terrain collision bugs.</br>
 
-This combines several addons that enhance the realism of GeoFS. In this one bookmarklet is contained:
+*How to use the carrier catapults:*
+Go to the flight deck of the USS John C. Stennis and taxi to the front end of the deck, then use "q" to lock/unlock the launch bar. Once the launch bar is locked, use "~" to launch the catapult. It is recommended to apply full power before launching. </br>
+
+You will notice a few new settings in the options panel. They are on by default.</br>
+
+*How to use the addon chat:*</br>
+At the bottom of the locations panel is an addon chat room. To use this, simply click the input text box, type your message, press "enter", then click somewhere else.
+
+
+What the Realism Pack adds:
 
 - Realistic KIAS for exterior instruments
+- My custom addon chat
+- *All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
 - Condensation effects for fighters
 - AriakimTaiyo's 737 and 777 immersion sound effects
 - If you strike the rotor blades of a helicopter on the ground, it crashes
+- A basic implementation of propwash
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
 - Carrier catapults
-- Night scenery and cockpit lighting (please note, this is sorta bugged for some reason with advanced atmosphere and METAR weather both on)
+- Stall buffet camera effect
+- Sixteen 3d landmarks around the world
+- Night scenery and cockpit lighting
+- A minor rework of the advanced atmosphere
 - Lift-based wingflex for most CC airliners
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
@@ -33,9 +58,13 @@ This combines several addons that enhance the realism of GeoFS. In this one book
 - Ejection seats for fighter jets (press E while airborne)
 - A machmeter on the HUD
 - Lag reduction
-- **If you use the second version of the addon, Kolos26's Livery Selector (with more liveries than Multiliveries and a better selection system) will be included. This makes it incompatible with other addons that need a UI, like FakeElonMusk's Challenges Addon.**
 - Other minor improvements
 
-There are a few things that have been removed, they will be added back when I can get them to work. You may also notice incomplete stuff in the code; that's going to be finished at some point as well.
+**IF YOU DISCOVER A BUG OR GLITCH WITH THE ADDON, OR IF YOU WANT TO SUBMIT FEEDBACK OR FEATURE SUGGESTIONS:**
+You can contact me in three ways:
+- Submit an issue under "Issues"
+- Send me a message on my Fandom message wall ( https://geofs.fandom.com/wiki/Message_Wall:NVB9_2 )
+- Send me an email ( coveljulian@gmail.com )
 
-Other parts of this addon may also be buggy or broken, please let me know if you've discovered a problem. I use this addon myself and so a lot of the bugs are ironed out before updates, but there may still be things I missed.
+If you're alerting me to a bug/glitch, please let me know of the circumstances that cause the issue, and if it produces a console error please provide a screenshot.</br>
+If you're submitting suggestions, please keep in mind that I may not be able or willing to implement them.
