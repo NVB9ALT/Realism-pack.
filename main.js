@@ -1,4 +1,7 @@
 function realismGo() {
+let addonChat = document.createElement("li");
+addonChat.innerHTML = '<li><iframe width="1000", height="1500", left=350,top=50, src="https://chat.hyperjs.ml/GeoFS", title="Addon chat"</iframe></li>';
+document.getElementsByClassName("geofs-location-list")[0].appendChild(addonChat);
 //this breaks things if its run before terrain has loaded
 //geofs.api.waterDetection.create();
 lagReductionInterval = setInterval(function () {
@@ -9,6 +12,33 @@ lagReductionInterval = setInterval(function () {
         flight.recorder.clear();
     }
 }, 100);
+geofs.animation.values.shake = null
+function getShake() {
+    geofs.animation.values.shake = geofs.animation.values.aoa * Math.random();
+}
+function doShake() {
+  getShake() 
+  if (geofs.animation.values.aoa >= 10) {
+  geofs.camera.translate(0.0001 * geofs.animation.values.shake,0.0001 * geofs.animation.values.shake,0.0001 * geofs.animation.values.shake)
+  setTimeout(function(){
+    geofs.camera.translate(-0.0001 * geofs.animation.values.shake,-0.0001 * geofs.animation.values.shake,-0.0001 * geofs.animation.values.shake)
+  },1)
+  }
+}
+shakeInterval = setInterval(function(){doShake()},10)
+
+setInterval(function(){
+    if (geofs.aircraft.instance.id == 21 || geofs.aircraft.instance.id == 2 || geofs.aircraft.instance.id == 2808 || geofs.aircraft.instance.id == 1 || geofs.aircraft.instance.id == 8 || geofs.aircraft.instance.id == 12 || geofs.aircraft.instance.id == 13 || geofs.aircraft.instance.id == 40 || geofs.aircraft.instance.id == 1069 || geofs.aircraft.instance.id == 2750 || geofs.aircraft.instance.id == 4251)  {
+geofs.aircraft.instance.airfoils.forEach(function(e){
+if (e.forceDirection == 2) {
+   e.propwash = 0.005
+} else {
+   e.propwash = 0.01
+}
+})
+geofs.aircraft.instance.setup.parts[0].centerOfMass = [geofs.animation.values.rpm/1000, 0, 0]
+   }
+})
 function gBlackout() {
     if (geofs.animation.values.accZ >= 90) {
         ui.showCrashNotification();
@@ -118,6 +148,24 @@ scriptC.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Weather-Mods@main/Advanced-2d
 document.body.appendChild(scriptC);
 scriptC.onload = function () {
     fixCloudsDensity();
+};
+var scriptATM = document.createElement("script");
+scriptATM.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/BetterGeoFSAtmosphere.js";
+document.body.appendChild(scriptATM);
+scriptATM.onload = function () {
+    redoAtmosphere();
+};
+var scriptCCI = document.createElement("script");
+scriptCCI.src = "https://raw.githack.com/NVB9ALT/Fixed-CC-PFDs-and-HUDs/main/fix.js";
+document.body.appendChild(scriptCCI);
+scriptCCI.onload = function () {
+    redoPFDSHUDS();
+};
+var scriptLM = document.createElement("script");
+scriptLM.src = "https://raw.githack.com/NVB9ALT/GeoFS-3d-landmarks-by-JAaMDG/main/Current-compatible.js";
+document.body.appendChild(scriptLM);
+scriptLM.onload = function () {
+    addLandmarks();
 };
 var scriptAS = document.createElement("script");
 scriptAS.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Autospoilers@main/autospoilersA.js";
