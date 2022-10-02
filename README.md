@@ -12,7 +12,7 @@ You can review the full list of additional features and changes below.
 - Make sure you have Tampermonkey installed
 - Add tampermonkey-code.js as a new userscript
 
-You'll never have to worry about updating your copy of the addon; the bookmarklet will automatically call the latest version of the addon.
+You'll never have to worry about updating your copy of the addon.
 
 **HOW TO USE:**</br>
 If you run the bookmarklet version, please wait until the terrain has loaded before clicking on the bookmarklet. Otherwise you might have terrain collision bugs.</br>
