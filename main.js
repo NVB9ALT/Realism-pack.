@@ -18,7 +18,7 @@ function getShake() {
 }
 function doShake() {
   getShake() 
-  if (geofs.animation.values.aoa >= 10) {
+  if (geofs.animation.values.aoa >= 10 && geofs.aircraft.instance.id != 4) {
   geofs.camera.translate(0.0001 * geofs.animation.values.shake,0.0001 * geofs.animation.values.shake,0.0001 * geofs.animation.values.shake)
   setTimeout(function(){
     geofs.camera.translate(-0.0001 * geofs.animation.values.shake,-0.0001 * geofs.animation.values.shake,-0.0001 * geofs.animation.values.shake)
