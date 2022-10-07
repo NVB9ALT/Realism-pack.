@@ -14,7 +14,7 @@ if (e.keyCode == 16 || e.keyCode == 13) {
 	})
 })
 document.addEventListener("keydown", function(e) {
-  if (e.keycode == 81 && geofs.debug.shiftIsTrue == 1 && promptOpen = true) {
+  if (e.keycode == 81 && geofs.debug.shiftIsTrue == 1 && promptOpen == true) {
 promptOpen = false
 var freq = prompt("Enter frequency:");
 document.getElementById("realismChat").src = "https://chat.hyperjs.ml/" + freq
