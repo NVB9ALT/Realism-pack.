@@ -1,7 +1,7 @@
 function realismGo() {
 let addonChat = document.createElement("li");
 addonChat.innerHTML = '<li><iframe width="1000", height="1500", left=350,top=50, src="https://chat.hyperjs.ml/GeoFS", title="Addon chat"</iframe></li>';
-document.getElementsByClassName("geofs-location-list")[0].appendChild(addonChat);
+document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-preference-list geofs-preferences")[0].appendChild(addonChat);
 //this breaks things if its run before terrain has loaded
 //geofs.api.waterDetection.create();
 lagReductionInterval = setInterval(function () {
