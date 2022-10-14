@@ -718,7 +718,7 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadF18AB()
   }
-  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == cockpit) {
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == "cockpit") {
     geofs.debug.loadF18Cockpit()
   }
 };
