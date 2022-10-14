@@ -528,6 +528,7 @@ var f18Afterburner = "https://142420819-645052386429616373.preview.editmysite.co
 var f18GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgearup.glb"
 var f18GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgeardown.glb"
 var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-cockpit.glb"
+var f18Airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-airbrake.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.debug.createF18GearUp = function() {
@@ -584,6 +585,20 @@ geofs.debug.loadF18Cockpit = function() {
         geofs.debug.F18Cockpit.model.setPositionOrientationAndScale(c, d);
     } catch (e) {
 	    throw("F18 cockpit loading error. " + e)
+    }
+};
+geofs.debug.createF18Airbrake = function() {
+   geofs.debug.F18Airbrake = {};
+	geofs.debug.F18Airbrake.model = new geofs.api.Model(f18Airbrake)
+}
+geofs.debug.loadF18Cockpit = function() {
+   geofs.debug.F18Airbrake || geofs.debug.createF18Airbrake()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18Airbrake.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F18 airbrake loading error. " + e)
     }
 };
 geofs.debug.loadF16Tank = function() {
@@ -708,7 +723,9 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.aircraft.instance.id == 247 && geofs.camera.currentModeName == "cockpit") {
     void(0) //placeholder
   }
-
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.airbrakesTarget == 1) {
+    geofs.debug.loadF18Airbrake()  
+  }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
     geofs.debug.loadF18GearDown()
   }
