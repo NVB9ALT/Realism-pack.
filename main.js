@@ -527,6 +527,7 @@ var rainEffect = "https://geo-fs.com/models/precipitations/rain.gltf"
 var f18Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a18cafterburner.glb"
 var f18GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgearup.glb"
 var f18GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgeardown.glb"
+geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.debug.createF18GearUp = function() {
    geofs.debug.F18GearUp = {};
