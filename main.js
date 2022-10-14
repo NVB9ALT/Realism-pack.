@@ -527,6 +527,7 @@ var rainEffect = "https://geo-fs.com/models/precipitations/rain.gltf"
 var f18Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a18cafterburner.glb"
 var f18GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgearup.glb"
 var f18GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgeardown.glb"
+var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-cockpit.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.debug.createF18GearUp = function() {
@@ -569,6 +570,20 @@ geofs.debug.loadF18AB = function() {
         geofs.debug.F18AB.model.setPositionOrientationAndScale(c, d);
     } catch (e) {
 	    throw("F18 AB loading error. " + e)
+    }
+};
+geofs.debug.createF18Cockpit = function() {
+   geofs.debug.F18Cockpit = {};
+	geofs.debug.F18Cockpit.model = new geofs.api.Model(f18Cockpit)
+}
+geofs.debug.loadF18Cockpit = function() {
+   geofs.debug.F18Cockpit || geofs.debug.createF18Cockpit()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18Cockpit.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F18 cockpit loading error. " + e)
     }
 };
 geofs.debug.loadF16Tank = function() {
@@ -696,9 +711,11 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
 
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
     geofs.debug.loadF18GearDown()
+    geofs.debug.loadF18Cockpit()
   }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 1) {
     geofs.debug.loadF18GearUp()
+    geofs.debug.loadF18Cockpit()
   }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadF18AB()
