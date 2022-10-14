@@ -711,14 +711,15 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
 
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
     geofs.debug.loadF18GearDown()
-    geofs.debug.loadF18Cockpit()
   }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 1) {
     geofs.debug.loadF18GearUp()
-    geofs.debug.loadF18Cockpit()
   }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadF18AB()
+  }
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == cockpit) {
+    geofs.debug.loadF18Cockpit()
   }
 };
 }
