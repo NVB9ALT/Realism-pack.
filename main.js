@@ -524,6 +524,52 @@ var condensationConesSmall = "https://142420819-645052386429616373.preview.editm
 var machCone = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/shockcone.glb"
 var parachute = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/parachute-proper.glb"
 var rainEffect = "https://geo-fs.com/models/precipitations/rain.gltf"
+var f18Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a18cafterburner.glb"
+var f18GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgearup.glb"
+var f18GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgeardown.glb"
+geofs.debug.isFA18 = 0
+geofs.debug.createF18GearUp = function() {
+   geofs.debug.F18GearUp = {};
+	geofs.debug.F18GearUp.model = new geofs.api.Model(f18GearUp)
+}
+geofs.debug.loadF18GearUp = function() {
+   geofs.debug.F18GearUp || geofs.debug.createF18GearUp()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18GearUp.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F18 Gear Up loading error. " + e)
+    }
+};
+geofs.debug.createF18GearDown = function() {
+   geofs.debug.F18GearDown = {};
+	geofs.debug.F18GearDown.model = new geofs.api.Model(f18GearDown)
+}
+geofs.debug.loadF18GearDown = function() {
+   geofs.debug.F18GearDown || geofs.debug.createF18GearDown()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18GearDown.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F18 Gear Down loading error. " + e)
+    }
+};
+geofs.debug.createF18AB = function() {
+   geofs.debug.F18AB = {};
+	geofs.debug.F18AB.model = new geofs.api.Model(f18Afterburner)
+}
+geofs.debug.loadF18AB = function() {
+   geofs.debug.F18AB || geofs.debug.createF18AB()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18AB.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F18 AB loading error. " + e)
+    }
+};
 geofs.debug.loadF16Tank = function() {
    geofs.debug.F16Tank || geofs.debug.createF16Tank()
 	try {
@@ -645,6 +691,16 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   //edit emb120 cockpit in vectary
   if (geofs.aircraft.instance.id == 247 && geofs.camera.currentModeName == "cockpit") {
     void(0) //placeholder
+  }
+
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
+    geofs.debug.loadF18GearDown()
+  }
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 1) {
+    geofs.debug.loadF18GearUp()
+  }
+  if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
+    geofs.debug.loadF18AB()
   }
 };
 }
