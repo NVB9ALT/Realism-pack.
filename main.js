@@ -591,7 +591,7 @@ geofs.debug.createF18Airbrake = function() {
    geofs.debug.F18Airbrake = {};
 	geofs.debug.F18Airbrake.model = new geofs.api.Model(f18Airbrake)
 }
-geofs.debug.loadF18Cockpit = function() {
+geofs.debug.loadF18Airbrake = function() {
    geofs.debug.F18Airbrake || geofs.debug.createF18Airbrake()
 	try {
         var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
