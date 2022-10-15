@@ -587,6 +587,20 @@ geofs.debug.loadF18Cockpit = function() {
 	    throw("F18 cockpit loading error. " + e)
     }
 };
+geofs.debug.createF18Stick = function() {
+   geofs.debug.F18Stick = {};
+	geofs.debug.F18Stick.model = new geofs.api.Model(f18Cockpit)
+}
+geofs.debug.loadF18Stick = function() {
+   geofs.debug.F18Stick || geofs.debug.createF18Stick()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F18Stick.model.setPositionOrientationAndScale(c, [d[0], d[1], d[2] + (geofs.animation.values.yaw * 10)]);
+    } catch (e) {
+	    throw("F18 stick loading error. " + e)
+    }
+};
 geofs.debug.createF18Airbrake = function() {
    geofs.debug.F18Airbrake = {};
 	geofs.debug.F18Airbrake.model = new geofs.api.Model(f18Airbrake)
@@ -737,6 +751,7 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   }
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == "cockpit") {
     geofs.debug.loadF18Cockpit()
+    geofs.debug.loadF18Stick()
   }
 };
 }
