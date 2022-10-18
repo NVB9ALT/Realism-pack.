@@ -535,6 +535,7 @@ var mig17speedbrake = "https://142420819-645052386429616373.preview.editmysite.c
 var mig17Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-afterburner.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
+geofs.addonAircraft.isMig17 = 0
 geofs.debug.createF18GearUp = function() {
    geofs.debug.F18GearUp = {};
 	geofs.debug.F18GearUp.model = new geofs.api.Model(f18GearUp)
