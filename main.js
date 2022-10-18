@@ -651,7 +651,7 @@ geofs.debug.loadMiG17GearDown = function() {
 };
 geofs.debug.createMiG17AB = function() {
    geofs.debug.MiG17AB = {};
-	geofs.debug.MiG17.model = new geofs.api.Model(mig17Afterburner)
+	geofs.debug.MiG17AB.model = new geofs.api.Model(mig17Afterburner)
 }
 geofs.debug.loadMiG17AB = function() {
    geofs.debug.MiG17AB || geofs.debug.createMiG17AB()
