@@ -529,6 +529,10 @@ var f18GearUp = "https://142420819-645052386429616373.preview.editmysite.com/upl
 var f18GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/geofsf-a-18cgeardown.glb"
 var f18Cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-cockpit.glb"
 var f18Airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-18-airbrake.glb"
+var mig17GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-gear-up.glb"
+var mig17GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-gear-down.glb"
+var mig17speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
+var mig17Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-afterburner.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.debug.createF18GearUp = function() {
@@ -615,6 +619,64 @@ geofs.debug.loadF18Airbrake = function() {
 	    throw("F18 airbrake loading error. " + e)
     }
 };
+	
+geofs.debug.createMiG17GearUp = function() {
+   geofs.debug.MiG17GearUp = {};
+	geofs.debug.MiG17GearUp.model = new geofs.api.Model(mig17GearUp)
+}
+geofs.debug.loadMiG17GearUp = function() {
+   geofs.debug.MiG17GearUp || geofs.debug.createMiG17GearUp()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.MiG17GearUp.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("MiG-17 Gear Up loading error. " + e)
+    }
+};
+geofs.debug.createMiG17GearDown = function() {
+   geofs.debug.MiG17GearDown = {};
+	geofs.debug.MiG17GearDown.model = new geofs.api.Model(mig17GearDown)
+}
+geofs.debug.loadMiG17GearDown = function() {
+   geofs.debug.MiG17GearDown || geofs.debug.createMiG17GearDown()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.MiG17GearDown.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("MiG-17 Gear Down loading error. " + e)
+    }
+};
+geofs.debug.createMiG17AB = function() {
+   geofs.debug.MiG17AB = {};
+	geofs.debug.MiG17.model = new geofs.api.Model(mig17Afterburner)
+}
+geofs.debug.loadMiG17AB = function() {
+   geofs.debug.MiG17AB || geofs.debug.createMiG17AB()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.MiG17AB.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("MiG-17 AB loading error. " + e)
+    }
+};
+geofs.debug.createMiG17Speedbrake = function() {
+   geofs.debug.MiG17Speedbrake = {};
+	geofs.debug.MiG17Speedbrake.model = new geofs.api.Model(mig17speedbrake)
+}
+geofs.debug.loadMiG17Speedbrake = function() {
+   geofs.debug.MiG17Speedbrake || geofs.debug.createMiG17Speedbrake()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.MiG17Speedbrake.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("MiG-17 speedbrake loading error. " + e)
+    }
+};
+	
 geofs.debug.loadF16Tank = function() {
    geofs.debug.F16Tank || geofs.debug.createF16Tank()
 	try {
