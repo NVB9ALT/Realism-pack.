@@ -819,10 +819,10 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
     geofs.debug.loadMiG17Speedbrake()
   }
-  if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 0) {
+  if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
     geofs.debug.loadMiG17GearDown()
   }
-  if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 1) {
+  if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
     geofs.debug.loadMiG17GearUp()
   }
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
