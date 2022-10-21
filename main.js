@@ -780,6 +780,9 @@ geofs.aircraft.instance.definition.dragFactor = 10
 geofs.aircraft.instance.definition.dragFactor = 0.5
   }
 	 }
+  if (geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.airbrakesTarget > 0) {
+    geofs.debug.loadSu27Airbrake()
+  }
   if (geofs.animation.values.mach > 0.95 && geofs.animation.values.mach < 1.05 && geofs.aircraft.instance.id != 2364 && cons == true) {
 	 geofs.debug.loadMachCone()
   }
