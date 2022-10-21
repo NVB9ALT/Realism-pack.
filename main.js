@@ -29,6 +29,7 @@ shakeInterval = setInterval(function(){doShake()},10)
 
 setInterval(function(){
     if (geofs.aircraft.instance.id == 21 || geofs.aircraft.instance.id == 2 || geofs.aircraft.instance.id == 2808 || geofs.aircraft.instance.id == 1 || geofs.aircraft.instance.id == 8 || geofs.aircraft.instance.id == 12 || geofs.aircraft.instance.id == 13 || geofs.aircraft.instance.id == 40 || geofs.aircraft.instance.id == 1069 || geofs.aircraft.instance.id == 2750 || geofs.aircraft.instance.id == 4251)  {
+if (geofs.addonAircraft.isTruck != 1) {
 geofs.aircraft.instance.airfoils.forEach(function(e){
 if (e.forceDirection == 2) {
    e.propwash = 0.005
@@ -38,6 +39,7 @@ if (e.forceDirection == 2) {
 })
 geofs.aircraft.instance.setup.parts[0].centerOfMass = [geofs.animation.values.rpm/1000, 0, 0]
    }
+    }
 })
 function gBlackout() {
     if (geofs.animation.values.accZ >= 90) {
@@ -533,9 +535,25 @@ var mig17GearUp = "https://142420819-645052386429616373.preview.editmysite.com/u
 var mig17GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-gear-down.glb"
 var mig17speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
 var mig17Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-afterburner.glb"
+var truckModel = "https://geo-fs.com/models/objects/vehicles/truck/multiplayer.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.addonAircraft.isMig17 = 0
+geofs.addonAircraft.isTruck = 0
+geofs.debug.createTruck = function() {
+   geofs.debug.truck = {};
+	geofs.debug.truck.model = new geofs.api.Model(f18GearUp)
+}
+geofs.debug.loadTruck = function() {
+   geofs.debug.truck || geofs.debug.createTruck()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.truck.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("Truck model loading error. " + e)
+    }
+};
 geofs.debug.createF18GearUp = function() {
    geofs.debug.F18GearUp = {};
 	geofs.debug.F18GearUp.model = new geofs.api.Model(f18GearUp)
@@ -830,6 +848,9 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   }
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadMiG17AB()
+  }
+  if (geofs.addonAircraft.isTruck = 1) {
+    geofs.debug.loadTruck()  
   }
 };
 }
