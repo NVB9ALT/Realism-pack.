@@ -542,7 +542,7 @@ geofs.addonAircraft.isMig17 = 0
 geofs.addonAircraft.isTruck = 0
 geofs.debug.createTruck = function() {
    geofs.debug.truck = {};
-	geofs.debug.truck.model = new geofs.api.Model(f18GearUp)
+	geofs.debug.truck.model = new geofs.api.Model(truckModel)
 }
 geofs.debug.loadTruck = function() {
    geofs.debug.truck || geofs.debug.createTruck()
@@ -849,7 +849,7 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadMiG17AB()
   }
-  if (geofs.addonAircraft.isTruck = 1) {
+  if (geofs.addonAircraft.isTruck == 1) {
     geofs.debug.loadTruck()  
   }
 };
