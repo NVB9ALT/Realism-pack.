@@ -867,5 +867,13 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.addonAircraft.isTruck == 1) {
     geofs.debug.loadTruck()  
   }
+  Object.values(multiplayer.visibleUsers).forEach(function(e){
+    if (e.id == 3 && e.currentLivery == 1) {
+      geofs.api.removeModelFromWorld(e.model._model)
+    }
+    if (e.id == 18 && e.currentLivery == 4) {
+      geofs.api.removeModelFromWorld(e.model._model)
+    }
+  })
 };
 }
