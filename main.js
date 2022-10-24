@@ -536,6 +536,7 @@ var mig17GearDown = "https://142420819-645052386429616373.preview.editmysite.com
 var mig17speedbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-speedbrakes.glb"
 var mig17Afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-17-afterburner.glb"
 var truckModel = "https://geo-fs.com/models/objects/vehicles/truck/multiplayer.glb"
+var su27airbrake = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/su-27_airbrake.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.addonAircraft.isMig17 = 0
@@ -552,6 +553,20 @@ geofs.debug.loadTruck = function() {
         geofs.debug.truck.model.setPositionOrientationAndScale(c, d);
     } catch (e) {
 	    throw("Truck model loading error. " + e)
+    }
+};
+geofs.debug.createSu27Airbrake = function() {
+   geofs.debug.su27airbrake = {};
+	geofs.debug.su27airbrake.model = new geofs.api.Model(su27airbrake)
+}
+geofs.debug.loadSu27Airbrake = function() {
+   geofs.debug.su27airbrake || geofs.debug.createSu27Airbrake()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.su27airbrake.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("Su-27 airbrake loading error. " + e)
     }
 };
 geofs.debug.createF18GearUp = function() {
