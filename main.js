@@ -549,6 +549,36 @@ geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
 geofs.addonAircraft.isMig17 = 0
 geofs.addonAircraft.isTruck = 0
+geofs.addonAircraft.isF14A = 0
+geofs.debug.createF14AGearUp = function() {
+   geofs.debug.F14AGearUp = {};
+	geofs.debug.F14AGearUp.model = new geofs.api.Model(f14gearup)
+}
+geofs.debug.loadF14AGearUp = function() {
+   geofs.debug.F14AGearUp || geofs.debug.F14AGearUp()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14AGearUp.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A Gear Up loading error. " + e)
+    }
+};
+geofs.debug.createF14AGearDown = function() {
+   geofs.debug.F14AGearDown = {};
+	geofs.debug.F14AGearDown.model = new geofs.api.Model(f14geardown)
+}
+geofs.debug.loadF14AGearDown = function() {
+   geofs.debug.F14AGearDown || geofs.debug.F14AGearDown()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14AGearDown.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A Gear Down loading error. " + e)
+    }
+};
+
 geofs.debug.createTruck = function() {
    geofs.debug.truck = {};
 	geofs.debug.truck.model = new geofs.api.Model(truckModel)
