@@ -555,7 +555,7 @@ geofs.debug.createF14AGearUp = function() {
 	geofs.debug.F14AGearUp.model = new geofs.api.Model(f14gearup)
 }
 geofs.debug.loadF14AGearUp = function() {
-   geofs.debug.F14AGearUp || geofs.debug.F14AGearUp()
+   geofs.debug.F14AGearUp || geofs.debug.createF14AGearUp()
 	try {
         var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
             d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
@@ -569,13 +569,97 @@ geofs.debug.createF14AGearDown = function() {
 	geofs.debug.F14AGearDown.model = new geofs.api.Model(f14geardown)
 }
 geofs.debug.loadF14AGearDown = function() {
-   geofs.debug.F14AGearDown || geofs.debug.F14AGearDown()
+   geofs.debug.F14AGearDown || geofs.debug.createF14AGearDown()
 	try {
         var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
             d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
         geofs.debug.F14AGearDown.model.setPositionOrientationAndScale(c, d);
     } catch (e) {
 	    throw("F-14A Gear Down loading error. " + e)
+    }
+};
+geofs.debug.createF14AWingStraight = function() {
+   geofs.debug.F14AWingStraight = {};
+	geofs.debug.F14AWingStraight.model = new geofs.api.Model(f14wingstraight)
+}
+geofs.debug.loadF14AWingStraight = function() {
+   geofs.debug.F14AWingStraight || geofs.debug.createF14AWingStraight()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14AWingStraight.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A Straight Wings loading error. " + e)
+    }
+};
+geofs.debug.createF14AWingSwept = function() {
+   geofs.debug.F14AWingSwept = {};
+	geofs.debug.F14AWingSwept.model = new geofs.api.Model(f14wingswept)
+}
+geofs.debug.loadF14AWingSwept = function() {
+   geofs.debug.F14AWingSwept || geofs.debug.createF14AWingSwept()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14AWingSwept.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A Swept Wings loading error. " + e)
+    }
+};
+geofs.debug.createF14ATailhookUp = function() {
+   geofs.debug.F14ATailhookUp = {};
+	geofs.debug.F14ATailhookUp.model = new geofs.api.Model(f14tailhookup)
+}
+geofs.debug.loadF14ATailhookUp = function() {
+   geofs.debug.F14ATailhookUp || geofs.debug.createF14ATailhookUp()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14ATailhookUp.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A tailhook loading error. " + e)
+    }
+};
+geofs.debug.createF14ATailhookDown = function() {
+   geofs.debug.F14ATailhookDown = {};
+	geofs.debug.F14ATailhookDown.model = new geofs.api.Model(f14tailhookdown)
+}
+geofs.debug.loadF14ATailhookDown = function() {
+   geofs.debug.F14ATailhookDown || geofs.debug.createF14ATailhookDown()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14ATailhookDown.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A tailhook loading error. " + e)
+    }
+};
+geofs.debug.createF14ASpeedbrake = function() {
+   geofs.debug.F14ASpeedbrake = {};
+	geofs.debug.F14ASpeedbrake.model = new geofs.api.Model(f14airbrake)
+}
+geofs.debug.loadF14ASpeedbrake = function() {
+   geofs.debug.F14ASpeedbrake || geofs.debug.createF14ASpeedbrake()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14ASpeedbrake.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A speedbrake loading error. " + e)
+    }
+};
+geofs.debug.createF14ACockpit = function() {
+   geofs.debug.F14ACockpit = {};
+	geofs.debug.F14ACockpit.model = new geofs.api.Model(f14cockpit)
+}
+geofs.debug.loadF14ACockpit = function() {
+   geofs.debug.F14ACockpit || geofs.debug.createF14ACockpit()
+	try {
+        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+        geofs.debug.F14ACockpit.model.setPositionOrientationAndScale(c, d);
+    } catch (e) {
+	    throw("F-14A cockpit loading error. " + e)
     }
 };
 
@@ -874,6 +958,32 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.aircraft.instance.id == 247 && geofs.camera.currentModeName == "cockpit") {
     void(0) //placeholder
   }
+
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
+    geofs.debug.loadF14AGearUp()
+    geofs.debug.loadF14ATailhookUp()
+  }
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
+    geofs.debug.loadF14AGearDown()
+    geofs.debug.loadF14ATailhookDown()
+  }
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.optionalAnimatedPartTarget == 0) {
+    geofs.debug.loadF14AWingStraight()
+  }
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.optionalAnimatedPartTarget == 1) {
+    geofs.debug.loadF14AWingSwept()
+  }
+  //if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
+  //}
+  //if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
+  //}
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.airbrakesTarget == 1) {
+    geofs.debug.loadF14ASpeedbrake()
+  }
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view == "cockpit") {
+    geofs.debug.loadF14ACockpit
+  }
+
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.airbrakesTarget == 1) {
     geofs.debug.loadF18Airbrake()  
   }
@@ -890,6 +1000,7 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
     geofs.debug.loadF18Cockpit()
     geofs.debug.loadF18Stick()
   }
+
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
     geofs.debug.loadMiG17Speedbrake()
   }
@@ -902,9 +1013,11 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
   if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
     geofs.debug.loadMiG17AB()
   }
+
   if (geofs.addonAircraft.isTruck == 1) {
     geofs.debug.loadTruck()  
   }
+
   Object.values(multiplayer.visibleUsers).forEach(function(e){
     if (e.id == 3 && e.currentLivery == 1) {
       geofs.api.removeModelFromWorld(e.model._model)
