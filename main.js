@@ -959,18 +959,18 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
     void(0) //placeholder
   }
 
-  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
     geofs.debug.loadF14AGearUp()
     geofs.debug.loadF14ATailhookUp()
   }
-  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
     geofs.debug.loadF14AGearDown()
     geofs.debug.loadF14ATailhookDown()
   }
-  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.optionalAnimatedPartTarget == 0) {
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 0) {
     geofs.debug.loadF14AWingStraight()
   }
-  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.optionalAnimatedPartTarget == 1) {
+  if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 1) {
     geofs.debug.loadF14AWingSwept()
   }
   //if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
