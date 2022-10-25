@@ -542,8 +542,8 @@ var f14gearup = "https://142420819-645052386429616373.preview.editmysite.com/upl
 var f14geardown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_main_gear_down.glb"
 var f14wingstraight = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_wings_straight.glb"
 var f14wingswept = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_wings_swept.glb"
-var f14tailhookup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_tailhook_up.glb"
-var f14tailhookdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_tailhook_down.glb"
+var f14tailhookup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f14a_tailhook_up.glb"
+var f14tailhookdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f14a_tailhook_down.glb"
 var f14cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_cockpit.glb"
 geofs.addonAircraft = {};
 geofs.addonAircraft.isFA18 = 0
@@ -981,7 +981,7 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
     geofs.debug.loadF14ASpeedbrake()
   }
   if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view == "cockpit") {
-    geofs.debug.loadF14ACockpit
+    geofs.debug.loadF14ACockpit()
   }
 
   if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.airbrakesTarget == 1) {
