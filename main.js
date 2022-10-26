@@ -606,34 +606,6 @@ geofs.debug.loadF14AWingSwept = function() {
 	    throw("F-14A Swept Wings loading error. " + e)
     }
 };
-geofs.debug.createF14ATailhookUp = function() {
-   geofs.debug.F14ATailhookUp = {};
-	geofs.debug.F14ATailhookUp.model = new geofs.api.Model(f14tailhookup)
-}
-geofs.debug.loadF14ATailhookUp = function() {
-   geofs.debug.F14ATailhookUp || geofs.debug.createF14ATailhookUp()
-	try {
-        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
-            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-        geofs.debug.F14ATailhookUp.model.setPositionOrientationAndScale(c, d);
-    } catch (e) {
-	    throw("F-14A tailhook loading error. " + e)
-    }
-};
-geofs.debug.createF14ATailhookDown = function() {
-   geofs.debug.F14ATailhookDown = {};
-	geofs.debug.F14ATailhookDown.model = new geofs.api.Model(f14tailhookdown)
-}
-geofs.debug.loadF14ATailhookDown = function() {
-   geofs.debug.F14ATailhookDown || geofs.debug.createF14ATailhookDown()
-	try {
-        var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
-            d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-        geofs.debug.F14ATailhookDown.model.setPositionOrientationAndScale(c, d);
-    } catch (e) {
-	    throw("F-14A tailhook loading error. " + e)
-    }
-};
 geofs.debug.createF14ASpeedbrake = function() {
    geofs.debug.F14ASpeedbrake = {};
 	geofs.debug.F14ASpeedbrake.model = new geofs.api.Model(f14airbrake)
@@ -961,11 +933,9 @@ geofs.aircraft.instance.definition.dragFactor = 0.5
 
   if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
     geofs.debug.loadF14AGearUp()
-    geofs.debug.loadF14ATailhookUp()
   }
   if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
     geofs.debug.loadF14AGearDown()
-    geofs.debug.loadF14ATailhookDown()
   }
   if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 0) {
     geofs.debug.loadF14AWingStraight()
