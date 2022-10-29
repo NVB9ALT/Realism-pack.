@@ -26,8 +26,15 @@ function doShake() {
   }
 }
 shakeInterval = setInterval(function(){doShake()},10)
-
-setInterval(function(){
+gSoundInt = setInterval(function(){
+   if (geofs.animation.values.accZ >= 50 && geofs.animation.values.view == "cockpit") {
+audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/wind.mp3")
+	}
+   if (geofs.animation.values.accZ >= 70 && geofs.animation.values.view == "cockpit") {
+audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/wind.mp3")
+	}
+},1000)
+propwashInt = setInterval(function(){
     if (geofs.aircraft.instance.id == 21 || geofs.aircraft.instance.id == 2 || geofs.aircraft.instance.id == 2808 || geofs.aircraft.instance.id == 1 || geofs.aircraft.instance.id == 8 || geofs.aircraft.instance.id == 12 || geofs.aircraft.instance.id == 13 || geofs.aircraft.instance.id == 40 || geofs.aircraft.instance.id == 1069 || geofs.aircraft.instance.id == 2750 || geofs.aircraft.instance.id == 4251)  {
 if (geofs.addonAircraft.isTruck != 1) {
 geofs.aircraft.instance.airfoils.forEach(function(e){
