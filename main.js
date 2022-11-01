@@ -235,7 +235,7 @@ accelInt = null;
 flexInterval = null;
 
 function checkForBoeing737() {
-if (geofs.aircraft.instance.id == 4) { //if the aircraft currently being flown is a 737
+if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 737
 if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
 
 //running the script
