@@ -228,6 +228,7 @@ console.log("Modified by NVB9");
 
 //variable to tell if the script has run or not
 var b737Sounds = new Boolean(0)
+current737 = 0;
 soundInt = null;
 tcasIntervalAnnounce = null;
 effectInterval = null;
@@ -236,7 +237,7 @@ flexInterval = null;
 
 function checkForBoeing737() {
 if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 737
-if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
+if (b737Sounds == 0 || geofs.aircraft.instance.id != current737){ //if the script hasn't already run on this aircraft (making difference between 700 and 800)
 
 //running the script
 var script737 = document.createElement('script'); 
@@ -247,6 +248,7 @@ script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
 //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
 //this avoids massive lag
 b737Sounds = 1
+current737 = geofs.aircraft.instance.id
       }
    }
 //if the aircraft isn't a 737
