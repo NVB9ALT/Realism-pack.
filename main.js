@@ -237,11 +237,11 @@ flexInterval = null;
 function checkForBoeing737() {
 if (geofs.aircraft.instance.id == 4) { //if the aircraft currently being flown is a 737
 if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
-        clearInterval(soundInt);
+        //cleanup from last run
+	clearInterval(soundInt);
         clearInterval(tcasIntervalAnnounce);
         clearInterval(accelInt);
         clearInterval(flexInterval);
-        delete window.k;
 //running the script
 var script737 = document.createElement('script'); 
 script737.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
@@ -275,15 +275,14 @@ var b738Sounds = new Boolean(0)
 function checkForBoeing738() {
     if (geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 738
     if (b738Sounds == 0){ //if the script hasn't already run on this aircraft
-    
+    	//cleanup from last run
         clearInterval(soundInt);
         clearInterval(tcasIntervalAnnounce);
         clearInterval(accelInt);
         clearInterval(flexInterval);
-        delete window.k;
     //running the script
     var script738 = document.createElement('script'); 
-    script738.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
+    script738.src="https://raw.githack.com/kolos26/GeoFs-737-Immersion-SFX-for-Realism-Addon/main/index.js";
     document.body.appendChild(script738);
     script738.onload = function(){clearInterval(tcasIntervalAnnounce)};
     
