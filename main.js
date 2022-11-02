@@ -228,7 +228,6 @@ console.log("Modified by NVB9");
 
 //variable to tell if the script has run or not
 var b737Sounds = new Boolean(0)
-current737 = 0;
 soundInt = null;
 tcasIntervalAnnounce = null;
 effectInterval = null;
@@ -236,9 +235,13 @@ accelInt = null;
 flexInterval = null;
 
 function checkForBoeing737() {
-if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 737
-if (b737Sounds == 0 || geofs.aircraft.instance.id != current737){ //if the script hasn't already run on this aircraft (making difference between 700 and 800)
-
+if (geofs.aircraft.instance.id == 4) { //if the aircraft currently being flown is a 737
+if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
+        clearInterval(soundInt);
+        clearInterval(tcasIntervalAnnounce);
+        clearInterval(accelInt);
+        clearInterval(flexInterval);
+        delete window.k;
 //running the script
 var script737 = document.createElement('script'); 
 script737.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
@@ -248,28 +251,67 @@ script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
 //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
 //this avoids massive lag
 b737Sounds = 1
-current737 = geofs.aircraft.instance.id
       }
    }
 //if the aircraft isn't a 737
 else {
-//clearing the script when the aircraft isn't a 737 to avoid filling up the console with errors
-if (typeof soundInt != undefined) {
-   clearInterval(soundInt)
-   clearInterval(tcasIntervalAnnounce)
-   clearInterval(accelInt)
-   clearInterval(flexInterval)
-} else {
-void(0)
-};
+    if (typeof soundInt != undefined && geofs.aircraft.instance.id != 3054) {
+        clearInterval(soundInt);
+        clearInterval(tcasIntervalAnnounce);
+        clearInterval(accelInt);
+        clearInterval(flexInterval);
+     } else {
+     void(0)
+     };
 //making sure the script can run again next time a 737 is selected
 	b737Sounds = 0
    }
 }
 
+//do the same for 738
+
+var b738Sounds = new Boolean(0)
+
+function checkForBoeing738() {
+    if (geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 738
+    if (b738Sounds == 0){ //if the script hasn't already run on this aircraft
+    
+        clearInterval(soundInt);
+        clearInterval(tcasIntervalAnnounce);
+        clearInterval(accelInt);
+        clearInterval(flexInterval);
+        delete window.k;
+    //running the script
+    var script738 = document.createElement('script'); 
+    script738.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
+    document.body.appendChild(script738);
+    script738.onload = function(){clearInterval(tcasIntervalAnnounce)};
+    
+    //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
+    //this avoids massive lag
+    b738Sounds = 1
+          }
+       }
+    //if the aircraft isn't a 738
+    else {
+    //clearing the script when the aircraft isn't a 737 or 738 to avoid filling up the console with errors
+    if (typeof soundInt != undefined && geofs.aircraft.instance.id != 4) {
+       clearInterval(soundInt)
+       clearInterval(tcasIntervalAnnounce)
+       clearInterval(accelInt)
+       clearInterval(flexInterval)
+    } else {
+    void(0)
+    };
+    //making sure the script can run again next time a 738 is selected
+        b738Sounds = 0
+       }
+    }
+
 //running the above function once per second
 checkInterval = setInterval(function(){
-checkForBoeing737()
+    checkForBoeing737()
+    checkForBoeing738()
 }, 1000)
 
 var b777sounds = new Boolean(0)
