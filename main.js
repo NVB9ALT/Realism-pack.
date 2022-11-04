@@ -240,7 +240,7 @@ if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
 
 //running the script
 var script737 = document.createElement('script'); 
-script737.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
+script737.src="https://raw.githack.com/kolos26/GeoFs-737-Immersion-SFX-for-Realism-Addon/main/index.js";
 document.body.appendChild(script737);
 script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
 
