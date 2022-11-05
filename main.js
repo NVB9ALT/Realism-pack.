@@ -303,6 +303,48 @@ checkForBoeing777()
 }, 1000)
 //Add them in the places where the normal PFDs & HUDs are
 
+//variable to tell if the script has run or not
+    var a320Sounds = new Boolean(0)
+
+    function checkFora320() {
+    if (geofs.aircraft.instance.id == 2865 || geofs.aircraft.instance.id == 2870 || geofs.aircraft.instance.id == 2871 || geofs.aircraft.instance.id == 242) { //if the aircraft currently being flown is a 737
+    if (a320Sounds == 0){ //if the script hasn't already run on this aircraft
+    //preventing errors
+            clearInterval(soundInt);
+            clearInterval(tcasIntervalAnnounce);
+            clearInterval(accelInt);
+            clearInterval(flexInterval);
+    //running the script
+    var a320script = document.createElement('script'); 
+    a320script.src="https://raw.githack.com/kolos26/geofs-a320neo-sounds-byAriakimTaiyo/main/sounds.js";
+    document.body.appendChild(a320script);
+
+    //script has run now, so we change scriptHasRun to avoid having the script execute multiple times per aircraft instance
+    //this avoids massive lag
+    a320Sounds = 1
+        }
+    }
+    //if the aircraft isn't a 320
+    else {
+    //clearing the script when the aircraft isn't a 320 to avoid filling up the console with errors
+    if (typeof soundInt != undefined) {
+    clearInterval(soundInt)
+    clearInterval(tcasIntervalAnnounce)
+    clearInterval(accelInt)
+    clearInterval(flexInterval)
+    } else {
+    void(0)
+    };
+    //making sure the script can run again next time a 320 is selected
+        a320Sounds = 0
+    }
+    }
+
+    //running the above function once per second
+    checkInterval2 = setInterval(function(){
+    checkFora320()
+    }, 1000)
+	
 geofs.calculatedAOA = null;
 function normalizeAroll() {
    var normalized = null;
