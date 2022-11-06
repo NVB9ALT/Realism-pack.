@@ -235,17 +235,16 @@ accelInt = null;
 flexInterval = null;
 
 function checkForBoeing737() {
-//  || geofs.aircraft.instance.id == 3054
-if (geofs.aircraft.instance.id == 4) { //if the aircraft currently being flown is a 737
+if (geofs.aircraft.instance.id == 4 || geofs.aircraft.instance.id == 3054) { //if the aircraft currently being flown is a 737
 if (b737Sounds == 0){ //if the script hasn't already run on this aircraft
 //preventing errors
-//        clearInterval(soundInt);
-//        clearInterval(tcasIntervalAnnounce);
-//        clearInterval(accelInt);
-//        clearInterval(flexInterval);
+        clearInterval(soundInt);
+        clearInterval(tcasIntervalAnnounce);
+        clearInterval(accelInt);
+        clearInterval(flexInterval);
 //running the script
 var script737 = document.createElement('script'); 
-script737.src="https://raw.githack.com/Ariakim-Taiyo/GeoFs-737-Immersion-SFX/main/index.js";
+script737.src="https://raw.githack.com/kolos26/GeoFs-737-Immersion-SFX-for-Realism-Addon/main/index.js";
 document.body.appendChild(script737);
 script737.onload = function(){clearInterval(tcasIntervalAnnounce)};
 
@@ -302,13 +301,12 @@ if (typeof effectInterval != undefined) {
 checkInterval1 = setInterval(function(){
 checkForBoeing777()
 }, 1000)
-//Add them in the places where the normal PFDs & HUDs are
 
 //variable to tell if the script has run or not
     var a320Sounds = new Boolean(0)
 
     function checkFora320() {
-    if (geofs.aircraft.instance.id == 2865 || geofs.aircraft.instance.id == 2870 || geofs.aircraft.instance.id == 2871 || geofs.aircraft.instance.id == 242) { //if the aircraft currently being flown is a 737
+    if (geofs.aircraft.instance.id == 2865 || geofs.aircraft.instance.id == 2870 || geofs.aircraft.instance.id == 2871 || geofs.aircraft.instance.id == 242) { //if the aircraft currently being flown is a320
     if (a320Sounds == 0){ //if the script hasn't already run on this aircraft
     //preventing errors
             clearInterval(soundInt);
@@ -327,16 +325,7 @@ checkForBoeing777()
     }
     //if the aircraft isn't a 320
     else {
-    //clearing the script when the aircraft isn't a 320 to avoid filling up the console with errors
-    if (typeof soundInt != undefined) {
-    clearInterval(soundInt)
-    clearInterval(tcasIntervalAnnounce)
-    clearInterval(accelInt)
-    clearInterval(flexInterval)
-    } else {
-    void(0)
-    };
-    //making sure the script can run again next time a 320 is selected
+        //making sure the script can run again next time a 320 is selected
         a320Sounds = 0
     }
     }
@@ -345,7 +334,11 @@ checkForBoeing777()
     checkInterval2 = setInterval(function(){
     checkFora320()
     }, 1000)
-	
+
+
+
+//Add them in the places where the normal PFDs & HUDs are
+
 geofs.calculatedAOA = null;
 function normalizeAroll() {
    var normalized = null;
