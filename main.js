@@ -224,7 +224,7 @@ geofs.runways.setRunwayModelVisibility(0)
 };checkOverlayInt = setInterval(function(){checkOverlays()},1000)
 
 console.log("Original scripts copyright Ariakim Taiyo");
-console.log("Modified by NVB9");
+console.log("Modified by NVB9 and Kolos26");
 
 //variable to tell if the script has run or not
 var b737Sounds = new Boolean(0)

@@ -35,7 +35,7 @@ What the Realism Pack adds:
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
 - Condensation effects for fighters
-- AriakimTaiyo's 737 and 777 immersion sound effects
+- AriakimTaiyo's A320, 737 and 777 immersion sound effects
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
 - A bug fix for the F-14 and XB-70
