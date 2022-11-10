@@ -592,11 +592,13 @@ function realismGo() {
     var f14tailhookup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f14a_tailhook_up.glb"
     var f14tailhookdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f14a_tailhook_down.glb"
     var f14cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_cockpit.glb"
+    var e7antenna = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/e-7_wedgetail_antenna.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
     geofs.addonAircraft.isTruck = 0
     geofs.addonAircraft.isF14A = 0
+    geofs.addonAircraft.isE7 = 0
     geofs.debug.createF14AGearUp = function() {
        geofs.debug.F14AGearUp = {};
         geofs.debug.F14AGearUp.model = new geofs.api.Model(f14gearup)
@@ -919,6 +921,20 @@ function realismGo() {
             throw("Condensation cone loading error. " + e)
         }
     };
+    geofs.debug.createE7Antenna = function() {
+       geofs.debug.E7Antenna = {};
+        geofs.debug.E7Antenna.model = new geofs.api.Model(e7antenna)
+    }
+    geofs.debug.loadE7Antenna = function() {
+       geofs.debug.E7Antenna || geofs.debug.createE7Antenna()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([Math.floor(Math.random() * 2) * 0.05, Math.floor(Math.random() * 2) * 0.05, Math.floor(Math.random() * 2) * 0.05], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.E7Antenna.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("E-7 AEW&C antenna loading error. " + e)
+        }
+    };
     geofs.debug.update = function (a) {
         geofs.debug.fps = exponentialSmoothing("fps", 1e3 / a).toPrecision(2);
         if (geofs.debugOn) {
@@ -1030,7 +1046,9 @@ function realismGo() {
       if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
         geofs.debug.loadMiG17AB()
       }
-    
+      if (geofs.addonAircraft.isE7 == 1) {
+        geofs.debug.loadE7Antenna()
+      }
       if (geofs.addonAircraft.isTruck == 1) {
         geofs.debug.loadTruck()  
       }
