@@ -928,7 +928,7 @@ function realismGo() {
     geofs.debug.loadE7Antenna = function() {
        geofs.debug.E7Antenna || geofs.debug.createE7Antenna()
         try {
-            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([Math.floor(Math.random() * 2) * 0.05, Math.floor(Math.random() * 2) * 0.05, Math.floor(Math.random() * 2) * 0.05], geofs.aircraft.instance.llaLocation)),
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
                 d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
             geofs.debug.E7Antenna.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
