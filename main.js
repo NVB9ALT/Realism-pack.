@@ -593,12 +593,17 @@ function realismGo() {
     var f14tailhookdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f14a_tailhook_down.glb"
     var f14cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f-14a_cockpit.glb"
     var e7antenna = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/e-7_wedgetail_antenna.glb"
+    var mig21gearup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_gear_up.glb"
+    var mig21geardown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_gear_down.glb"
+    var mig21afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_blowtorch.glb"
+    var mig21droptank = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_fuel_tank.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
     geofs.addonAircraft.isTruck = 0
     geofs.addonAircraft.isF14A = 0
     geofs.addonAircraft.isE7 = 0
+    geofs.addonAircraft.isMiG21 = 0
     geofs.debug.createF14AGearUp = function() {
        geofs.debug.F14AGearUp = {};
         geofs.debug.F14AGearUp.model = new geofs.api.Model(f14gearup)
