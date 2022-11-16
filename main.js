@@ -1111,16 +1111,16 @@ function realismGo() {
       if (geofs.addonAircraft.isE7 == 1) {
         geofs.debug.loadE7Antenna()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMig21GearDown()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMig21GearUp()
       }
       if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.rpm >= 9100) {
           geofs.debug.loadMig21AB()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 0) {
+      if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 1) {
           geofs.debug.loadMig21Tank()
       }
       if (geofs.addonAircraft.isTruck == 1) {
