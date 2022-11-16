@@ -604,6 +604,63 @@ function realismGo() {
     geofs.addonAircraft.isF14A = 0
     geofs.addonAircraft.isE7 = 0
     geofs.addonAircraft.isMiG21 = 0
+     geofs.debug.Mig21GearUp = function() {
+       geofs.debug.Mig21GearUp = {};
+        geofs.debug.Mig21GearUp.model = new geofs.api.Model(mig21gearup)
+    }
+    geofs.debug.loadMig21GearUp = function() {
+       geofs.debug.Mig21GearUp || geofs.debug.createMig21GearUp()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.Mig21GearUp.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Mig-21 Gear Up loading error. " + e)
+        }
+    };
+    geofs.debug.Mig21GearDown = function() {
+       geofs.debug.Mig21GearDown = {};
+        geofs.debug.Mig21GearDown.model = new geofs.api.Model(mig21geardown)
+    }
+    geofs.debug.loadMig21GearDown = function() {
+       geofs.debug.Mig21GearDown || geofs.debug.createMig21GearDown()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.Mig21GearDown.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Mig-21 Gear Down loading error. " + e)
+        }
+    };
+    geofs.debug.Mig21AB = function() {
+       geofs.debug.Mig21AB = {};
+        geofs.debug.Mig21AB.model = new geofs.api.Model(mig21afterburner)
+    }
+    geofs.debug.loadMig21AB = function() {
+       geofs.debug.Mig21AB || geofs.debug.createMig21AB()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.Mig21AB.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Mig-21 Afterburner loading error. " + e)
+        }
+    };
+    geofs.debug.Mig21Tank = function() {
+       geofs.debug.Mig21Tank = {};
+        geofs.debug.Mig21Tank.model = new geofs.api.Model(mig21droptank)
+    }
+    geofs.debug.loadMig21Tank = function() {
+       geofs.debug.Mig21Tank || geofs.debug.createMig21Tank()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.Mig21Tank.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Mig-21 Drop Tank loading error. " + e)
+        }
+    };
+
     geofs.debug.createF14AGearUp = function() {
        geofs.debug.F14AGearUp = {};
         geofs.debug.F14AGearUp.model = new geofs.api.Model(f14gearup)
@@ -1053,6 +1110,18 @@ function realismGo() {
       }
       if (geofs.addonAircraft.isE7 == 1) {
         geofs.debug.loadE7Antenna()
+      }
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+          geofs.debug.loadMig21Geardown()
+      }
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+          geofs.debug.loadMig21GearUp()
+      }
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.rpm >= 9100) {
+          geofs.debug.loadMig21AB()
+      }
+      if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 0) {
+          geofs.debug.loadMig21Tank()
       }
       if (geofs.addonAircraft.isTruck == 1) {
         geofs.debug.loadTruck()  
