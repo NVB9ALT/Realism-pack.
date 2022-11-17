@@ -605,7 +605,7 @@ function realismGo() {
     geofs.addonAircraft.isF14A = 0
     geofs.addonAircraft.isE7 = 0
     geofs.addonAircraft.isMiG21 = 0
-    geofs.debug.createMig21GNozzle = function() {
+    geofs.debug.createMig21Nozzle = function() {
        geofs.debug.Mig21Nozzle = {};
         geofs.debug.Mig21Nozzle.model = new geofs.api.Model(mig21nozzle)
     }
