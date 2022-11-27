@@ -598,6 +598,7 @@ function realismGo() {
     var mig21afterburner = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_blowtorch.glb"
     var mig21droptank = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_fuel_tank.glb"
     var mig21nozzle = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_nozzle.glb"
+    var mig21cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
@@ -617,6 +618,20 @@ function realismGo() {
             geofs.debug.Mig21Nozzle.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Mig-21 Nozzle loading error. " + e)
+        }
+    };
+    geofs.debug.createMig21Cockpit = function() {
+       geofs.debug.Mig21Cockpit = {};
+        geofs.debug.Mig21Cockpit.model = new geofs.api.Model(mig21cockpit)
+    }
+    geofs.debug.loadMig21Cockpit = function() {
+       geofs.debug.Mig21Cockpit || geofs.debug.createMig21Cockpit()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.Mig21Cockpit.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Mig-21 Cockpit loading error. " + e)
         }
     };
     geofs.debug.createMig21GearUp = function() {
@@ -1133,6 +1148,9 @@ function realismGo() {
       if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMig21GearUp()
           geofs.debug.loadMig21Nozzle()
+      }
+      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.view == "cockpit") {
+          geofs.debug.loadMig21Cockpit()
       }
       if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.rpm >= 9100) {
           geofs.debug.loadMig21AB()
