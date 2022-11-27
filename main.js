@@ -164,6 +164,12 @@ function realismGo() {
     scriptATM.onload = function () {
         redoAtmosphere();
     };
+    var scriptSB = document.createElement("script");
+    scriptSB.src = "https://raw.githack.com/NVB9ALT/GeoFS-sound-changes/main/main.js";
+    document.body.appendChild(scriptSB);
+    scriptSB.onload = function () {
+        addEffects();
+    };
     var scriptCCI = document.createElement("script");
     scriptCCI.src = "https://raw.githack.com/NVB9ALT/Fixed-CC-PFDs-and-HUDs/main/fix.js";
     document.body.appendChild(scriptCCI);
