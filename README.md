@@ -40,6 +40,8 @@ What the Realism Pack adds:
 - A basic implementation of propwash
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
+- Minor F-16 sound tweak (sounds different in front vs rear)
+- *Sonic booms*
 - Carrier catapults
 - Stall buffet camera effect
 - Sixteen 3d landmarks around the world
