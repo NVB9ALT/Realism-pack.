@@ -609,6 +609,8 @@ function realismGo() {
     var mig21droptank = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_fuel_tank.glb"
     var mig21nozzle = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_nozzle.glb"
     var mig21cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
+    var MsG = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g.glb"
+    var MsGengine = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_engine.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
@@ -616,6 +618,45 @@ function realismGo() {
     geofs.addonAircraft.isF14A = 0
     geofs.addonAircraft.isE7 = 0
     geofs.addonAircraft.isMiG21 = 0
+    geofs.addonAircraft.isMSG = 0
+    geofs.debug.createMsG = function() {
+       geofs.debug.MsG = {};
+        geofs.debug.MsG.model = new geofs.api.Model(MsG)
+    }
+    geofs.debug.loadMSG = function() {
+       geofs.debug.MsG || geofs.debug.createMsG()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MsG.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Morane-Saulnier G loading error. " + e)
+        }
+    };
+    geofs.debug.createMsGengine = function() {
+       geofs.debug.MsGengine = {};
+        geofs.debug.MsGengine.model = new geofs.api.Model(MsGengine)
+    }
+    geofs.debug.loadMSGengineon = function() {
+       geofs.debug.MsGengine || geofs.debug.createMsGengine()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = [M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[0], M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[1], M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[2]];
+            geofs.debug.MsGengine.model.setPositionOrientationAndScale(c, d); //Somehow I have to make this rotate relative to the aircraft Y axis
+        } catch (e) {
+            throw("Morane-Saulnier G Engine On loading error. " + e)
+        }
+    };
+    geofs.debug.loadMSGengineoff = function() {
+       geofs.debug.MsGengine || geofs.debug.createMsGengine()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MsGengine.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Morane-Saulnier G Engine Off loading error. " + e)
+        }
+    };
     geofs.debug.createMig21Nozzle = function() {
        geofs.debug.Mig21Nozzle = {};
         geofs.debug.Mig21Nozzle.model = new geofs.api.Model(mig21nozzle)
