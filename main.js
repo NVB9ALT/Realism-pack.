@@ -635,7 +635,7 @@ function realismGo() {
     };
     geofs.debug.createMsGprop = function() {
        geofs.debug.MsGprop = {};
-        geofs.debug.MsGengine.model = new geofs.api.Model(MsGprop)
+        geofs.debug.MsGprop.model = new geofs.api.Model(MsGprop)
     }
     geofs.debug.loadMSGprop = function() {
        geofs.debug.MsGprop || geofs.debug.createMsGprop()
