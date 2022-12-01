@@ -1211,7 +1211,7 @@ function realismGo() {
       }
       if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMSG();
-          geofs.debug.loadMSGengineon();
+          geofs.debug.loadMSGengineoff();
           geofs.debug.MsGengine.model._model._apiHtr[2] = geofs.debug.MsGengine.model._model._apiHtr[2] + Math.floor(Math.random() * 360)
       }
         
