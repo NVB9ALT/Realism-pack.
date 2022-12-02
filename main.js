@@ -611,6 +611,7 @@ function realismGo() {
     var mig21cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-21_cockpit.glb"
     var MsG = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g.glb"
     var MsGprop = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_prop.glb"
+    var MsGcockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_cockpit.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
@@ -631,6 +632,20 @@ function realismGo() {
             geofs.debug.MsG.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Morane-Saulnier G loading error. " + e)
+        }
+    };
+    geofs.debug.createMsGcockpit = function() {
+       geofs.debug.MsGcockpit = {};
+        geofs.debug.MsGcockpit.model = new geofs.api.Model(MsGcockpit)
+    }
+    geofs.debug.loadMSGcockpit = function() {
+       geofs.debug.MsGcockpit || geofs.debug.createMsGcockpit()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MsGcockpit.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("Morane-Saulnier G cockpit loading error. " + e)
         }
     };
     geofs.debug.createMsGprop = function() {
@@ -1199,12 +1214,14 @@ function realismGo() {
       if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 1) {
           geofs.debug.loadMig21Tank()
       }
-      // && geofs.animation.values.view != "cockpit"
-      if (geofs.addonAircraft.isMSG == 1) {
+      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMSG();
       }
       if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.enginesOn == 0) {
           geofs.debug.loadMSGprop();
+      }
+      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view == "cockpit") {
+          geofs.debug.loadMSGcockpit();
       }
         
       if (geofs.addonAircraft.isTruck == 1) {
