@@ -1199,7 +1199,8 @@ function realismGo() {
       if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 1) {
           geofs.debug.loadMig21Tank()
       }
-      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
+      // && geofs.animation.values.view != "cockpit"
+      if (geofs.addonAircraft.isMSG == 1) {
           geofs.debug.loadMSG();
       }
       if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.enginesOn == 0) {
