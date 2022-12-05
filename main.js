@@ -612,6 +612,8 @@ function realismGo() {
     var MsG = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g.glb"
     var MsGprop = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_prop.glb"
     var MsGcockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_cockpit.glb"
+    var f117GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_up.glb"
+    var f117GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_down.glb"
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
@@ -620,6 +622,37 @@ function realismGo() {
     geofs.addonAircraft.isE7 = 0
     geofs.addonAircraft.isMiG21 = 0
     geofs.addonAircraft.isMSG = 0
+    geofs.addonAircraft.isF117 = 0
+
+    geofs.debug.createF117GearUp = function() {
+       geofs.debug.F117GearUp = {};
+       geofs.debug.F117GearUp.model = new geofs.api.Model(f117GearUp)
+    }
+    geofs.debug.loadF117GearUp = function() {
+       geofs.debug.F117GearUp || geofs.debug.createF117GearUp()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.F117GearUp.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("F-117 Nighthawk Gear Up loading error. " + e)
+        }
+    }
+    geofs.debug.createF117GearDown = function() {
+       geofs.debug.F117GearDown = {};
+       geofs.debug.F117GearDown.model = new geofs.api.Model(f117GearDown)
+    }
+    geofs.debug.loadF117GearDown = function() {
+       geofs.debug.F117GearDown || geofs.debug.createF117GearDown()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.F117GearDown.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("F-117 Nighthawk Gear Down loading error. " + e)
+        }
+    }
+    
     geofs.debug.createMsG = function() {
        geofs.debug.MsG = {};
         geofs.debug.MsG.model = new geofs.api.Model(MsG)
@@ -662,6 +695,7 @@ function realismGo() {
             throw("Morane-Saulnier G propeller loading error. " + e)
         }
     };
+
     geofs.debug.createMig21Nozzle = function() {
        geofs.debug.Mig21Nozzle = {};
         geofs.debug.Mig21Nozzle.model = new geofs.api.Model(mig21nozzle)
@@ -846,6 +880,7 @@ function realismGo() {
             throw("Truck model loading error. " + e)
         }
     };
+
     geofs.debug.createSu27Airbrake = function() {
        geofs.debug.su27airbrake = {};
         geofs.debug.su27airbrake.model = new geofs.api.Model(su27airbrake)
@@ -860,6 +895,7 @@ function realismGo() {
             throw("Su-27 airbrake loading error. " + e)
         }
     };
+
     geofs.debug.createF18GearUp = function() {
        geofs.debug.F18GearUp = {};
         geofs.debug.F18GearUp.model = new geofs.api.Model(f18GearUp)
@@ -1012,6 +1048,7 @@ function realismGo() {
             throw("F16 tank loading error. " + e)
         }
     };
+
     geofs.debug.createMachCone = function() {
        geofs.debug.machCone = {};
         geofs.debug.machCone.model = new geofs.api.Model(machCone)
@@ -1027,6 +1064,7 @@ function realismGo() {
             throw("Mach cone loading error. " + e)
         }
     };
+
     geofs.debug.createParachute = function() {
        geofs.debug.parachute = {};
         geofs.debug.parachute.model = new geofs.api.Model(parachute)
@@ -1041,6 +1079,7 @@ function realismGo() {
             throw("Parachute loading error. " + e)
         }
     };
+
     geofs.debug.createConConesLarge = function() {
        geofs.debug.conConeLarge = {};
         geofs.debug.conConeLarge.model = new geofs.api.Model(condensationConesLarge)
@@ -1055,6 +1094,7 @@ function realismGo() {
             throw("Condensation cone loading error. " + e)
         }
     };
+
     geofs.debug.createConConesSmall = function() {
        geofs.debug.conConeSmall = {};
         geofs.debug.conConeSmall.model = new geofs.api.Model(condensationConesSmall)
@@ -1069,6 +1109,7 @@ function realismGo() {
             throw("Condensation cone loading error. " + e)
         }
     };
+
     geofs.debug.createE7Antenna = function() {
        geofs.debug.E7Antenna = {};
         geofs.debug.E7Antenna.model = new geofs.api.Model(e7antenna)
@@ -1083,6 +1124,7 @@ function realismGo() {
             throw("E-7 AEW&C antenna loading error. " + e)
         }
     };
+
     geofs.debug.update = function (a) {
         geofs.debug.fps = exponentialSmoothing("fps", 1e3 / a).toPrecision(2);
         if (geofs.debugOn) {
@@ -1222,6 +1264,12 @@ function realismGo() {
       }
       if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view == "cockpit") {
           geofs.debug.loadMSGcockpit();
+      }
+      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+         geofs.debug.loadF117GearUp();
+      }
+      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+         geofs.debug.loadF117GearDown();
       }
         
       if (geofs.addonAircraft.isTruck == 1) {
