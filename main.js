@@ -689,7 +689,7 @@ function realismGo() {
        geofs.debug.MsGprop || geofs.debug.createMsGprop()
         try {
             var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
-                d = [M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[0] + (geofs.animation.values.enginesOn == 1 ? 0 : geofs.animation.values.rpm/100), M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[1], M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[2]];
+                d = [M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[0] + (geofs.animation.values.enginesOn == 1 ? 0 : geofs.animation.values.rpm/10), M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[1], M33.getOrientation(geofs.aircraft.instance.object3d._rotation)[2]];
             geofs.debug.MsGprop.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("Morane-Saulnier G propeller loading error. " + e)
