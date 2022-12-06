@@ -1285,4 +1285,97 @@ function realismGo() {
         }
       })
     };
+    flight.setAnimationValues = function (a, b) {
+//a = e from flight.tick
+    var c = geofs.aircraft.instance,
+        d = geofs.animation.values,
+        e = c.llaLocation[2] * METERS_TO_FEET,
+        g = (60 * (e - c.oldAltitude * METERS_TO_FEET)) / a;
+    c.oldAltitude = c.llaLocation[2];
+    var f = fixAngle(weather.currentWindDirection - c.htr[0]),
+        k = c.engine.rpm * c.definition.RPM2PropAS * a;
+    d.acceleration = M33.transform(M33.transpose(c.object3d._rotation), c.rigidBody.v_acceleration);
+    d.accX = d.acceleration[0];
+    d.accY = d.acceleration[1];
+    d.accZ = d.acceleration[2];
+    d.loadFactor = d.acceleration[2] / GRAVITY;
+    d.slipball = exponentialSmoothing("slipball", d.acceleration[0], 0.02);
+    d.ktas = c.trueAirSpeed * MS_TO_KNOTS;
+    d.kiasChangeRate = (d.kias - d.ktas) * a;
+    d.kias = d.ktas;
+    d.kiasUnits = d.ktas % 10;
+    d.kiasTens = d.ktas % 100;
+    d.kiasHundreds = d.ktas % 1e3;
+    d.kiasThousands = d.ktas % 1e4;
+    d.groundSpeed = c.groundSpeed;
+    d.groundSpeedKnt = c.groundSpeed * MS_TO_KNOTS;
+    d.altitudeMeters = c.llaLocation[2];
+    d.altitude = e;
+    d.haglMeters = geofs.relativeAltitude;
+    d.haglFeet = geofs.relativeAltitude * METERS_TO_FEET;
+    d.groundElevationFeet = geofs.groundElevation * METERS_TO_FEET;
+    d.verticalSpeed = g;
+    d.climbrate = g;
+    d.aoa = c.angleOfAttackDeg;
+    d.turnrate = (60 * fixAngle(c.htr[0] - d.heading)) / a;
+    d.pitchrate = (60 * fixAngle(c.htr[1] - Math.abs(d.atilt))) / a;
+    d.heading = c.htr[0];
+    d.heading360 = fixAngle360(c.htr[0]);
+    d.atilt = c.htr[1];
+    d.aroll = c.htr[2];
+    d.enginesOn = c.engine.on;
+    d.engineVibration = 100 < c.engine.rpm ? Math.random() * clamp(1e3 / c.engine.rpm, 0, 1) : 0;
+    d.prop = fixAngle360(d.prop + k);
+    d.thrust = c.totalThrust;
+    d.rpm = c.engine.rpm;
+    d.throttle = controls.throttle;
+    d.mixture = controls.mixture;
+    d.carbHeat = controls.carbHeat;
+    d.smoothThrottle = exponentialSmoothing("throttle", d.throttle, 0.02);
+    d.pitch = controls.pitch;
+    d.rawPitch = controls.rawPitch;
+    d.roll = controls.roll;
+    d.yaw = controls.yaw;
+    d.rawYaw = controls.rawYaw;
+    d.trim = controls.elevatorTrim;
+    d.brakes = controls.brakes;
+    d.gearPosition = controls.gear.position;
+    d.invGearPosition = 1 - controls.gear.position;
+    d.gearTarget = controls.gear.target;
+    d.flapsValue = controls.flaps.position / controls.flaps.maxPosition;
+    d.accessoriesPosition = controls.accessories.position;
+    d.flapsPosition = controls.flaps.position;
+    d.flapsTarget = controls.flaps.target;
+    d.flapsPositionTarget = controls.flaps.positionTarget;
+    d.flapsMaxPosition = controls.flaps.maxPosition;
+    d.airbrakesPosition = controls.airbrakes.position;
+    d.optionalAnimatedPartPosition = controls.optionalAnimatedPart.position;
+    d.airbrakesTarget = controls.airbrakes.target;
+    d.parkingBrake = c.brakesOn;
+    d.groundContact = c.groundContact ? 1 : 0;
+    d.arrestingHookTension = c.arrestingCableContact ? V3.length(c.arrestingCableContact.force) : 0;
+    d.airTemp = weather.atmosphere.airTempAtAltitude;
+    d.mach = c.trueAirSpeed / (331.3 + 0.606 * weather.atmosphere.airTempAtAltitude);
+    d.machUnits = Math.floor(d.mach);
+    d.machTenth = Math.floor(10 * (d.mach % 1).toPrecision(2));
+    d.machHundredth = Math.floor(100 * (d.mach % 0.1).toPrecision(2));
+    d.altTenThousands = e % 1e5;
+    d.altThousands = e % 1e4;
+    d.altHundreds = e % 1e3;
+    d.altTens = e % 100;
+    d.altTensShift = Math.floor((e % 1e5) / 1e4);
+    d.altUnits = e % 10;
+    d.relativeWind = f;
+    d.windSpeed = weather.currentWindSpeed;
+    d.windSpeedLabel = parseInt(weather.currentWindSpeed) + " kts";
+    d.view = geofs.camera.currentView;
+    d.envelopeTemp = c.envelopeTemp;
+    d["aircraft.maxAngularVRatio"] = c.maxAngularVRatio;
+    d.rollingSpeed = c.groundContact ? c.velocityScalar : 0;
+    "free" == geofs.camera.currentModeName || "chase" == geofs.camera.currentModeName
+        ? ((c = geofs.utils.llaDistanceInMeters(geofs.camera.lla, c.llaLocation)), (d.cameraAircraftSpeed = (d.cameraAircraftDistance - c) / a), (d.cameraAircraftDistance = c))
+        : ((d.cameraAircraftSpeed = 0), (d.cameraAircraftDistance = 0));
+    d.geofsTime = b;
+    geofs.api.postMessage({ animationValues: d });
+};
     }
