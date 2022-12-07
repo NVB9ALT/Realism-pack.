@@ -25,6 +25,7 @@ You will notice a few new settings in the options panel. They are on by default.
 *How to use the addon chat:*</br>
 At the bottom of the locations panel is an addon chat room. To use this, simply click the input text box, type your message, press "enter", then click somewhere else.
 
+Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
 
 What the Realism Pack adds:
 
@@ -35,19 +36,19 @@ What the Realism Pack adds:
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
 - Condensation effects for fighters
-- AriakimTaiyo's A320 (applies to A220 as well), 737 and 777 immersion sound effects
+- A320 (applies to A220 as well), 737 and 777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
 - Minor F-16 sound tweak (sounds different in front vs rear)
 - *Sonic booms*
-- Carrier catapults
-- Stall buffet camera effect
+- Carrier catapults (*)
+- Stall buffet camera effect (*)
 - Sixteen 3d landmarks around the world
 - Night scenery and cockpit lighting
 - A minor rework of the advanced atmosphere
-- Lift-based wingflex for most CC airliners
+- Lift-based wingflex for most CC airliners (*)
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
 - A similar fix for the F-15
