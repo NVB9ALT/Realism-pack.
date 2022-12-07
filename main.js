@@ -1,4 +1,5 @@
 function realismGo() {
+    console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
     let addonChat = document.createElement("li");
     addonChat.innerHTML = '<li><iframe width="1000", height="1500", left=350,top=50, src="https://chat.hyperjs.ml/GeoFS", title="Addon chat"</iframe></li>';
     document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-preference-list geofs-preferences")[0].appendChild(addonChat);
@@ -229,7 +230,7 @@ function realismGo() {
     }
     };checkOverlayInt = setInterval(function(){checkOverlays()},1000)
     
-    console.log("Original scripts copyright Ariakim Taiyo");
+    console.log("Original immersion SFX scripts copyright Ariakim Taiyo");
     console.log("Modified by NVB9 and Kolos26");
     
     //variable to tell if the script has run or not
