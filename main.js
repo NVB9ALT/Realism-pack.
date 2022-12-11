@@ -1319,7 +1319,7 @@ function realismGo() {
     d.climbrate = g;
     d.aoa = c.angleOfAttackDeg;
     d.turnrate = (60 * fixAngle(c.htr[0] - d.heading)) / a;
-    d.pitchrate = (60 * fixAngle(c.htr[1] - Math.abs(d.atilt))) / a;
+    d.pitchrate = (60 * fixAngle(c.htr[1] - d.atilt)) / a;
     d.heading = c.htr[0];
     d.heading360 = fixAngle360(c.htr[0]);
     d.atilt = c.htr[1];
