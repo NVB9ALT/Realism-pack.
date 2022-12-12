@@ -615,6 +615,8 @@ function realismGo() {
     var MsGcockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/morane-saulnier_g_cockpit.glb"
     var f117GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_up.glb"
     var f117GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_down.glb"
+    var f117cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117-cockpit"
+    
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
     geofs.addonAircraft.isMig17 = 0
@@ -637,6 +639,20 @@ function realismGo() {
             geofs.debug.F117GearUp.model.setPositionOrientationAndScale(c, d);
         } catch (e) {
             throw("F-117 Nighthawk Gear Up loading error. " + e)
+        }
+    }
+    geofs.debug.createF117Cockpit = function() {
+       geofs.debug.F117Cockpit = {};
+       geofs.debug.F117Cockpit.model = new geofs.api.Model(f117cockpit)
+    }
+    geofs.debug.loadF117Cockpit = function() {
+       geofs.debug.F117Cockpit || geofs.debug.createF117Cockpit()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.F117Cockpit.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("F-117 Nighthawk Cockpit loading error. " + e)
         }
     }
     geofs.debug.createF117GearDown = function() {
@@ -1271,6 +1287,9 @@ function realismGo() {
       }
       if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
          geofs.debug.loadF117GearDown();
+      }
+      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.view == "cockpit") {
+         geofs.debug.loadF117Cockpit();
       }
         
       if (geofs.addonAircraft.isTruck == 1) {
