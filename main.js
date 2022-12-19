@@ -5,16 +5,16 @@ function realismGo() {
 document.querySelectorAll('[data-aircraft]').forEach(function(e){
    var elemName = e.outerText;
     if (elemName.includes("Su-35")) {
-	    e.innerHTML = '<li data-aircraft="18"><img data-deferredsrc="images/planes/su35.png">Sukhoi Su-35S Flanker-E<div data-aircraft="18" data-livery="0"><img data-deferredsrc="images/planes/su35_0.png">Akula 35</div><div data-aircraft="18" data-livery="1"><img data-deferredsrc="images/planes/su35_1.png">Russia Bort 01</div><div data-aircraft="18" data-livery="2"><img data-deferredsrc="images/planes/su35_2.png">Russia Bort 06</div><div data-aircraft="18" data-livery="3"><img data-deferredsrc="images/planes/su35_3.png">Russia Bort 901</div><div data-aircraft="18" data-livery="4"><img data-deferredsrc="images/planes/su35_4.png">Ho Ho Ho</div></li>';
+	    e.innerHTML = '<li data-aircraft="18"><img data-deferredsrc="https://geo-fs.com/images/planes/su35.png">Sukhoi Su-35S Flanker-E<div data-aircraft="18" data-livery="0"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_0.png">Akula 35</div><div data-aircraft="18" data-livery="1"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_1.png">Russia Bort 01</div><div data-aircraft="18" data-livery="2"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_2.png">Russia Bort 06</div><div data-aircraft="18" data-livery="3"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_3.png">Russia Bort 901</div><div data-aircraft="18" data-livery="4"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_4.png">Ho Ho Ho</div></li>';
     }
 	 if (elemName.includes("F-16")) {
-	    e.innerHTML = '<li data-aircraft="7"><img data-deferredsrc="images/planes/f16.png"> F-16C Fighting Falcon</li>';
+	    e.innerHTML = '<li data-aircraft="7"><img data-deferredsrc="https://geo-fs.com/images/planes/f16.png"> F-16C Fighting Falcon</li>';
 	 }
 	 if (elemName.includes("Alphajet")) {
-	    e.innerHTML = '<li data-aircraft="3"><img data-deferredsrc="images/planes/alphajet.png">Dassault-Dornier Alpha Jet</li>';
+	    e.innerHTML = '<li data-aircraft="3"><img data-deferredsrc="https://geo-fs.com/images/planes/alphajet.png">Dassault-Dornier Alpha Jet</li>';
 	 }
 	 if (elemName.includes("A380")) {
-	    e.innerHTML = '<li data-aircraft="10"><img data-deferredsrc="images/planes/a380.png">Airbus A380-800<div data-aircraft="10" data-livery="0"><img data-deferredsrc="images/planes/a380_0.png">Emirates</div><div data-aircraft="10" data-livery="1"><img data-deferredsrc="images/planes/a380_1.png">Air France</div><div data-aircraft="10" data-livery="2"><img data-deferredsrc="images/planes/a380_2.png">Qantas</div></li>';
+	    e.innerHTML = '<li data-aircraft="10"><img data-deferredsrc="https://geo-fs.com/images/planes/a380.png">Airbus A380-800<div data-aircraft="10" data-livery="0"><img data-deferredsrchttps://geo-fs.com/images/planes/a380_0.png">Emirates</div><div data-aircraft="10" data-livery="1"><img data-deferredsrc="https://geo-fs.com/images/planes/a380_1.png">Air France</div><div data-aircraft="10" data-livery="2"><img data-deferredsrc="https://geo-fs.com/images/planes/a380_2.png">Qantas</div></li>';
 	 }
 });
 
