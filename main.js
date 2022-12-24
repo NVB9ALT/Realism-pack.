@@ -5,18 +5,37 @@ function realismGo() {
 document.querySelectorAll('[data-aircraft]').forEach(function(e){
    var elemName = e.outerText;
     if (elemName.includes("Su-35")) {
-	    e.innerHTML = '<li data-aircraft="18"><img data-deferredsrc="https://geo-fs.com/images/planes/su35.png">Sukhoi Su-35S Flanker-E<div data-aircraft="18" data-livery="0"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_0.png">Akula 35</div><div data-aircraft="18" data-livery="1"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_1.png">Russia Bort 01</div><div data-aircraft="18" data-livery="2"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_2.png">Russia Bort 06</div><div data-aircraft="18" data-livery="3"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_3.png">Russia Bort 901</div><div data-aircraft="18" data-livery="4"><img data-deferredsrc="https://geo-fs.com/images/planes/su35_4.png">Ho Ho Ho</div></li>';
+	    e.innerHTML = '<li data-aircraft="18"><img src="images/planes/su35.png">Sukhoi Su-35S Flanker-E<div data-aircraft="18" data-livery="0"><img src="images/planes/su35_0.png">Akula 35</div><div data-aircraft="18" data-livery="1"><img src="images/planes/su35_1.png">Russia Bort 01</div><div data-aircraft="18" data-livery="2"><img src="images/planes/su35_2.png">Russia Bort 06</div><div data-aircraft="18" data-livery="3"><img src="images/planes/su35_3.png">Russia Bort 901</div><div data-aircraft="18" data-livery="4"><img src="images/planes/su35_4.png">Ho Ho Ho</div></li>';
     }
 	 if (elemName.includes("F-16")) {
-	    e.innerHTML = '<li data-aircraft="7"><img data-deferredsrc="https://geo-fs.com/images/planes/f16.png"> F-16C Fighting Falcon</li>';
+	    e.innerHTML = '<li data-aircraft="7"><img src="images/planes/f16.png"> F-16C Fighting Falcon</li>';
 	 }
 	 if (elemName.includes("Alphajet")) {
-	    e.innerHTML = '<li data-aircraft="3"><img data-deferredsrc="https://geo-fs.com/images/planes/alphajet.png">Dassault-Dornier Alpha Jet</li>';
+	    e.innerHTML = '<li data-aircraft="3"><img src="images/planes/alphajet.png">Dassault-Dornier Alpha Jet</li>';
 	 }
 	 if (elemName.includes("A380")) {
-	    e.innerHTML = '<li data-aircraft="10"><img data-deferredsrc="https://geo-fs.com/images/planes/a380.png">Airbus A380-800<div data-aircraft="10" data-livery="0"><img data-deferredsrchttps://geo-fs.com/images/planes/a380_0.png">Emirates</div><div data-aircraft="10" data-livery="1"><img data-deferredsrc="https://geo-fs.com/images/planes/a380_1.png">Air France</div><div data-aircraft="10" data-livery="2"><img data-deferredsrc="https://geo-fs.com/images/planes/a380_2.png">Qantas</div></li>';
+	    e.innerHTML = '<li data-aircraft="10"><img src="images/planes/a380.png">Airbus A380-800<div data-aircraft="10" data-livery="0"><img src="images/planes/a380_0.png">Emirates</div><div data-aircraft="10" data-livery="1"><img src="images/planes/a380_1.png">Air France</div><div data-aircraft="10" data-livery="2"><img src="images/planes/a380_2.png">Qantas</div></li>';
 	 }
 });
+	
+function gBreath() {
+   if (geofs.animation.values.loadFactor >= 3) {
+audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/cutgbreath.mp3")
+	}
+}
+gBreathInt = setInterval(function(){gBreath()},3500)
+function flankerBeep() {
+   if (geofs.aircraft.instance.id == 18 && (geofs.animation.values.aoa >= 15 || (geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1))) {
+audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerbeep2.m4a")	
+	}
+}
+flankerBeepInt = setInterval(function(){flankerBeep()},1000)
+function flankerStall() {
+   if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && controls.accessories.target == 1) {
+audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
+	}
+}
+flankerStallInt = setInterval(function(){flankerStall()},3000)
 
     let addonChat = document.createElement("li");
     addonChat.innerHTML = '<li><iframe width="1000", height="1500", left=350,top=50, src="https://chat.hyperjs.ml/GeoFS", title="Addon chat"</iframe></li>';
