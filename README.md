@@ -19,6 +19,8 @@ If you run the bookmarklet version, please wait until the terrain has loaded bef
 
 *How to use the carrier catapults:*
 Go to the flight deck of the USS John C. Stennis and taxi to the front end of the deck, then use "q" to lock/unlock the launch bar. Once the launch bar is locked, use "~" to launch the catapult. It is recommended to apply full power before launching. </br>
+NOTE: You must be in a carrier-capable aircraft for the catapults to work (i.e. it needs a tailhook). </br>
+*TUTORIAL:* https://www.youtube.com/watch?v=XWT7eGtNRl8 </br>
 
 You will notice a few new settings in the options panel. They are on by default.</br>
 
