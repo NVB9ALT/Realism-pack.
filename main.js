@@ -246,7 +246,7 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
         runTrueKias();
     };
     function lookBack() {
-        if (geofs.camera.currentModeName == "cockpit" && geofs.addonAircraft.isF117 == 0) {
+        if (geofs.camera.currentModeName == "cockpit" && geofs.addonAircraft.isF117 != 1) {
             geofs.camera.currentDefinition.position[0] = geofs.aircraft.instance.definition.cameras.cockpit.position[0] + geofs.camera.definitions["cockpit"].orientations.current[0] / 1000;
         }
     }
