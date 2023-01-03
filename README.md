@@ -27,6 +27,15 @@ You will notice a few new settings in the options panel. They are on by default.
 *How to use the addon chat:*</br>
 At the bottom of the locations panel is an addon chat room. To use this, simply click the input text box, type your message, press "enter", then click somewhere else.
 
+*Cobra button*</br>
+Some aircraft may feature a Cobra button or feature to disable the flight limiters. This will be your " key.</br>
+Current aircraft with the Cobra button:</br>
+- F-22
+- Su-27 addon aircraft
+- F/A-18 addon aircraft
+Addon aircraft are available in a separate repository you can also find on my GitHub.</br>
+</br>
+
 Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
 
 What the Realism Pack adds:
