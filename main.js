@@ -286,6 +286,12 @@ blackoutRun = 1
     scriptC.onload = function () {
         fixCloudsDensity();
     };
+    var scriptFBW = document.createElement("script");
+    scriptFBW.src = "https://raw.githack.com/NVB9ALT/Fighter-jet-FBW/main/main.js";
+    document.body.appendChild(scriptFBW);
+    scriptFBW.onload = function () {
+        addFBW()
+    }
     var scriptATM = document.createElement("script");
     scriptATM.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/BetterGeoFSAtmosphere.js";
     document.body.appendChild(scriptATM);
