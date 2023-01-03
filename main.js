@@ -86,9 +86,8 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
        }
         }
     })
-let blackoutRun = 0;
 blackoutLoadInt = setInterval(function(){
-   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true && blackoutRun == 0) {
+   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true) {
 geofs["overlayG.glsl"] = "" + `
 uniform sampler2D colorTexture;
 varying vec2 v_textureCoordinates;
@@ -184,7 +183,7 @@ geofs.fx.overg = {
 //geofs.fx.atmosphere.atmospherePostProcessStage._ready
 geofs.fx.overg.create()
 blackoutEffectInterval = setInterval(function(){geofs.fx.overg.update();}, 10)
-blackoutRun = 1
+clearInterval(blackoutLoadInt)
    }
 }, 1000)
     function fixSpin() {
