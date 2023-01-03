@@ -31,7 +31,7 @@ audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysi
 }
 flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 function flankerStall() {
-   if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && controls.accessories.target == 1) {
+   if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
 	}
 }
