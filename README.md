@@ -33,6 +33,7 @@ Current aircraft with the Cobra button:</br>
 - F-22
 - Su-27 addon aircraft
 - F/A-18 addon aircraft
+</br>
 Addon aircraft are available in a separate repository you can also find on my GitHub.</br>
 </br>
 
