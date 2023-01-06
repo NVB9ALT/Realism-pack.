@@ -285,6 +285,12 @@ clearInterval(blackoutLoadInt)
     scriptC.onload = function () {
         fixCloudsDensity();
     };
+    var scriptVC = document.createElement("script");
+    scriptVC.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/vortexCon.js";
+    document.body.appendChild(scriptVC);
+    scriptVC.onload = function () {
+        runVortexCons();
+    };
     var scriptFBW = document.createElement("script");
     scriptFBW.src = "https://raw.githack.com/NVB9ALT/Fighter-jet-FBW/main/main.js";
     document.body.appendChild(scriptFBW);
