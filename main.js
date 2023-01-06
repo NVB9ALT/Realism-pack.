@@ -684,13 +684,13 @@ clearInterval(blackoutLoadInt)
     };checkMarbleInterval = setInterval(function(){checkNightStuff()},10)
     
     geofs.condensation = {};
-    let cons = true;
+    geofs.cons = true;
     geofs.condensation.update = function() {
-      if (cons == true) {
-        cons = false;
+      if (geofs.cons == true) {
+        geofs.cons = false;
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
       } else {
-        cons = true;
+        geofs.cons = true;
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
       }
     };
@@ -1311,19 +1311,19 @@ clearInterval(blackoutLoadInt)
       if (geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.airbrakesTarget > 0) {
         geofs.debug.loadSu27Airbrake()
       }
-      if (geofs.animation.values.mach > 0.95 && geofs.animation.values.mach < 1.05 && geofs.aircraft.instance.id != 2364 && cons == true) {
+      if (geofs.animation.values.mach > 0.95 && geofs.animation.values.mach < 1.05 && geofs.aircraft.instance.id != 2364 && geofs.cons == true) {
          geofs.debug.loadMachCone()
       }
-      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 100 && geofs.animation.values.accZ > 60 && cons == true && geofs.addonAircraft.isFA18 != 1 ) {
+      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isFA18 != 1 ) {
         geofs.debug.loadConConesLarge()
       }
-      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 100 && geofs.animation.values.accZ > 60 && cons == true && geofs.addonAircraft.isFA18 == 1 ) {
+      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isFA18 == 1 ) {
         geofs.debug.loadConConesSmall()
       }
-      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 100 && geofs.animation.values.accZ > 60 && cons == true && geofs.addonAircraft.isMiG21 != 1) {
+      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isMiG21 != 1) {
         geofs.debug.loadConConesSmall()
       }
-      if (geofs.aircraft.instance.id == 2857 && geofs.animation.values.kias > 100 && geofs.animation.values.accZ > 60 && cons == true) {
+      if (geofs.aircraft.instance.id == 2857 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true) {
         geofs.debug.loadConConesSmall()
       }
       //load cockpit for DHC-8 Q400
