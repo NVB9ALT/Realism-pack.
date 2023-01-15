@@ -25,7 +25,7 @@ audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysi
 }
 gBreathInt = setInterval(function(){gBreath()},3500)
 function flankerBeep() {
-   if (geofs.aircraft.instance.id == 18 && (geofs.animation.values.aoa >= 15 || (geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1))) {
+   if (geofs.aircraft.instance.id == 18 && (geofs.animation.values.aoa >= 15 || (geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1)) && geofs.aircraft.instance.liveryId != 6) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerbeep2.m4a")	
 	}
 }
