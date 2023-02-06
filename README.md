@@ -41,7 +41,7 @@ Some of these features were originally standalone addons by AriakimTaiyo; these 
 
 What the Realism Pack adds:
 
-- Realistic KIAS for exterior instruments
+- Button to toggle whether instruments show realistic KCAS or KTAS
 - My custom addon chat
 - *All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
