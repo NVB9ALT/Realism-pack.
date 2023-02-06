@@ -9,6 +9,7 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
+var realismGo = null;
 let itv = setInterval(
 function(){
 try{
