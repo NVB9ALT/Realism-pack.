@@ -46,9 +46,6 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
         geofs.savePreferencesPanel();
         geofs.api.renderingSettings.degradedCollisions = true;
         geofs.api.renderingSettings.lowResRunways = true;
-        if (geofs.preferences.graphics.advanced.fxaa = false) {
-            flight.recorder.clear();
-        }
     }, 100);
     geofs.animation.values.shake = null
     function getShake() {
