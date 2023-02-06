@@ -336,10 +336,10 @@ clearInterval(blackoutLoadInt)
     scriptAl.onload = function () {
         justDoTheThing();
     };
-    var scriptRKIAS = document.createElement("script");
-    scriptRKIAS.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Bookmarklet_AP-Plus-Plus_and_FMC@main/Realistic%20KIAS.js";
-    document.body.appendChild(scriptRKIAS);
-    scriptRKIAS.onload = function () {
+    var scriptKCAS = document.createElement("script");
+    scriptKCAS.src = "https://raw.githack.com/NVB9ALT/Bookmarklet_AP-Plus-Plus_and_FMC/main/Realistic%20KIAS.js";
+    document.body.appendChild(scriptKCAS);
+    scriptKCAS.onload = function () {
         runTrueKias();
     };
     function lookBack() {
