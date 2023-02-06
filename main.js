@@ -1,4 +1,4 @@
-function realismGo() {
+realismGo = function() {
     console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
 
 //Making the names in the aircraft menu more accurate (there's six different variants of F-16, for example)
