@@ -1,4 +1,6 @@
 # Realism-pack
+**COMING SOON: Making features toggleable!**
+
 This massive addon adds over 35 new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
 You can review the full list of additional features and changes below.
 
