@@ -1,5 +1,5 @@
 //Toggles in the options panel!
-//Hopefully there will also be a way to save them via the GeoFS cache
+//Save options with localStorage.setItem(item, value)
 
 realismGo = function() {
     console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
