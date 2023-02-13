@@ -3,7 +3,8 @@
 
 realismGo = function() {
     console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
-
+let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
+	
 //Making the names in the aircraft menu more accurate (there's six different variants of F-16, for example)
 document.querySelectorAll('[data-aircraft]').forEach(function(e){
    var elemName = e.outerText;
@@ -37,7 +38,6 @@ geofs.sfx.update = function() {
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
   }
 };
-let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
 let toggleSFX = document.createElement("label");
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
     toggleSFX.setAttribute("for", "sfx");
@@ -317,12 +317,6 @@ clearInterval(blackoutLoadInt)
     turbAccelInt = setInterval(function () {
         runTurbAccel();
     }, 100);
-    var scriptC = document.createElement("script");
-    scriptC.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Weather-Mods@main/Advanced-2d-CloudsD.js";
-    document.body.appendChild(scriptC);
-    scriptC.onload = function () {
-        fixCloudsDensity();
-    };
     var scriptVC = document.createElement("script");
     scriptVC.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/vortexCon.js";
     document.body.appendChild(scriptVC);
