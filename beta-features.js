@@ -20,25 +20,65 @@ document.querySelectorAll('[data-aircraft]').forEach(function(e){
 	    e.innerHTML = '<li data-aircraft="10"><img src="images/planes/a380.png">Airbus A380-800<div data-aircraft="10" data-livery="0"><img src="images/planes/a380_0.png">Emirates</div><div data-aircraft="10" data-livery="1"><img src="images/planes/a380_1.png">Air France</div><div data-aircraft="10" data-livery="2"><img src="images/planes/a380_2.png">Qantas</div></li>';
 	 }
 });
-	
+
+geofs.sfx = {};
+let sfxOn = null;
+let sfxRunning = null;
+geofs.sfx.update = function() {
+  if (sfxOn == true) {
+    sfxOn = false;
+    //save preference
+    localStorage.setItem(sfxOn, false)
+    toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
+  } else {
+    sfxOn = true;
+    //save preference
+    localStorage.setItem(sfxOn, false)
+    toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
+  }
+};
+let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
+let toggleSFX = document.createElement("label");
+    toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
+    toggleSFX.setAttribute("for", "sfx");
+    toggleSFX.setAttribute("id", "sfx");
+    toggleSFX.setAttribute("tabindex", "0");
+    toggleSFX.setAttribute("dataUpgraded", ",MaterialSwitch,MaterialRipple");
+    toggleSFX.innerHTML = '<input type="checkbox" id="sfx" class="mdl-switch__input" data-gespref="geofs.sfx.preference"><span class="mdl-switch__label">Sound Effects</span>';
+elementSel.appendChild(toggleE);
+toggleE.addEventListener("click", geofs.sfx.update);
+//Update options panel switch
+geofs.sfx.update();
+geofs.sfx.update();
+
 function gBreath() {
    if (geofs.animation.values.loadFactor >= 3) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/cutgbreath.mp3")
 	}
 }
-gBreathInt = setInterval(function(){gBreath()},3500)
 function flankerBeep() {
    if (geofs.aircraft.instance.id == 18 && ((geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1)) && geofs.aircraft.instance.liveryId != 6) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerbeep2.m4a")	
 	}
 }
-flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 function flankerStall() {
    if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
 	}
 }
+function runSFX() {
+   if (sfxOn == true && sfxRunning != true) {
+sfxRunning = true
+gBreathInt = setInterval(function(){gBreath()},3500)
+flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 flankerStallInt = setInterval(function(){flankerStall()},3000)
+   } else if (sfxOn == false && sfxRunning != false) {
+clearInterval(gBreathInt)
+clearInterval(flankerBeepInt)
+clearInterval(flankerStallInt)
+   }
+}
+runSFXInterval = setInterval(function(){runSFX()},100)
 
 /* The chat website used for this is broken at this time :(
     let addonChat = document.createElement("li");
