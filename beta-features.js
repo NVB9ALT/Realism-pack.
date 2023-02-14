@@ -49,8 +49,8 @@ let toggleSFX = document.createElement("label");
     toggleSFX.setAttribute("tabindex", "0");
     toggleSFX.setAttribute("dataUpgraded", ",MaterialSwitch,MaterialRipple");
     toggleSFX.innerHTML = '<input type="checkbox" id="sfx" class="mdl-switch__input" data-gespref="geofs.sfx.preference"><span class="mdl-switch__label">Sound Effects</span>';
-elementSel.appendChild(toggleE);
-toggleE.addEventListener("click", geofs.sfx.update);
+elementSel.appendChild(toggleSFX);
+toggleSFX.addEventListener("click", geofs.sfx.update);
 //Update options panel switch
 geofs.sfx.update();
 geofs.sfx.update();
