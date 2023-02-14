@@ -1,5 +1,9 @@
-realismGo = function() {
-    console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
+//Consistency
+function realismGo() {
+   console.log("Realism Pack running")
+}
+
+console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
 
 //Making the names in the aircraft menu more accurate (there's six different variants of F-16, for example)
 document.querySelectorAll('[data-aircraft]').forEach(function(e){
@@ -1645,4 +1649,3 @@ document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="g
 geofs.kiasOn = 0
 	}
 }
-    }
