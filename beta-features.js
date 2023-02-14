@@ -76,7 +76,7 @@ sfxRunning = true
 gBreathInt = setInterval(function(){gBreath()},3500)
 flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 flankerStallInt = setInterval(function(){flankerStall()},3000)
-   } else if (sfxOn == false && sfxRunning != false) {
+   } else if (sfxOn == false && sfxRunning != false && gBreathInt != undefined) {
 clearInterval(gBreathInt)
 clearInterval(flankerBeepInt)
 clearInterval(flankerStallInt)
