@@ -1,6 +1,11 @@
 //Toggles in the options panel!
 //Save options with localStorage.setItem(item, value)
 
+//Consistency
+function realismGo() {
+   console.log("Realism Pack running")
+}
+
     console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
 let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
 	
