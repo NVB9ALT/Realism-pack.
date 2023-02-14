@@ -27,18 +27,19 @@ document.querySelectorAll('[data-aircraft]').forEach(function(e){
 });
 
 geofs.sfx = {};
+geofs.preferences.sfx = null
 let sfxOn = null;
 let sfxRunning = null;
 geofs.sfx.update = function() {
   if (sfxOn == true) {
     sfxOn = false;
     //save preference
-    localStorage.setItem(sfxOn, false)
+    geofs.preferences.sfx = false
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
   } else {
     sfxOn = true;
     //save preference
-    localStorage.setItem(sfxOn, false)
+    geofs.preferences.sfx = true
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
   }
 };
@@ -730,15 +731,16 @@ clearInterval(blackoutLoadInt)
     };checkMarbleInterval = setInterval(function(){checkNightStuff()},10)
     
     geofs.condensation = {};
+    geofs.preferences.cons = null;
     var cons = null;
     geofs.condensation.update = function() {
       if (cons == true) {
         cons = false;
-    localStorage.setItem(cons, false)
+    geofs.preferences.cons = false
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
       } else {
         cons = true;
-    localStorage.setItem(cons, true)
+    geofs.preferences.cons = true
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
       }
     };
