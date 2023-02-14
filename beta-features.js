@@ -726,17 +726,18 @@ clearInterval(blackoutLoadInt)
     };checkMarbleInterval = setInterval(function(){checkNightStuff()},10)
     
     geofs.condensation = {};
-    geofs.cons = true;
+    var cons = null;
     geofs.condensation.update = function() {
-      if (geofs.cons == true) {
-        geofs.cons = false;
+      if (cons == true) {
+        cons = false;
+    localStorage.setItem(cons, false)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
       } else {
-        geofs.cons = true;
+        cons = true;
+    localStorage.setItem(cons, true)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
       }
     };
-    let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
     let toggleC = document.createElement("label");
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
         toggleC.setAttribute("for", "condensation");
@@ -746,7 +747,9 @@ clearInterval(blackoutLoadInt)
         toggleC.innerHTML = '<input type="checkbox" id="condensation" class="mdl-switch__input" data-gespref="geofs.condensation.preference"><span class="mdl-switch__label">Condensation effects</span>';
     elementSel.appendChild(toggleC);
     toggleC.addEventListener("click", geofs.condensation.update);
-    
+    geofs.condensation.update()
+    geofs.condensation.update()
+
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
     //Most of this is not related to the realism pack. This stuff loads 4 models directly related to the realism pack,
     //while the rest is for the addon aircraft (in a separate addon in my repository list).
