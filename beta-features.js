@@ -33,12 +33,12 @@ geofs.sfx.update = function() {
   if (sfxOn == true) {
     sfxOn = false;
     //save preference
-    localStorage.geofs_SFX.setItem(sfxOn, false)
+    localStorage.setItem(sfxOn, false)
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
   } else {
     sfxOn = true;
     //save preference
-    localStorage.geofs_SFX.setItem(sfxOn, false)
+    localStorage.setItem(sfxOn, false)
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
   }
 };
@@ -734,11 +734,11 @@ clearInterval(blackoutLoadInt)
     geofs.condensation.update = function() {
       if (cons == true) {
         cons = false;
-    localStorage.geofs_CONS.setItem(cons, false)
+    localStorage.setItem(cons, false)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
       } else {
         cons = true;
-    localStorage.geofs_CONS.setItem(cons, true)
+    localStorage.setItem(cons, true)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
       }
     };
