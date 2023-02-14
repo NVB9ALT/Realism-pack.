@@ -33,12 +33,12 @@ geofs.sfx.update = function() {
   if (sfxOn == true) {
     sfxOn = false;
     //save preference
-    localStorage.setItem(sfxOn, false)
+    localStorage.geofs_SFX.setItem(sfxOn, false)
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
   } else {
     sfxOn = true;
     //save preference
-    localStorage.setItem(sfxOn, false)
+    localStorage.geofs_SFX.setItem(sfxOn, false)
     toggleSFX.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
   }
 };
@@ -70,16 +70,20 @@ function flankerStall() {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
 	}
 }
+gBreathInt = null;
+flankerBeepInt = null;
+flankerStallInt = null;
 function runSFX() {
    if (sfxOn == true && sfxRunning != true) {
 sfxRunning = true
 gBreathInt = setInterval(function(){gBreath()},3500)
 flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 flankerStallInt = setInterval(function(){flankerStall()},3000)
-   } else if (sfxOn == false && sfxRunning != false && gBreathInt != undefined) {
+   } else if (sfxOn == false && sfxRunning != false) {
 clearInterval(gBreathInt)
 clearInterval(flankerBeepInt)
 clearInterval(flankerStallInt)
+sfxRunning = false
    }
 }
 runSFXInterval = setInterval(function(){runSFX()},100)
@@ -730,11 +734,11 @@ clearInterval(blackoutLoadInt)
     geofs.condensation.update = function() {
       if (cons == true) {
         cons = false;
-    localStorage.setItem(cons, false)
+    localStorage.geofs_CONS.setItem(cons, false)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
       } else {
         cons = true;
-    localStorage.setItem(cons, true)
+    localStorage.geofs_CONS.setItem(cons, true)
         toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
       }
     };
