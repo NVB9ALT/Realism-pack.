@@ -226,7 +226,6 @@ geofs.fx.overg = {
   }
 };
 
-//make this only execute if the advanced atmosphere is done loading
 //geofs.fx.atmosphere.atmospherePostProcessStage._ready
 geofs.fx.overg.create()
 blackoutEffectInterval = setInterval(function(){geofs.fx.overg.update();}, 10)
@@ -288,6 +287,9 @@ clearInterval(blackoutLoadInt)
     script2.onload = function () {
         realismify();
     };
+/* //Removed for now because it's buggy at certain times of day (flickering stars at dawn/dusk)
+   //Besides, it didn't work anyway - probably overwritten by some other part of the GeoFS enviro engine
+   //TODO: new implementation (possibly create new skybox?)
     function showTheStars() {
         if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {
             geofs.api.viewer.scene.skyBox.show = 1;
@@ -298,6 +300,7 @@ clearInterval(blackoutLoadInt)
     starsInterval = setInterval(function () {
         showTheStars();
     }, 1000);
+*/
     function runBladeCollisions() {
         if (geofs.animation.values.aroll > 70 || geofs.animation.values.aroll < -70) {
             if (geofs.animation.values.haglFeet <= 5 && geofs.preferences.crashDetection == 1) {
@@ -356,6 +359,7 @@ clearInterval(blackoutLoadInt)
     scriptCCI.onload = function () {
         redoPFDSHUDS();
     };
+//TODO: This needs to be meshed with the 3.5 official buildings
     var scriptLM = document.createElement("script");
     scriptLM.src = "https://raw.githack.com/NVB9ALT/GeoFS-3d-landmarks-by-JAaMDG/main/Current-compatible.js";
     document.body.appendChild(scriptLM);
