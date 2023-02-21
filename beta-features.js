@@ -1,5 +1,6 @@
 //Toggles in the options panel!
 //Save options with localStorage.setItem(item, value)
+localStorage.realismOptions = "";
 
 //Consistency
 function realismGo() {
