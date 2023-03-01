@@ -804,6 +804,11 @@ clearInterval(blackoutLoadInt)
     var f117GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_up.glb"
     var f117GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_down.glb"
     var f117cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117-cockpit.glb"
+    var mig25geardown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_gear_down"
+    var mig25gearup = ""
+    var mig25ab = ""
+    var mig25flapsup = ""
+    var mig25flapsdown = ""
     
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
@@ -814,6 +819,22 @@ clearInterval(blackoutLoadInt)
     geofs.addonAircraft.isMiG21 = 0
     geofs.addonAircraft.isMSG = 0
     geofs.addonAircraft.isF117 = 0
+    geofs.addonAircraft.isMiG25 = 0
+
+    geofs.debug.createMiG25GearDown = function() {
+       geofs.debug.MiG25GearDown = {};
+       geofs.debug.MiG25GearDown.model = new geofs.api.Model(mig25geardown)
+    }
+    geofs.debug.loadMiG25GearDown = function() {
+       geofs.debug.MiG25GearDown || geofs.debug.createMiG25GearDown()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25GearDown.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Gear Down loading error. " + e)
+        }
+    }
 
     geofs.debug.createF117GearUp = function() {
        geofs.debug.F117GearUp = {};
