@@ -334,11 +334,11 @@ clearInterval(blackoutLoadInt)
     scriptEJ.onload = function () {
         runEjections();
     };
-    var scriptAl = document.createElement("script");
-    scriptAl.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Autoland@main/autoland.js";
-    document.body.appendChild(scriptAl);
-    scriptAl.onload = function () {
-        justDoTheThing();
+    var scriptAS = document.createElement("script");
+    scriptAS.src = "https://raw.githack.com/NVB9ALT/GeoFS-Autospoilers/main/autospoilers.js";
+    document.body.appendChild(scriptAS);
+    scriptAS.onload = function () {
+        autospoilers();
     };
     var scriptKCAS = document.createElement("script");
     scriptKCAS.src = "https://raw.githack.com/NVB9ALT/Bookmarklet_AP-Plus-Plus_and_FMC/main/Realistic%20KIAS.js";
