@@ -368,7 +368,7 @@ clearInterval(blackoutLoadInt)
         addLandmarks();
     };
     var scriptAS = document.createElement("script");
-    scriptAS.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Autospoilers@main/autospoilersD.js";
+    scriptAS.src = "https://raw.githack.com/NVB9ALT/GeoFS-Autospoilers/main/autospoilers.js";
     document.body.appendChild(scriptAS);
     scriptAS.onload = function () {
         autospoilers();
