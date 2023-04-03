@@ -27,23 +27,25 @@ function gBreath() {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/cutgbreath.mp3")
 	}
 }
-gBreathInt = setInterval(function(){gBreath()},3500)
 function flankerBeep() {
-   if (geofs.aircraft.instance.id == 18 && (geofs.animation.values.aoa >= 15 || (geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1)) && geofs.aircraft.instance.liveryId != 6) {
+   if (geofs.aircraft.instance.id == 18 && ((geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1)) && geofs.aircraft.instance.liveryId != 6) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerbeep2.m4a")	
 	}
 }
-flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 function flankerStall() {
    if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
 	}
 }
+gBreathInt = setInterval(function(){gBreath()},3500)
+flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 flankerStallInt = setInterval(function(){flankerStall()},3000)
 
+/* The chat website used for this is broken at this time :(
     let addonChat = document.createElement("li");
     addonChat.innerHTML = '<li><iframe width="1000", height="1500", left=350,top=50, src="https://chat.hyperjs.ml/GeoFS", title="Addon chat"</iframe></li>';
     document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-preference-list geofs-preferences")[0].appendChild(addonChat);
+*/
     //this breaks things if its run before terrain has loaded
     //geofs.api.waterDetection.create();
     lagReductionInterval = setInterval(function () {
@@ -242,6 +244,9 @@ clearInterval(blackoutLoadInt)
     script2.onload = function () {
         realismify();
     };
+/* //Removed for now because it's buggy at certain times of day (flickering stars at dawn/dusk)
+   //Besides, it didn't work anyway - probably overwritten by some other part of the GeoFS enviro engine
+   //TODO: new implementation (possibly create new skybox?)
     function showTheStars() {
         if (geofs.aircraft.instance.altitude >= 80000 || geofs.isNight == 1) {
             geofs.api.viewer.scene.skyBox.show = 1;
@@ -252,6 +257,7 @@ clearInterval(blackoutLoadInt)
     starsInterval = setInterval(function () {
         showTheStars();
     }, 1000);
+*/
     function runBladeCollisions() {
         if (geofs.animation.values.aroll > 70 || geofs.animation.values.aroll < -70) {
             if (geofs.animation.values.haglFeet <= 5 && geofs.preferences.crashDetection == 1) {
@@ -741,6 +747,11 @@ clearInterval(blackoutLoadInt)
     var f117GearUp = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_up.glb"
     var f117GearDown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117_gear_down.glb"
     var f117cockpit = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/f117-cockpit.glb"
+    var mig25geardown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_gear_down_2.glb"
+    var mig25gearup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_gear_up_2.glb"
+    var mig25ab = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_afterburner_2.glb"
+    var mig25flapsup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_flaps_up_2.glb"
+    var mig25flapsdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_flaps_down_2.glb"
     
     geofs.addonAircraft = {};
     geofs.addonAircraft.isFA18 = 0
@@ -751,6 +762,82 @@ clearInterval(blackoutLoadInt)
     geofs.addonAircraft.isMiG21 = 0
     geofs.addonAircraft.isMSG = 0
     geofs.addonAircraft.isF117 = 0
+    geofs.addonAircraft.isMiG25 = 0
+
+    geofs.debug.createMiG25GearDown = function() {
+       geofs.debug.MiG25GearDown = {};
+       geofs.debug.MiG25GearDown.model = new geofs.api.Model(mig25geardown)
+    }
+    geofs.debug.loadMiG25GearDown = function() {
+       geofs.debug.MiG25GearDown || geofs.debug.createMiG25GearDown()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25GearDown.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Gear Down loading error. " + e)
+        }
+    }
+
+    geofs.debug.createMiG25GearUp = function() {
+       geofs.debug.MiG25GearUp = {};
+       geofs.debug.MiG25GearUp.model = new geofs.api.Model(mig25gearup)
+    }
+    geofs.debug.loadMiG25GearUp = function() {
+       geofs.debug.MiG25GearUp || geofs.debug.createMiG25GearUp()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25GearUp.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Gear Up loading error. " + e)
+        }
+    }
+
+    geofs.debug.createMiG25FlapsUp = function() {
+       geofs.debug.MiG25FlapsUp = {};
+       geofs.debug.MiG25FlapsUp.model = new geofs.api.Model(mig25flapsup)
+    }
+    geofs.debug.loadMiG25FlapsUp = function() {
+       geofs.debug.MiG25FlapsUp || geofs.debug.createMiG25FlapsUp()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25FlapsUp.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Flaps Up loading error. " + e)
+        }
+    }
+
+    geofs.debug.createMiG25FlapsDown = function() {
+       geofs.debug.MiG25FlapsDown = {};
+       geofs.debug.MiG25FlapsDown.model = new geofs.api.Model(mig25flapsdown)
+    }
+    geofs.debug.loadMiG25FlapsDown = function() {
+       geofs.debug.MiG25FlapsDown || geofs.debug.createMiG25FlapsDown()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25FlapsDown.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Flaps Down loading error. " + e)
+        }
+    }
+
+    geofs.debug.createMiG25AB = function() {
+       geofs.debug.MiG25AB = {};
+       geofs.debug.MiG25AB.model = new geofs.api.Model(mig25ab)
+    }
+    geofs.debug.loadMiG25AB = function() {
+       geofs.debug.MiG25AB || geofs.debug.createMiG25AB()
+        try {
+            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
+                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
+            geofs.debug.MiG25AB.model.setPositionOrientationAndScale(c, d);
+        } catch (e) {
+            throw("MiG-25 Afterburner loading error. " + e)
+        }
+    }
 
     geofs.debug.createF117GearUp = function() {
        geofs.debug.F117GearUp = {};
@@ -1432,6 +1519,17 @@ clearInterval(blackoutLoadInt)
       }
       if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.view == "cockpit") {
          geofs.debug.loadF117Cockpit();
+      }
+      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 1) {
+	 geofs.debug.loadMiG25GearUp()
+	 geofs.debug.loadMiG25FlapsUp()
+      }
+      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 0) {
+	 geofs.debug.loadMiG25GearDown()
+	 geofs.debug.loadMiG25FlapsDown()
+      }
+      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.rpm > 9000) {
+	 geofs.debug.loadMiG25AB()
       }
         
       if (geofs.addonAircraft.isTruck == 1) {
