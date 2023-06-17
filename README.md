@@ -1,7 +1,8 @@
 # Realism-pack
 **COMING SOON: Making features toggleable!**
+**EDIT: sorry about the wait, Kolos26 is currently in charge of the addon and is not available as of mid-June 2023**
 
-This massive addon adds over 35 new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
+This massive addon adds over 30 new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
 You can review the full list of additional features and changes below.
 
 
@@ -45,6 +46,7 @@ What the Realism Pack adds:
 
 - Button to toggle whether instruments show realistic KCAS or KTAS
 - *All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
+  **Note: this is not really usable as of 3.5/possibly 3.6 because the old-style HUDs/PFDs are bugged anyways
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
@@ -60,8 +62,6 @@ What the Realism Pack adds:
 - Carrier catapults (*)
 - Stall buffet camera effect (*)
 - Sixteen 3d landmarks around the world
-- Night scenery and cockpit lighting
-- A minor rework of the advanced atmosphere
 - Lift-based wingflex for most CC airliners (*)
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
