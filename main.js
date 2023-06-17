@@ -304,12 +304,6 @@ clearInterval(blackoutLoadInt)
     scriptFBW.onload = function () {
         addFBW()
     }
-    var scriptATM = document.createElement("script");
-    scriptATM.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/BetterGeoFSAtmosphere.js";
-    document.body.appendChild(scriptATM);
-    scriptATM.onload = function () {
-        redoAtmosphere();
-    };
     var scriptSB = document.createElement("script");
     scriptSB.src = "https://raw.githack.com/NVB9ALT/GeoFS-sound-changes/main/main.js";
     document.body.appendChild(scriptSB);
