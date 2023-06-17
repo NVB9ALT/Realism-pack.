@@ -46,7 +46,7 @@ What the Realism Pack adds:
 
 - Button to toggle whether instruments show realistic KCAS or KTAS
 - *All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
-  **Note: this is not really usable as of 3.5/possibly 3.6 because the old-style HUDs/PFDs are bugged anyways
+  **Note: this is not really usable as of 3.5/possibly 3.6 because the old-style HUDs/PFDs are bugged anyways**
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
 - A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs
