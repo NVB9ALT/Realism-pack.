@@ -322,12 +322,6 @@ clearInterval(blackoutLoadInt)
     scriptLM.onload = function () {
         addLandmarks();
     };
-    var scriptAS = document.createElement("script");
-    scriptAS.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/GeoFS-Autospoilers@main/autospoilersA.js";
-    document.body.appendChild(scriptAS);
-    scriptAS.onload = function () {
-        autospoilers();
-    };
     var scriptEJ = document.createElement("script");
     scriptEJ.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Fighter-jet-ejections@main/mainG.js";
     document.body.appendChild(scriptEJ);
