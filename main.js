@@ -292,6 +292,12 @@ clearInterval(blackoutLoadInt)
     scriptC.onload = function () {
         fixCloudsDensity();
     };
+    var scriptCCP = document.createElement("script");
+    scriptCCP.src = "https://raw.githack.com/NVB9ALT/GeoFS-Clickable-Cockpits/personal-proxy-config/main.js";
+    document.body.appendChild(scriptCCP);
+    scriptCCP.onload = function () {
+        runCLickableCockpits();
+    };
     var scriptVC = document.createElement("script");
     scriptVC.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/vortexCon.js";
     document.body.appendChild(scriptVC);
