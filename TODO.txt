@@ -1,0 +1,15 @@
+To fix:
+- Carrier catapults don't work unless you spawn as a carrier aircraft
+- Clickable cockpits error: "runCLickickableCockpits" not defined (capitalization error)
+- Autospoilers broken: update with Kolos26 3.5+ version
+- Remove current toggleable features because they're buggy and don't work very well
+- Fix 2d clouds density mod
+- Debug autoland (despite the script using black magic to try and hide its loading path)
+- Fix HUD/PFD placement
+- Finish refining multiplayer aircraft sounds and re-add
+- Sonic booms only play once: fix
+- Hide 3d landmarks if user has 3d buildings on
+- F-22 is super hard to fly at AoA: try and fix
+- Fly-by-wire in general leads to strange handling around centered controls: refine this as well
+- Expand differential aircraft sounds to more than just the F-16
+- Fix issue where if you decelerate from M>1 to M<1 while camera is in front of aircraft, it does not resume playing engine sound
