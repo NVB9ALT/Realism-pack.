@@ -1,6 +1,7 @@
 # Realism-pack
-**COMING SOON: Making features toggleable!**
-**EDIT: sorry about the wait, Kolos26 is currently in charge of the addon and is not available as of mid-June 2023**
+*Notice: the Tampermoney version may not work properly. If this is the case, please try the bookmarklet version if you are able to.*
+
+**This addon needs several updates and an implementation of toggleable features. Kolos26 is currently in charge of the addon, however he seems to have neglected it. I may have to reinstate myself as the primary maintainer soon because of this. I apologize for the wait.**
 
 This massive addon adds over 30 new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
 You can review the full list of additional features and changes below.
