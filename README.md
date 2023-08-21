@@ -26,8 +26,6 @@ Go to the flight deck of the USS John C. Stennis and taxi to the front end of th
 NOTE: You must be in a carrier-capable aircraft for the catapults to work (i.e. it needs a tailhook). </br>
 *TUTORIAL:* https://www.youtube.com/watch?v=XWT7eGtNRl8 </br>
 
-You will notice a few new settings in the options panel. They are on by default.</br>
-
 *How to use the clickable cockpits*</br>
 For throttles, click on the throttle and hold until the throttle is at the desired position. At the max and idle settings, a detent keeps the lever in position for half a second so that setting max or idle thrust is slightly easier.
 For anything else, click and hold for half a second. Try not to click and hold for more than half a second, because that would trigger the switch twice.<br>
@@ -48,7 +46,7 @@ Current aircraft with the Cobra button:</br>
 - Su-27 addon aircraft
 - F/A-18 addon aircraft</br>
 
-Addon aircraft are available in a separate repository you can also find on my GitHub.</br>
+Addon aircraft are available <a href="https://github.com/NVB9ALT/Addon-Aircraft-and-Parts">here.</a> They do not have animated control surfaces and some may be lacking animated speedbrakes/flaps as well, but the physics models are as realistic as I can make them. I may work on making the addon aircraft easier to run later.</br>
 </br>
 
 Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
