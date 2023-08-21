@@ -1,7 +1,7 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.showOnce("This addon needs several updates and an implementation of toggleable features. Kolos26 is currently in charge of the addon, however he seems to have neglected it. I may have to reinstate myself as the primary maintainer soon because of this. I apologize for the wait but I will try to make these updates happen.")
+   ui.notification.showOnce("This addon needs several updates and an implementation of toggleable features. Fixes are currently happening but progress will be slow. Today's fixes: clickable cockpits fix (check GitHub repository for info on how to use), removed buggy toggles (to be replaced much later by Kolos26)")
 }
 
 console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
