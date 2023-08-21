@@ -28,8 +28,18 @@ NOTE: You must be in a carrier-capable aircraft for the catapults to work (i.e. 
 
 You will notice a few new settings in the options panel. They are on by default.</br>
 
-*How to use the addon chat:*</br>
-At the bottom of the locations panel is an addon chat room. To use this, simply click the input text box, type your message, press "enter", then click somewhere else.
+*How to use the clickable cockpits*</br>
+For throttles, click on the throttle and hold until the throttle is at the desired position. At the max and idle settings, a detent keeps the lever in position for half a second so that setting max or idle thrust is slightly easier.
+For anything else, click and hold for half a second. Try not to click and hold for more than half a second, because that would trigger the switch twice.<br>
+*What clickable parts this addon includes:*<br>
+- Piper Cub: mixture (toggles engine)
+- Cessna 172: throttle, mixture (toggles engine)
+- Embraer Phenom 100: throttle, landing gear, parking brake
+- DHC-6 Twin Otter: flaps
+- Douglas DC-3: flaps, throttle, mixture levers and magneto switches (both must be turned on in order for the engines to auto-start)
+- Alisport Silent 2: speedbrake, flaps
+- DHC-2 Beaver: flaps, throttle, mixture (toggles engine), water rudders
+- Airbus A380: speedbrake
 
 *Cobra button*</br>
 Some aircraft may feature a Cobra button or feature to disable the flight limiters. This will be your " key.</br>
@@ -56,7 +66,7 @@ What the Realism Pack adds:
 - A basic implementation of propwash
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
-- Clickable cockpits (you can see what parts are clickable <a href="https://github.com/NVB9ALT/GeoFS-Clickable-Cockpits/blob/main/README.md">here</a>)
+- Clickable cockpits
 - Minor F-16 sound tweak (sounds different in front vs rear)
 - *Sonic booms*
 - A couple of sounds for high Gs
