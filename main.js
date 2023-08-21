@@ -293,6 +293,8 @@ clearInterval(blackoutLoadInt)
     scriptC.onload = function () {
         fixCloudsDensity();
     };
+    //kludge fix
+    geofs.cons = true;
     var scriptCCP = document.createElement("script");
     scriptCCP.src = "https://raw.githack.com/NVB9ALT/GeoFS-Clickable-Cockpits/personal-proxy-config/main.js";
     document.body.appendChild(scriptCCP);
