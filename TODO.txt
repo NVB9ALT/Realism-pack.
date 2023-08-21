@@ -1,8 +1,6 @@
 To fix:
 - Carrier catapults don't work unless you spawn as a carrier aircraft
-- Clickable cockpits error: "runCLickickableCockpits" not defined (capitalization error)
 - Autospoilers broken: update with Kolos26 3.5+ version
-- Remove current toggleable features because they're buggy and don't work very well
 - Fix 2d clouds density mod
 - Debug autoland (despite the script using black magic to try and hide its loading path)
 - Fix HUD/PFD placement
