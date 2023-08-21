@@ -297,7 +297,7 @@ clearInterval(blackoutLoadInt)
     scriptCCP.src = "https://raw.githack.com/NVB9ALT/GeoFS-Clickable-Cockpits/personal-proxy-config/main.js";
     document.body.appendChild(scriptCCP);
     scriptCCP.onload = function () {
-        runCLickableCockpits();
+        runClickableCockpits();
     };
     var scriptVC = document.createElement("script");
     scriptVC.src = "https://raw.githack.com/NVB9ALT/GeoFS-Effects-Rework/main/vortexCon.js";
@@ -676,28 +676,6 @@ clearInterval(blackoutLoadInt)
             d.textAlign = "left";
             d.fillText("G " + geofs.animation.getValue("loadFactor").toFixed(1), 143, 110);
         }
-    
-    geofs.condensation = {};
-    geofs.cons = true;
-    geofs.condensation.update = function() {
-      if (geofs.cons == true) {
-        geofs.cons = false;
-        toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
-      } else {
-        geofs.cons = true;
-        toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded is-checked")
-      }
-    };
-    let elementSel = document.getElementsByClassName('geofs-preference-list')[0].getElementsByClassName('geofs-advanced')[0].getElementsByClassName('geofs-stopMousePropagation')[0];
-    let toggleC = document.createElement("label");
-        toggleC.setAttribute("class", "mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded");
-        toggleC.setAttribute("for", "condensation");
-        toggleC.setAttribute("id", "condensation");
-        toggleC.setAttribute("tabindex", "0");
-        toggleC.setAttribute("dataUpgraded", ",MaterialSwitch,MaterialRipple");
-        toggleC.innerHTML = '<input type="checkbox" id="condensation" class="mdl-switch__input" data-gespref="geofs.condensation.preference"><span class="mdl-switch__label">Condensation effects</span>';
-    elementSel.appendChild(toggleC);
-    toggleC.addEventListener("click", geofs.condensation.update);
     
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
     //Most of this is not related to the realism pack. This stuff loads 4 models directly related to the realism pack,
