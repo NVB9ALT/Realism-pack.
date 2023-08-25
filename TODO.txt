@@ -7,7 +7,5 @@ To fix:
 - Finish refining multiplayer aircraft sounds and re-add
 - Sonic booms only play once: fix
 - Hide 3d landmarks if user has 3d buildings on
-- F-22 is super hard to fly at AoA: try and fix
-- Fly-by-wire in general leads to strange handling around centered controls: refine this as well
 - Expand differential aircraft sounds to more than just the F-16
 - Fix issue where if you decelerate from M>1 to M<1 while camera is in front of aircraft, it does not resume playing engine sound
