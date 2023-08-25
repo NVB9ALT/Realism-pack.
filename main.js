@@ -1170,20 +1170,6 @@ clearInterval(blackoutLoadInt)
             throw("F18 cockpit loading error. " + e)
         }
     };
-    geofs.debug.createF18Stick = function() {
-       geofs.debug.F18Stick = {};
-        geofs.debug.F18Stick.model = new geofs.api.Model(f18Cockpit)
-    }
-    geofs.debug.loadF18Stick = function() {
-       geofs.debug.F18Stick || geofs.debug.createF18Stick()
-        try {
-            var c = V3.add(geofs.aircraft.instance.llaLocation, xyz2lla([0, 0, 0], geofs.aircraft.instance.llaLocation)),
-                d = M33.getOrientation(geofs.aircraft.instance.object3d._rotation);
-            geofs.debug.F18Stick.model.setPositionOrientationAndScale(c, [d[0], d[1], d[2] + (geofs.animation.values.yaw * 10)]);
-        } catch (e) {
-            throw("F18 stick loading error. " + e)
-        }
-    };
     geofs.debug.createF18Airbrake = function() {
        geofs.debug.F18Airbrake = {};
         geofs.debug.F18Airbrake.model = new geofs.api.Model(f18Airbrake)
@@ -1442,7 +1428,6 @@ clearInterval(blackoutLoadInt)
       }
       if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == "cockpit") {
         geofs.debug.loadF18Cockpit()
-        geofs.debug.loadF18Stick()
       }
     
       if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
@@ -1608,7 +1593,7 @@ geofs.switchAS = function() {
     d.geofsTime = b;
     geofs.api.postMessage({ animationValues: d });
 };
-document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="geofs-radio-ident" onclick=geofs.switchAS() >KIAS------------</button><div class="geofs-autopilot-bar"><div class="control-pad geofs-autopilot-pad" title="Toggle autopilot on/off"><div class="control-pad-label transp-pad">AUTOPILOT</div></div><div class="geofs-autopilot-controls"><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-speed" min="0" step="10" data-method="setSpeed" maxlength="3" value="0"><a class="numberUp">+</a><span>KTAS</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-course" min="0" max="359" data-loop="true" step="1" data-method="setCourse" maxlength="3" value="000"><a class="numberUp">+</a><span class="geofs-autopilot-switch geofs-autopilot-mode"><a class="switchLeft geofs-autopilot-HDG green-pad" data-method="setMode" value="HDG">HDG</a><a class="switchRight geofs-autopilot-NAV" data-method="setMode" value="NAV">NAV</a></span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-altitude" min="0" max="100000" step="500" data-method="setAltitude" maxlength="5" value="00000"><a class="numberUp">+</a><span>ALTITUDE</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-verticalSpeed" min="-6000" max="6000" step="100" data-method="setVerticalSpeed" maxlength="5" value="00000"><a class="numberUp">+</a><span>VERT SPEED</span></div></div></div>'
+document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="geofs-radio-ident" onclick=geofs.switchAS() >KIAS------------</button><div class="geofs-autopilot-bar"><div class="control-pad geofs-autopilot-pad" title="Toggle autopilot on/off"><div class="control-pad-label transp-pad">AUTOPILOT</div></div><div class="geofs-autopilot-controls"><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-speed" min="0" step="10" data-method="setSpeed" maxlength="3" value="0"><a class="numberUp">+</a><span>KIAS</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-course" min="0" max="359" data-loop="true" step="1" data-method="setCourse" maxlength="3" value="000"><a class="numberUp">+</a><span class="geofs-autopilot-switch geofs-autopilot-mode"><a class="switchLeft geofs-autopilot-HDG green-pad" data-method="setMode" value="HDG">HDG</a><a class="switchRight geofs-autopilot-NAV" data-method="setMode" value="NAV">NAV</a></span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-altitude" min="0" max="100000" step="500" data-method="setAltitude" maxlength="5" value="00000"><a class="numberUp">+</a><span>ALTITUDE</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-verticalSpeed" min="-6000" max="6000" step="100" data-method="setVerticalSpeed" maxlength="5" value="00000"><a class="numberUp">+</a><span>VERT SPEED</span></div></div></div>'
 geofs.kiasOn = 1
 	} else {
     flight.setAnimationValues = function (a, b) {
