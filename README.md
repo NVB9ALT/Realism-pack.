@@ -39,13 +39,6 @@ For anything else, click and hold for half a second. Try not to click and hold f
 - DHC-2 Beaver: flaps, throttle, mixture (toggles engine), water rudders
 - Airbus A380: speedbrake
 
-*Cobra button*</br>
-Some aircraft may feature a Cobra button or feature to disable the flight limiters. This will be your " key.</br>
-Current aircraft with the Cobra button:</br>
-- F-22
-- Su-27 addon aircraft
-- F/A-18 addon aircraft</br>
-
 Addon aircraft are available <a href="https://github.com/NVB9ALT/Addon-Aircraft-and-Parts">here.</a> They do not have animated control surfaces and some may be lacking animated speedbrakes/flaps as well, but the physics models are as realistic as I can make them. I may work on making the addon aircraft easier to run later.</br>
 </br>
 
