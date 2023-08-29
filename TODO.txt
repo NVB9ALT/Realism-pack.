@@ -5,7 +5,6 @@ To fix:
 - Debug autoland (despite the script using black magic to try and hide its loading path)
 - Fix HUD/PFD placement
 - Finish refining multiplayer aircraft sounds and re-add
-- Sonic booms only play once: fix
 - Hide 3d landmarks if user has 3d buildings on
 - Add differential aircraft sound to F-15C
 - Fix issue where if you decelerate from M>1 to M<1 while camera is in front of aircraft, it does not resume playing engine sound
