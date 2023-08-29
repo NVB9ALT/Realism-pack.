@@ -7,7 +7,7 @@ To fix:
 - Finish refining multiplayer aircraft sounds and re-add
 - Sonic booms only play once: fix
 - Hide 3d landmarks if user has 3d buildings on
-- Expand differential aircraft sounds to more than just the F-16
+- Add differential aircraft sound to F-15C
 - Fix issue where if you decelerate from M>1 to M<1 while camera is in front of aircraft, it does not resume playing engine sound
 - Game forgets to load carrier hitbox sometimes (possibly caused by carrier catapults script? also check if there are any other scripts
 that interfere with object loading)
