@@ -28,11 +28,6 @@ function gBreath() {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/cutgbreath.mp3")
 	}
 }
-function flankerBeep() {
-   if (geofs.aircraft.instance.id == 18 && ((geofs.animation.values.enginesOn == 0 && geofs.animation.values.groundContact == 0) || (geofs.animation.values.groundContact == 1 && geofs.animation.values.gearPosition != 1)) && geofs.aircraft.instance.liveryId != 6) {
-audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerbeep2.m4a")	
-	}
-}
 function flankerStall() {
    if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
