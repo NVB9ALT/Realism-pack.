@@ -320,12 +320,6 @@ clearInterval(blackoutLoadInt)
     scriptCCI.onload = function () {
         redoPFDSHUDS();
     };
-    var scriptLM = document.createElement("script");
-    scriptLM.src = "https://raw.githack.com/NVB9ALT/GeoFS-3d-landmarks-by-JAaMDG/main/Current-compatible.js";
-    document.body.appendChild(scriptLM);
-    scriptLM.onload = function () {
-        addLandmarks();
-    };
     var scriptEJ = document.createElement("script");
     scriptEJ.src = "https://cdn.jsdelivr.net/gh/NVB9ALT/Fighter-jet-ejections@main/mainG.js";
     document.body.appendChild(scriptEJ);
