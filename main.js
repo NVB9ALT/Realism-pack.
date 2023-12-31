@@ -1,7 +1,7 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.showOnce("This addon needs several updates and an implementation of toggleable features. Fixes are currently happening but progress will be slow. Today's fixes: the fly-by-wire controls on the F-16 and F-22 have been adjusted quite a bit")
+   ui.notification.showOnce("This addon is in desparate need of a lot of major work, yet I haven't done any work on it for months. I'm sorry. I may try to find someone else to take over development.")
 }
 
 console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
