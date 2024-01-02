@@ -326,11 +326,8 @@ clearInterval(blackoutLoadInt)
         runEjections();
     };
     var scriptAS = document.createElement("script");
-    scriptAS.src = "https://raw.githack.com/NVB9ALT/GeoFS-Autospoilers/main/autospoilers.js";
+    scriptAS.src = "https://raw.githack.com/kolos26/GeoFS-spoilerArming/main/spoilerarming.js";
     document.body.appendChild(scriptAS);
-    scriptAS.onload = function () {
-        autospoilers();
-    };
     var scriptKCAS = document.createElement("script");
     scriptKCAS.src = "https://raw.githack.com/NVB9ALT/Bookmarklet_AP-Plus-Plus_and_FMC/main/Realistic%20KIAS.js";
     document.body.appendChild(scriptKCAS);
