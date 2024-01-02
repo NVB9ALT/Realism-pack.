@@ -1,7 +1,7 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.showOnce("This addon is in desparate need of a lot of major work, yet I haven't done any work on it for months. I'm sorry. I may try to find someone else to take over development.")
+   ui.notification.showOnce("Today's updates: added reworked sounds to Xavier 777 and A350, added spoilers arming, airspeed defaults to KIAS instead of KTAS to fix autopilot UI bug (will re-add toggle later)")
 }
 
 console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
@@ -1465,11 +1465,8 @@ clearInterval(blackoutLoadInt)
         geofs.debug.loadTruck()  
       }
     };
-document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="geofs-radio-ident" onclick=geofs.switchAS() >KTAS------------</button><div class="geofs-autopilot-bar"><div class="control-pad geofs-autopilot-pad" title="Toggle autopilot on/off"><div class="control-pad-label transp-pad">AUTOPILOT</div></div><div class="geofs-autopilot-controls"><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-speed" min="0" step="10" data-method="setSpeed" maxlength="3" value="0"><a class="numberUp">+</a><span>KTAS</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-course" min="0" max="359" data-loop="true" step="1" data-method="setCourse" maxlength="3" value="000"><a class="numberUp">+</a><span class="geofs-autopilot-switch geofs-autopilot-mode"><a class="switchLeft geofs-autopilot-HDG green-pad" data-method="setMode" value="HDG">HDG</a><a class="switchRight geofs-autopilot-NAV" data-method="setMode" value="NAV">NAV</a></span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-altitude" min="0" max="100000" step="500" data-method="setAltitude" maxlength="5" value="00000"><a class="numberUp">+</a><span>ALTITUDE</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-verticalSpeed" min="-6000" max="6000" step="100" data-method="setVerticalSpeed" maxlength="5" value="00000"><a class="numberUp">+</a><span>VERT SPEED</span></div></div></div>'
-geofs.kiasOn = 0;
-geofs.switchAS = function() {
-   if (geofs.kiasOn == 0) {
-    flight.setAnimationValues = function (a, b) {
+
+flight.setAnimationValues = function (a, b) {
 //a = e from flight.tick
     var c = geofs.aircraft.instance,
         d = geofs.animation.values,
@@ -1562,103 +1559,4 @@ geofs.switchAS = function() {
     d.geofsTime = b;
     geofs.api.postMessage({ animationValues: d });
 };
-document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="geofs-radio-ident" onclick=geofs.switchAS() >KIAS------------</button><div class="geofs-autopilot-bar"><div class="control-pad geofs-autopilot-pad" title="Toggle autopilot on/off"><div class="control-pad-label transp-pad">AUTOPILOT</div></div><div class="geofs-autopilot-controls"><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-speed" min="0" step="10" data-method="setSpeed" maxlength="3" value="0"><a class="numberUp">+</a><span>KIAS</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-course" min="0" max="359" data-loop="true" step="1" data-method="setCourse" maxlength="3" value="000"><a class="numberUp">+</a><span class="geofs-autopilot-switch geofs-autopilot-mode"><a class="switchLeft geofs-autopilot-HDG green-pad" data-method="setMode" value="HDG">HDG</a><a class="switchRight geofs-autopilot-NAV" data-method="setMode" value="NAV">NAV</a></span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-altitude" min="0" max="100000" step="500" data-method="setAltitude" maxlength="5" value="00000"><a class="numberUp">+</a><span>ALTITUDE</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-verticalSpeed" min="-6000" max="6000" step="100" data-method="setVerticalSpeed" maxlength="5" value="00000"><a class="numberUp">+</a><span>VERT SPEED</span></div></div></div>'
 geofs.kiasOn = 1
-	} else {
-    flight.setAnimationValues = function (a, b) {
-//a = e from flight.tick
-    var c = geofs.aircraft.instance,
-        d = geofs.animation.values,
-        e = c.llaLocation[2] * METERS_TO_FEET,
-        g = (60 * (e - c.oldAltitude * METERS_TO_FEET)) / a;
-    c.oldAltitude = c.llaLocation[2];
-    var f = fixAngle(weather.currentWindDirection - c.htr[0]),
-        k = c.engine.rpm * c.definition.RPM2PropAS * a;
-    d.acceleration = M33.transform(M33.transpose(c.object3d._rotation), c.rigidBody.v_acceleration);
-    d.accX = d.acceleration[0];
-    d.accY = d.acceleration[1];
-    d.accZ = d.acceleration[2];
-    d.loadFactor = d.acceleration[2] / GRAVITY;
-    d.slipball = exponentialSmoothing("slipball", d.acceleration[0], 0.02);
-    d.ktas = c.trueAirSpeed * MS_TO_KNOTS;
-    d.kiasChangeRate = (d.kias - d.ktas) * a;
-    d.kias = d.ktas;
-    d.kiasUnits = d.ktas % 10;
-    d.kiasTens = d.ktas % 100;
-    d.kiasHundreds = d.ktas % 1e3;
-    d.kiasThousands = d.ktas % 1e4;
-    d.groundSpeed = c.groundSpeed;
-    d.groundSpeedKnt = c.groundSpeed * MS_TO_KNOTS;
-    d.altitudeMeters = c.llaLocation[2];
-    d.altitude = e;
-    d.haglMeters = geofs.relativeAltitude;
-    d.haglFeet = geofs.relativeAltitude * METERS_TO_FEET;
-    d.groundElevationFeet = geofs.groundElevation * METERS_TO_FEET;
-    d.verticalSpeed = g;
-    d.climbrate = g;
-    d.aoa = c.angleOfAttackDeg;
-    d.turnrate = (60 * fixAngle(c.htr[0] - d.heading)) / a;
-    d.pitchrate = (60 * fixAngle(c.htr[1] - d.atilt)) / a;
-    d.heading = c.htr[0];
-    d.heading360 = fixAngle360(c.htr[0]);
-    d.atilt = c.htr[1];
-    d.aroll = c.htr[2];
-    d.enginesOn = c.engine.on;
-    d.engineVibration = 100 < c.engine.rpm ? Math.random() * clamp(1e3 / c.engine.rpm, 0, 1) : 0;
-    d.prop = fixAngle360(d.prop + k);
-    d.thrust = c.totalThrust;
-    d.rpm = c.engine.rpm;
-    d.throttle = controls.throttle;
-    d.mixture = controls.mixture;
-    d.carbHeat = controls.carbHeat;
-    d.smoothThrottle = exponentialSmoothing("throttle", d.throttle, 0.02);
-    d.pitch = controls.pitch;
-    d.rawPitch = controls.rawPitch;
-    d.roll = controls.roll;
-    d.yaw = controls.yaw;
-    d.rawYaw = controls.rawYaw;
-    d.trim = controls.elevatorTrim;
-    d.brakes = controls.brakes;
-    d.gearPosition = controls.gear.position;
-    d.invGearPosition = 1 - controls.gear.position;
-    d.gearTarget = controls.gear.target;
-    d.flapsValue = controls.flaps.position / controls.flaps.maxPosition;
-    d.accessoriesPosition = controls.accessories.position;
-    d.flapsPosition = controls.flaps.position;
-    d.flapsTarget = controls.flaps.target;
-    d.flapsPositionTarget = controls.flaps.positionTarget;
-    d.flapsMaxPosition = controls.flaps.maxPosition;
-    d.airbrakesPosition = controls.airbrakes.position;
-    d.optionalAnimatedPartPosition = controls.optionalAnimatedPart.position;
-    d.airbrakesTarget = controls.airbrakes.target;
-    d.parkingBrake = c.brakesOn;
-    d.groundContact = c.groundContact ? 1 : 0;
-    d.arrestingHookTension = c.arrestingCableContact ? V3.length(c.arrestingCableContact.force) : 0;
-    d.airTemp = weather.atmosphere.airTempAtAltitude;
-    d.mach = c.trueAirSpeed / (331.3 + 0.606 * weather.atmosphere.airTempAtAltitude);
-    d.machUnits = Math.floor(d.mach);
-    d.machTenth = Math.floor(10 * (d.mach % 1).toPrecision(2));
-    d.machHundredth = Math.floor(100 * (d.mach % 0.1).toPrecision(2));
-    d.altTenThousands = e % 1e5;
-    d.altThousands = e % 1e4;
-    d.altHundreds = e % 1e3;
-    d.altTens = e % 100;
-    d.altTensShift = Math.floor((e % 1e5) / 1e4);
-    d.altUnits = e % 10;
-    d.relativeWind = f;
-    d.windSpeed = weather.currentWindSpeed;
-    d.windSpeedLabel = parseInt(weather.currentWindSpeed) + " kts";
-    d.view = geofs.camera.currentView;
-    d.envelopeTemp = c.envelopeTemp;
-    d["aircraft.maxAngularVRatio"] = c.maxAngularVRatio;
-    d.rollingSpeed = c.groundContact ? c.velocityScalar : 0;
-    "free" == geofs.camera.currentModeName || "chase" == geofs.camera.currentModeName
-        ? ((c = geofs.utils.llaDistanceInMeters(geofs.camera.lla, c.llaLocation)), (d.cameraAircraftSpeed = (d.cameraAircraftDistance - c) / a), (d.cameraAircraftDistance = c))
-        : ((d.cameraAircraftSpeed = 0), (d.cameraAircraftDistance = 0));
-    d.geofsTime = b;
-    geofs.api.postMessage({ animationValues: d });
-};
-document.getElementsByClassName("geofs-ui-top")[0].innerHTML = '<button class="geofs-radio-ident" onclick=geofs.switchAS() >KTAS------------</button><div class="geofs-autopilot-bar"><div class="control-pad geofs-autopilot-pad" title="Toggle autopilot on/off"><div class="control-pad-label transp-pad">AUTOPILOT</div></div><div class="geofs-autopilot-controls"><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-speed" min="0" step="10" data-method="setSpeed" maxlength="3" value="0"><a class="numberUp">+</a><span>KTAS</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-course" min="0" max="359" data-loop="true" step="1" data-method="setCourse" maxlength="3" value="000"><a class="numberUp">+</a><span class="geofs-autopilot-switch geofs-autopilot-mode"><a class="switchLeft geofs-autopilot-HDG green-pad" data-method="setMode" value="HDG">HDG</a><a class="switchRight geofs-autopilot-NAV" data-method="setMode" value="NAV">NAV</a></span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-altitude" min="0" max="100000" step="500" data-method="setAltitude" maxlength="5" value="00000"><a class="numberUp">+</a><span>ALTITUDE</span></div><div class="geofs-autopilot-control"><a class="numberDown">-</a><input class="numberValue geofs-autopilot-verticalSpeed" min="-6000" max="6000" step="100" data-method="setVerticalSpeed" maxlength="5" value="00000"><a class="numberUp">+</a><span>VERT SPEED</span></div></div></div>'
-geofs.kiasOn = 0
-	}
-}
