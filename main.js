@@ -321,12 +321,8 @@ clearInterval(blackoutLoadInt)
     var scriptML = document.createElement("script");
     scriptML.src = "https://raw.githack.com/kolos26/GEOFS-LiverySelector/main/main.js";
     document.body.appendChild(scriptML);
-    //i hope this works
-    scriptML.onload = function () {
-       if (typeof(localStorage.favorites) === "undefined") {
     localStorage.favorites = "";
-       }
-    }
+    ui.notification.show("Favorite livery selections are possibly not saved at this time.")
 
     function lookBack() {
         if (geofs.camera.currentModeName == "cockpit" && geofs.addonAircraft.isF117 != 1) {
