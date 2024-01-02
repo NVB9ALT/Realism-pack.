@@ -14,3 +14,5 @@ To fix:
 - Game forgets to load carrier hitbox sometimes (possibly caused by carrier catapults script? also check if there are any other scripts
 that interfere with object loading)
 - Make Flankers not prone to flat spins
+- Add toggle features
+   - If we can't figure out cookie saving, try using a config code and a config website?
