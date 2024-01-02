@@ -34,7 +34,6 @@ audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysi
 	}
 }
 gBreathInt = setInterval(function(){gBreath()},3500)
-flankerBeepInt = setInterval(function(){flankerBeep()},1000)
 flankerStallInt = setInterval(function(){flankerStall()},3000)
 
 /* The chat website used for this is broken at this time :(
@@ -415,7 +414,7 @@ clearInterval(blackoutLoadInt)
     
     function checkForBoeing777() {
     
-    if (geofs.aircraft.instance.id == 240) {
+    if (geofs.aircraft.instance.id == 240 || geofs.aircraft.instance.id == 25 || geofs.aircraft.instance.id == 4402) {
     if (b777sounds == 0){
     
     var script777 = document.createElement('script'); 
