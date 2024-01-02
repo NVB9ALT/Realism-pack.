@@ -439,7 +439,7 @@ clearInterval(blackoutLoadInt)
         var a320Sounds = 0
     
         function checkFora320() {
-        if (geofs.aircraft.instance.id == 2865 || geofs.aircraft.instance.id == 2870 || geofs.aircraft.instance.id == 2871 || geofs.aircraft.instance.id == 242 || geofs.aircraft.instance.id == 2843 || geofs.aircraft.instance.id == 2899) { //if the aircraft currently being flown is a320 or a220
+        if (geofs.aircraft.instance.id == 2865 || geofs.aircraft.instance.id == 2870 || geofs.aircraft.instance.id == 2871 || geofs.aircraft.instance.id == 242 || geofs.aircraft.instance.id == 2843 || geofs.aircraft.instance.id == 2899 || geofs.aircraft.instance.id == 24 || geofs.aircraft.instance.id == 2973) { //if the aircraft currently being flown is a320 or a220 or a350
         if (a320Sounds != geofs.aircraft.instance.id){ //if the script hasn't already run on this aircraft
         //preventing errors
                 clearInterval(soundInt);
