@@ -1,8 +1,6 @@
 To fix:
-- Add sound mods to new Xavier 777 and A350
 - Fix UI edits, Xavier updated the livery system
 - Carrier catapults don't work unless you spawn as a carrier aircraft
-- Autospoilers broken: update with Kolos26 3.5+ version
 - Fix 2d clouds density mod toggle switch not updating and force weather refresh on load if it's enabled and volumetric clouds are off
 - Debug autoland (despite the script using black magic to try and hide its loading path)
    - Hard landings
