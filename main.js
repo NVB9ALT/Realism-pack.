@@ -312,6 +312,7 @@ clearInterval(blackoutLoadInt)
     var scriptAS = document.createElement("script");
     scriptAS.src = "https://raw.githack.com/kolos26/GeoFS-spoilerArming/main/spoilerarming.js";
     document.body.appendChild(scriptAS);
+
     var scriptKCAS = document.createElement("script");
     scriptKCAS.src = "https://raw.githack.com/NVB9ALT/Bookmarklet_AP-Plus-Plus_and_FMC/main/Realistic%20KIAS.js";
     document.body.appendChild(scriptKCAS);
@@ -1488,7 +1489,7 @@ flight.setAnimationValues = function (a, b) {
     d.loadFactor = d.acceleration[2] / GRAVITY;
     d.slipball = exponentialSmoothing("slipball", d.acceleration[0], 0.02);
     d.ktas = c.trueAirSpeed * MS_TO_KNOTS;
-    d.kiasChangeRate = (d.kias - d.ktas) * a;
+    d.kiasChangeRate = (d.ktas - d.ktas) * a;
     d.kias = d.kcas;
     d.kiasUnits = d.ktas % 10;
     d.kiasTens = d.ktas % 100;
