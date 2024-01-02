@@ -318,6 +318,16 @@ clearInterval(blackoutLoadInt)
     scriptKCAS.onload = function () {
         runTrueKias();
     };
+    var scriptML = document.createElement("script");
+    scriptML.src = "https://raw.githack.com/kolos26/GEOFS-LiverySelector/main/main.js";
+    document.body.appendChild(scriptML);
+    //i hope this works
+    scriptML.onload = function () {
+       if (typeof(localStorage.favorites) === "undefined") {
+    localStorage.favorites = "";
+       }
+    }
+
     function lookBack() {
         if (geofs.camera.currentModeName == "cockpit" && geofs.addonAircraft.isF117 != 1) {
             geofs.camera.currentDefinition.position[0] = geofs.aircraft.instance.definition.cameras.cockpit.position[0] + geofs.camera.definitions["cockpit"].orientations.current[0] / 1000;
