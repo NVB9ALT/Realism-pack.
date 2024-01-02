@@ -74,7 +74,7 @@ What the Realism Pack adds:
 - A brake parachute for the F-16
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
-- Autospoilers (use Shift+B to arm the spoilers so they automatically deploy on touchdown)
+- Autospoilers (use Z to arm the spoilers so they automatically deploy on touchdown)
 - Ejection seats for fighter jets (press E while airborne)
 - A machmeter on the HUD
 - Lag reduction
