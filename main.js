@@ -291,6 +291,10 @@ clearInterval(blackoutLoadInt)
     scriptFBW.onload = function () {
         addFBW()
     }
+    var scriptSHA = document.createElement("script");
+    scriptSHA.src = "https://raw.githack.com/Ariakim-Taiyo/GeoFS-Shaders-Repository/main/SSR/SSR.js";
+    document.body.appendChild(scriptSHA);
+
     var scriptSB = document.createElement("script");
     scriptSB.src = "https://raw.githack.com/NVB9ALT/GeoFS-sound-changes/main/main.js";
     document.body.appendChild(scriptSB);
