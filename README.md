@@ -56,6 +56,7 @@ What the Realism Pack adds:
 - A320 (applies to A220 as well), 737 and 777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
+- **Livery Selector by Kolos26**
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
 - Clickable cockpits
