@@ -7,7 +7,6 @@ To fix:
    - Landings are sometimes short
 - Fix HUD/PFD placement
 - Finish refining multiplayer aircraft sounds and re-add
-- Add differential aircraft sound to F-15C
 - Fix issue where if you decelerate from M>1 to M<1 while camera is in front of aircraft, it does not resume playing engine sound
 - Game forgets to load carrier hitbox sometimes (possibly caused by carrier catapults script? also check if there are any other scripts
 that interfere with object loading)
