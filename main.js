@@ -1,10 +1,10 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.showOnce("Today's updates: added reworked sounds to Xavier 777 and A350, added spoilers arming, airspeed defaults to KTAS instead of KIAS to fix autopilot UI bug (will re-add toggle later)")
+   ui.notification.showOnce("Today's updates: bugfixes, added AriakimTaiyo's SSR shaders")
 }
 
-console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, and lift-based wingflex copyright AriakimTaiyo");
+console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, shaders, and lift-based wingflex from AriakimTaiyo, Livery Selector and 3.5+ spoilers arming from Kolos26");
 
 
 function gBreath() {
