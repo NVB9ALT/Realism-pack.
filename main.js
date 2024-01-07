@@ -126,7 +126,7 @@ function getStrength() {
     }, 100)
   }
   var g = geofs.animation.values.loadFactor;
-  if (g > 9) {
+  if (g > 9 && geofs.animation.values.view == "cockpit") {
     initTime += 0.05; //0.01, speed of blackout effect
     //console.log(initTime);
     if (initTime > 0.1) boInit = true; //1, time delay before blackout
