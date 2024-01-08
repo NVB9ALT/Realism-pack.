@@ -47,10 +47,10 @@ Some of these features were originally standalone addons by AriakimTaiyo; these 
 What the Realism Pack adds:
 
 - Button to toggle whether instruments show realistic KCAS or KTAS
-- *All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
+- **NOTICE: CC aircraft HUDs/PFDs are badly bugged right now, I don't know if I will update this**</br>*All CC aircraft's PFDs and HUDs have been fixed to be the right size and display all information correctly*
 - ILS autoland (if you're on an autopilot ILS approach, the plane will be able to land itself)
-- A rudimentary form of **multiplayer aircraft sounds**
-- You black out when you pull more than 9 Gs
+- **NOTICE: This is not in the addon yet, but I do have a working version that will be added once I fix the volume**</br>A rudimentary form of **multiplayer aircraft sounds**
+- You black out when you pull more than 9 Gs (Now only in cockpit view)
 - Condensation effects for fighters
 - A320 (applies to A220 as well), 737 and 777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
@@ -64,7 +64,6 @@ What the Realism Pack adds:
 - A couple of sounds for high Gs
 - Carrier catapults (*)
 - Stall buffet camera effect (*)
-- Sixteen 3d landmarks around the world
 - Lift-based wingflex for most CC airliners (*)
 - Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
