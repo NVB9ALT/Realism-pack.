@@ -52,6 +52,7 @@ What the Realism Pack adds:
 - **NOTICE: This is not in the addon yet, but I do have a working version that will be added once I fix the volume**</br>A rudimentary form of **multiplayer aircraft sounds**
 - You black out when you pull more than 9 Gs (Now only in cockpit view)
 - Condensation effects for fighters
+- SSR shaders by AriakimTaiyo (*)
 - A320 (applies to A220 as well), 737 and 777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
