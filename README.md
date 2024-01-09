@@ -53,7 +53,7 @@ What the Realism Pack adds:
 - You black out when you pull more than 9 Gs (Now only in cockpit view)
 - Condensation effects for fighters
 - SSR shaders by AriakimTaiyo (*)
-- A320 (applies to A220 as well), 737 and 777 immersion sound effects (*)
+- A320/A220/A350, 737/777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
 - **Livery Selector by Kolos26**
@@ -66,7 +66,6 @@ What the Realism Pack adds:
 - Carrier catapults (*)
 - Stall buffet camera effect (*)
 - Lift-based wingflex for most CC airliners (*)
-- Falcon 9 control fix
 - A massive realism fix for the HAL Tejas
 - A similar fix for the F-15
 - F-22 fix
