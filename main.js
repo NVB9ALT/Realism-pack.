@@ -167,7 +167,7 @@ geofs.fx.overg.create()
 blackoutEffectInterval = setInterval(function(){geofs.fx.overg.update();}, 10)
 clearInterval(blackoutLoadInt)
    }
-}, 1000)
+}, 20000)
     function fixSpin() {
         if (geofs.aircraft.instance.id == 2948 || geofs.aircraft.instance.id == 2581) {
             var pitch = geofs.animation.values.atilt;
