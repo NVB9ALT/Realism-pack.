@@ -69,7 +69,7 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
         }
     })
 blackoutLoadInt = setInterval(function(){
-   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true) {
+   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true && typeof document.body.scriptSHA != "undefined") {
 geofs["overlayG.glsl"] = "" + `
 uniform sampler2D colorTexture;
 varying vec2 v_textureCoordinates;
