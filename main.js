@@ -69,7 +69,7 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
         }
     })
 blackoutLoadInt = setInterval(function(){
-   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true && typeof document.body.scriptSHA != "undefined") {
+   if (geofs.fx.atmosphere.atmospherePostProcessStage._ready == true) {
 geofs["overlayG.glsl"] = "" + `
 uniform sampler2D colorTexture;
 varying vec2 v_textureCoordinates;
@@ -167,7 +167,7 @@ geofs.fx.overg.create()
 blackoutEffectInterval = setInterval(function(){geofs.fx.overg.update();}, 10)
 clearInterval(blackoutLoadInt)
    }
-}, 20000)
+}, 1000)
     function fixSpin() {
         if (geofs.aircraft.instance.id == 2948 || geofs.aircraft.instance.id == 2581) {
             var pitch = geofs.animation.values.atilt;
@@ -291,10 +291,15 @@ clearInterval(blackoutLoadInt)
     scriptFBW.onload = function () {
         addFBW()
     }
+shaLoaded = 0
+loadInterval = setInterval(function(){
+	if (shaLoaded == 0 && geofs.fx.overg.shader) {
     var scriptSHA = document.createElement("script");
     scriptSHA.src = "https://raw.githack.com/Ariakim-Taiyo/GeoFS-Shaders-Repository/main/SSR/SSR.js";
     document.body.appendChild(scriptSHA);
-
+    shaLoaded = 1
+	}
+}, 1000)
     var scriptSB = document.createElement("script");
     scriptSB.src = "https://raw.githack.com/NVB9ALT/GeoFS-sound-changes/main/main.js";
     document.body.appendChild(scriptSB);
