@@ -39,8 +39,17 @@ For anything else, click and hold for half a second. Try not to click and hold f
 - DHC-2 Beaver: flaps, throttle, mixture (toggles engine), water rudders
 - Airbus A380: speedbrake
 
-Addon aircraft are available <a href="https://github.com/NVB9ALT/Addon-Aircraft-and-Parts">here.</a> They do not have animated control surfaces and some may be lacking animated speedbrakes/flaps as well, but the physics models are as realistic as I can make them. I may work on making the addon aircraft easier to run later.</br>
-</br>
+*Addon aircraft*<br>
+I've recently added all of my addon aircraft to the Realism Pack. These aircraft do not have animated control surfaces, may not have cockpits, and may not have other animated parts, but the physics are as realistic as I can make them.<br>
+Currently includes 8 new aircraft:
+- F/A-18C, has tailhook and the paddle switch thing
+- Sukhoi Su-27. Not a Sukhoi Su-35. Has cobra button.
+- MiG-17.
+- E-7 Wedgetail AWACS
+- MiG-21. X key toggles a drop tank.
+- Morane-Saulnier Type G.
+- Lockheed F-117. Does not have working stealth.
+- F-14A Tomcat. Not the same as the F-14B. Has a much more realistic physics model.
 
 Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
 
@@ -56,9 +65,10 @@ What the Realism Pack adds:
 - A320/A220/A350, 737/777 immersion sound effects (*)
 - If you strike the rotor blades of a helicopter on the ground, it crashes
 - A basic implementation of propwash
-- **Livery Selector by Kolos26**
+- *Livery Selector by Kolos26*
 - A bug fix for the F-14 and XB-70
 - F-14 swing wing physics
+- **8 addon aircraft**
 - Clickable cockpits
 - Minor F-16 sound tweak (sounds different in front vs rear)
 - *Sonic booms*
