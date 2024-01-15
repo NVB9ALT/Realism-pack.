@@ -51,6 +51,9 @@ Currently includes 8 new aircraft:
 - Lockheed F-117. Does not have working stealth.
 - F-14A Tomcat. Not the same as the F-14B. Has a much more realistic physics model.
 
+  *Spoilers arming*
+  This allows you to "arm" the spoilers so they automatically deploy on touchdown. The key for this is Shift.
+
 Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
 
 What the Realism Pack adds:
@@ -83,7 +86,7 @@ What the Realism Pack adds:
 - A brake parachute for the F-16
 - Turbofan engines now take longer to spool up to full power between 10% and 70% RPM
 - Advanced 2d Clouds Generation V1
-- Autospoilers (use Z to arm the spoilers so they automatically deploy on touchdown)
+- Autospoilers
 - Ejection seats for fighter jets (press E while airborne)
 - A machmeter on the HUD
 - Lag reduction
