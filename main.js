@@ -353,7 +353,7 @@ instruments.init(geofs.aircraft.instance.setup.instruments)
 
 $(document).keydown(
     function (e) {
-        if (e.which == 16){ //spoiler arming key is left shift
+        if (e.which == 16){ //spoiler arming key is shift
             controls.setters.setSpoilerArming.set()
         }
     }
