@@ -51,7 +51,7 @@ Currently includes 8 new aircraft:
 - Lockheed F-117. Does not have working stealth.
 - F-14A Tomcat. Not the same as the F-14B. Has a much more realistic physics model.
 
-*Spoilers arming*
+*Spoilers arming*<br>
 This allows you to "arm" the spoilers so they automatically deploy on touchdown. The key for this is Shift.
 
 Some of these features were originally standalone addons by AriakimTaiyo; these have been marked with an asterisk (*).
