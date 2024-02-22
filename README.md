@@ -1,7 +1,7 @@
 # Realism-pack
 *Notice: the Tampermoney version may not work properly. If this is the case, please try the bookmarklet version if you are able to.*
 
-**Slowly working on updates, but if you'd like to take over the project, do let me know. Updates will include the addon aircraft being combined with this, bug fixes, and toggleable features at some point.**</br>
+**THIS ADDON WILL NO LONGER BE UPDATED EXCEPT OCCASIONAL BUG FIXES. I am developing a new system that gives you more control over the mods.**</br>
 
 This massive addon adds over 30 new features, realism fixes, and a few bug fixes. The goal of this project is to modify GeoFS to make it as realistic as possible and expand its capabilities.</br>
 You can review the full list of additional features and changes below.
