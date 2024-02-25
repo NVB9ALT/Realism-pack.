@@ -1,7 +1,7 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.showOnce("Today's updates: all of my addon aircraft")
+   ui.notification.show("This addon is not longer being updated. At some point I'll have an addon manager that allows you to *select* which of the Realism Pack's </br> features you would like to use.")
 }
 
 console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, shaders, and lift-based wingflex from AriakimTaiyo, Livery Selector and 3.5+ spoilers arming from Kolos26");
