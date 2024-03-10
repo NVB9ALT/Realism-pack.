@@ -291,7 +291,7 @@ clearInterval(blackoutLoadInt)
     scriptFBW.onload = function () {
         addFBW()
     }
-/* //Temp removed to test for conflict with addon aircraft
+
 shaLoaded = 0
 loadInterval = setInterval(function(){
 	if (shaLoaded == 0 && geofs.fx.overg.shader) {
@@ -301,7 +301,6 @@ loadInterval = setInterval(function(){
     shaLoaded = 1
 	}
 }, 1000)
-*/
     var scriptSB = document.createElement("script");
     scriptSB.src = "https://raw.githack.com/NVB9ALT/GeoFS-sound-changes/main/main.js";
     document.body.appendChild(scriptSB);
