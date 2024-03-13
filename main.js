@@ -13,7 +13,7 @@ audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysi
 	}
 }
 function flankerStall() {
-   if (geofs.aircraft.instance.id == 18 && geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
+   if (geofs.aircraft.instance.id == 18 && geofsAddonAircraft.isSu27 == 1 && geofs.animation.values.cobraMode == 1) {
 audio.impl.html5.playFile("https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/flankerstall.m4a")
 	}
 }
@@ -56,7 +56,7 @@ flankerStallInt = setInterval(function(){flankerStall()},3000)
     },1000)
     propwashInt = setInterval(function(){
         if (geofs.aircraft.instance.id == 21 || geofs.aircraft.instance.id == 2 || geofs.aircraft.instance.id == 2808 || geofs.aircraft.instance.id == 1 || geofs.aircraft.instance.id == 8 || geofs.aircraft.instance.id == 12 || geofs.aircraft.instance.id == 13 || geofs.aircraft.instance.id == 40 || geofs.aircraft.instance.id == 1069 || geofs.aircraft.instance.id == 2750 || geofs.aircraft.instance.id == 4251)  {
-    if (geofs.addonAircraft.isTruck != 1) {
+    if (geofsAddonAircraft.isTruck != 1) {
     geofs.aircraft.instance.airfoils.forEach(function(e){
     if (e.forceDirection == 2) {
        e.propwash = 0.005
@@ -392,7 +392,7 @@ setInterval(
     ui.notification.show("Favorite livery selections are possibly not saved at this time.")
 
     function lookBack() {
-        if (geofs.camera.currentModeName == "cockpit" && geofs.addonAircraft.isF117 != 1) {
+        if (geofs.camera.currentModeName == "cockpit" && geofsAddonAircraft.isF117 != 1) {
             geofs.camera.currentDefinition.position[0] = geofs.aircraft.instance.definition.cameras.cockpit.position[0] + geofs.camera.definitions["cockpit"].orientations.current[0] / 1000;
         }
     }
@@ -770,16 +770,16 @@ setInterval(
     var mig25flapsup = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_flaps_up_2.glb"
     var mig25flapsdown = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/mig-25_flaps_down_2.glb"
     
-    geofs.addonAircraft = {};
-    geofs.addonAircraft.isFA18 = 0
-    geofs.addonAircraft.isMig17 = 0
-    geofs.addonAircraft.isTruck = 0
-    geofs.addonAircraft.isF14A = 0
-    geofs.addonAircraft.isE7 = 0
-    geofs.addonAircraft.isMiG21 = 0
-    geofs.addonAircraft.isMSG = 0
-    geofs.addonAircraft.isF117 = 0
-    geofs.addonAircraft.isMiG25 = 0
+    let geofsAddonAircraft = {};
+    geofsAddonAircraft.isFA18 = 0
+    geofsAddonAircraft.isMig17 = 0
+    geofsAddonAircraft.isTruck = 0
+    geofsAddonAircraft.isF14A = 0
+    geofsAddonAircraft.isE7 = 0
+    geofsAddonAircraft.isMiG21 = 0
+    geofsAddonAircraft.isMSG = 0
+    geofsAddonAircraft.isF117 = 0
+    geofsAddonAircraft.isMiG25 = 0
 
     geofs.debug.createMiG25GearDown = function() {
        geofs.debug.MiG25GearDown = {};
@@ -1406,19 +1406,19 @@ setInterval(
     geofs.aircraft.instance.definition.dragFactor = 0.5
       }
          }
-      if (geofs.addonAircraft.isSu27 == 1 && geofs.animation.values.airbrakesTarget > 0) {
+      if (geofsAddonAircraft.isSu27 == 1 && geofs.animation.values.airbrakesTarget > 0) {
         geofs.debug.loadSu27Airbrake()
       }
       if (geofs.animation.values.mach > 0.95 && geofs.animation.values.mach < 1.05 && geofs.aircraft.instance.id != 2364 && geofs.cons == true) {
          geofs.debug.loadMachCone()
       }
-      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isFA18 != 1 ) {
+      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.isFA18 != 1 ) {
         geofs.debug.loadConConesLarge()
       }
-      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isFA18 == 1 ) {
+      if (geofs.aircraft.instance.id == 18 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.isFA18 == 1 ) {
         geofs.debug.loadConConesSmall()
       }
-      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofs.addonAircraft.isMiG21 != 1) {
+      if (geofs.aircraft.instance.id == 7 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true && geofsAddonAircraft.isMiG21 != 1) {
         geofs.debug.loadConConesSmall()
       }
       if (geofs.aircraft.instance.id == 2857 && geofs.animation.values.kias > 50 && geofs.animation.values.accZ > 60 && geofs.cons == true) {
@@ -1430,111 +1430,111 @@ setInterval(
         void(0) //placeholder
       }
     
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 1) {
         geofs.debug.loadF14AGearUp()
       }
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.gearTarget == 0) {
         geofs.debug.loadF14AGearDown()
       }
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 0) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 0) {
         geofs.debug.loadF14AWingStraight()
       }
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 1) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && controls.optionalAnimatedPart.target == 1) {
         geofs.debug.loadF14AWingSwept()
       }
-      //if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
+      //if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
       //}
-      //if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
+      //if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" &&) {
       //}
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.airbrakesTarget == 1) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.airbrakesTarget == 1) {
         geofs.debug.loadF14ASpeedbrake()
       }
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.view == "cockpit") {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.view == "cockpit") {
         geofs.debug.loadF14ACockpit()
       }
-      if (geofs.addonAircraft.isF14A == 1 && geofs.animation.values.rpm > 9100) {
+      if (geofsAddonAircraft.isF14A == 1 && geofs.animation.values.rpm > 9100) {
 	 geofs.debug.loadF14ABurner()
       }
     
-      if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.airbrakesTarget == 1) {
+      if (geofsAddonAircraft.isFA18 == 1 && geofs.animation.values.airbrakesTarget == 1) {
         geofs.debug.loadF18Airbrake()  
       }
-      if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
+      if (geofsAddonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 0) {
         geofs.debug.loadF18GearDown()
       }
-      if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 1) {
+      if (geofsAddonAircraft.isFA18 == 1 && geofs.animation.values.gearTarget == 1) {
         geofs.debug.loadF18GearUp()
       }
-      if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
+      if (geofsAddonAircraft.isFA18 == 1 && geofs.animation.values.rpm >= 9100) {
         geofs.debug.loadF18AB()
       }
-      if (geofs.addonAircraft.isFA18 == 1 && geofs.animation.values.view == "cockpit") {
+      if (geofsAddonAircraft.isFA18 == 1 && geofs.animation.values.view == "cockpit") {
         geofs.debug.loadF18Cockpit()
       }
     
-      if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
+      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.airbrakesTarget == 1) {
         geofs.debug.loadMiG17Speedbrake()
       }
-      if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
         geofs.debug.loadMiG17GearDown()
       }
-      if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
         geofs.debug.loadMiG17GearUp()
       }
-      if (geofs.addonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
+      if (geofsAddonAircraft.isMig17 == 1 && geofs.animation.values.rpm >= 9100) {
         geofs.debug.loadMiG17AB()
       }
-      if (geofs.addonAircraft.isE7 == 1) {
+      if (geofsAddonAircraft.isE7 == 1) {
         geofs.debug.loadE7Antenna()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMig21GearDown()
           geofs.debug.loadMig21Nozzle()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isMiG21 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMig21GearUp()
           geofs.debug.loadMig21Nozzle()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.view == "cockpit") {
+      if (geofsAddonAircraft.isMiG21 == 1 && geofs.animation.values.view == "cockpit") {
           geofs.debug.loadMig21Cockpit()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && geofs.animation.values.rpm >= 9100) {
+      if (geofsAddonAircraft.isMiG21 == 1 && geofs.animation.values.rpm >= 9100) {
           geofs.debug.loadMig21AB()
       }
-      if (geofs.addonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 1) {
+      if (geofsAddonAircraft.isMiG21 == 1 && controls.optionalAnimatedPart.target == 1) {
           geofs.debug.loadMig21Tank()
       }
-      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit") {
           geofs.debug.loadMSG();
       }
-      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.enginesOn == 0) {
+      if (geofsAddonAircraft.isMSG == 1 && geofs.animation.values.view != "cockpit" && geofs.animation.values.enginesOn == 0) {
           geofs.debug.loadMSGprop();
       }
-      if (geofs.addonAircraft.isMSG == 1 && geofs.animation.values.view == "cockpit") {
+      if (geofsAddonAircraft.isMSG == 1 && geofs.animation.values.view == "cockpit") {
           geofs.debug.loadMSGcockpit();
       }
-      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 1 && geofs.animation.values.view != "cockpit") {
          geofs.debug.loadF117GearUp();
       }
-      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
+      if (geofsAddonAircraft.isF117 == 1 && geofs.animation.values.gearTarget == 0 && geofs.animation.values.view != "cockpit") {
          geofs.debug.loadF117GearDown();
       }
-      if (geofs.addonAircraft.isF117 == 1 && geofs.animation.values.view == "cockpit") {
+      if (geofsAddonAircraft.isF117 == 1 && geofs.animation.values.view == "cockpit") {
          geofs.debug.loadF117Cockpit();
       }
-      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 1) {
+      if (geofsAddonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 1) {
 	 geofs.debug.loadMiG25GearUp()
 	 geofs.debug.loadMiG25FlapsUp()
       }
-      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 0) {
+      if (geofsAddonAircraft.isMiG25 == 1 && geofs.animation.values.gearTarget == 0) {
 	 geofs.debug.loadMiG25GearDown()
 	 geofs.debug.loadMiG25FlapsDown()
       }
-      if (geofs.addonAircraft.isMiG25 == 1 && geofs.animation.values.rpm > 9000) {
+      if (geofsAddonAircraft.isMiG25 == 1 && geofs.animation.values.rpm > 9000) {
 	 geofs.debug.loadMiG25AB()
       }
         
-      if (geofs.addonAircraft.isTruck == 1) {
+      if (geofsAddonAircraft.isTruck == 1) {
         geofs.debug.loadTruck()  
       }
     };
@@ -1636,19 +1636,19 @@ flight.setAnimationValues = function (a, b) {
 geofs.kiasOn = 1
 */
 
-geofs.addonAircraft = {};
+geofsAddonAircraft = {};
 //Generic addon aircraft tailhook:
 //Any aircraft running this tailhook MUST run the function on an interval of 10ms or the hook only has 10% the strength
 //All these functions made by AriakimTaiyo
-geofs.addonAircraft.wireLLAs = [[37.779434570552304, -122.60905835885147, 25]]; //geofs.aircraft.instance.llaLocation
-geofs.addonAircraft.stopForce = -(geofs.aircraft.instance.rigidBody.mass * 1.1);
-geofs.addonAircraft.landed = 0;
-geofs.addonAircraft.resolveForceVector = function(force, angle) {
+geofsAddonAircraft.wireLLAs = [[37.779434570552304, -122.60905835885147, 25]]; //geofs.aircraft.instance.llaLocation
+geofsAddonAircraft.stopForce = -(geofs.aircraft.instance.rigidBody.mass * 1.1);
+geofsAddonAircraft.landed = 0;
+geofsAddonAircraft.resolveForceVector = function(force, angle) {
   var fx = force * (Math.cos(angle * (Math.PI/180)));
   var fy = force * (Math.sin(angle * (Math.PI/180)));
   return [fx, fy, 0];
 }
-geofs.addonAircraft.distance = function (pos1, pos2) {
+geofsAddonAircraft.distance = function (pos1, pos2) {
   var a = pos2[0] - pos1[0];
   var b = pos2[1] - pos1[1];
   var c = pos2[2] - pos1[2];
@@ -1659,31 +1659,31 @@ geofs.addonAircraft.distance = function (pos1, pos2) {
 //but I'm not gonna bother fixing it because approaching the carrier with CC multiplayer models turned on literally crashes my computer
 //The inconsiderate CCs think people playing GeoFS on school Chromebooks have 1000 dollars to drop on a PC that can run MSFS
 //which we obviously don't
-geofs.addonAircraft.runAddonTailhook = function(){
-   geofs.addonAircraft.wireLLAs.forEach(function(e){
-if (geofs.animation.values.gearPosition == 0 && geofs.addonAircraft.landed == 0 && geofs.animation.values.groundContact == 1 && geofs.addonAircraft.distance(geofs.aircraft.instance.llaLocation, e) < 10) {
+geofsAddonAircraft.runAddonTailhook = function(){
+   geofsAddonAircraft.wireLLAs.forEach(function(e){
+if (geofs.animation.values.gearPosition == 0 && geofsAddonAircraft.landed == 0 && geofs.animation.values.groundContact == 1 && geofsAddonAircraft.distance(geofs.aircraft.instance.llaLocation, e) < 10) {
    console.log("Hooking detected")
-   geofs.aircraft.instance.rigidBody.applyCentralImpulse([geofs.addonAircraft.resolveForceVector(geofs.addonAircraft.stopForce, geofs.animation.values.heading360)[1], geofs.addonAircraft.resolveForceVector(geofs.addonAircraft.stopForce, geofs.animation.values.heading360)[0], geofs.addonAircraft.resolveForceVector(geofs.addonAircraft.stopForce, geofs.animation.values.heading360)[2]])
+   geofs.aircraft.instance.rigidBody.applyCentralImpulse([geofsAddonAircraft.resolveForceVector(geofsAddonAircraft.stopForce, geofs.animation.values.heading360)[1], geofsAddonAircraft.resolveForceVector(geofsAddonAircraft.stopForce, geofs.animation.values.heading360)[0], geofsAddonAircraft.resolveForceVector(geofsAddonAircraft.stopForce, geofs.animation.values.heading360)[2]])
 }
    })
 	if (geofs.animation.values.groundSpeedKnt < 10 && geofs.animation.values.groundContact == 1) {
-geofs.addonAircraft.landed = 1
+geofsAddonAircraft.landed = 1
 console.log("Landed")
 	}
 	if (geofs.animation.values.groundContact == 0) {
-geofs.addonAircraft.landed = 0
+geofsAddonAircraft.landed = 0
 console.log("Airborne")
 	}
 }
 //-----F/A-18C Hornet-----------------------------------------------------------------------------------------------------
 //adding the button
-geofs.addonAircraft.runFA18 = function(){
+geofsAddonAircraft.runFA18 = function(){
    console.log("Loading F/A-18C. Model credit cs09736. Model loaded under CC Attribution Share-Alike Liscense.")
    geofs.aircraft.instance.change(18, 4)
 }
 f18Li = document.createElement("li");
 f18Li.innerHTML = '<div><img src="https://w7.pngwing.com/pngs/871/313/png-transparent-boeing-f-a-18e-f-super-hornet-mcdonnell-douglas-f-a-18-hornet-battlefield-3-rogerson-aircraft-corporation-airplane-boeing-767-video-game-fighter-aircraft-airplane.png">F/A-18C Hornet</div>';
-f18Li.addEventListener("click", geofs.addonAircraft.runFA18);
+f18Li.addEventListener("click", geofsAddonAircraft.runFA18);
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(f18Li)
 
 geofs.f18instruments = new Boolean(0)
@@ -1743,7 +1743,7 @@ geofs.aircraft.instance.engines[1].afterBurnerThrust = 87000
 geofs.aircraft.instance.definition.mass = 17000
 audio.soundplayer.setRate(geofs.aircraft.instance.definition.sounds[3].id, 0.5) //Sound pitch modification
 //Tailhook
-geofs.addonAircraft.runAddonTailhook()
+geofsAddonAircraft.runAddonTailhook()
 //Replacing the tires lol
 geofs.aircraft.instance.definition.contactProperties = {
         "wheel": {
@@ -1785,7 +1785,7 @@ if (geofs.f18instruments == 0) {
    geofs.f18instruments = 1
 }
 setTimeout(() => {
-   geofs.addonAircraft.isFA18 = 1
+   geofsAddonAircraft.isFA18 = 1
 },5000)
 setTimeout(() => {
    	 geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
@@ -1796,20 +1796,20 @@ setTimeout(() => {
 	 geofs.aircraft.instance.definition.parts[55].animations[0].gt = 100000
 },10000)
    } else {
-geofs.addonAircraft.isFA18 = 0
+geofsAddonAircraft.isFA18 = 0
 geofs.f18instruments = 0
    }
 }
 checkRunHornetInterval = setInterval(function(){runHornet()},10)
 
 //-----Mig-17 Fresco-----------------------------------------------------------------------------------------------------
-geofs.addonAircraft.isMig17 = 0
-geofs.addonAircraft.runMiG17 = function(){
+geofsAddonAircraft.isMig17 = 0
+geofsAddonAircraft.runMiG17 = function(){
    console.log("Loading MiG-17. Model credit manilov.ap")
 }
 mig17Li = document.createElement("li");
 mig17Li.innerHTML = '<div><img src="https://finescale.com/~/media/images/workbench-reviews/2020/february-2020/fsmwb1219_zvezda_mig17_01.jpg">Mikoyan-Gurevich MiG-17 "Fresco"</div>';
-mig17Li.addEventListener("click", geofs.addonAircraft.runMiG17);
+mig17Li.addEventListener("click", geofsAddonAircraft.runMiG17);
 //this works actually
 mig17Li.setAttribute("data-aircraft", 3)
 mig17Li.setAttribute("data-livery", 1)
@@ -1831,31 +1831,31 @@ geofs.aircraft.instance.engines[1].afterBurnerThrust = 20000
 geofs.aircraft.instance.cockpitSetup.parts[1].object3d.model._model.color.alpha = 0
    }
 setTimeout(() => {
-   geofs.addonAircraft.isMig17 = 1
+   geofsAddonAircraft.isMig17 = 1
 },5000)
 setTimeout(() => {
    geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
 	geofs.aircraft.instance.definition.parts[0].animations[0].gt = -1
 },10000)
    } else {
-geofs.addonAircraft.isMig17 = 0
+geofsAddonAircraft.isMig17 = 0
    }
 }
 mig17Int = setInterval(function(){runMiG17()},100)
 
 //-----Su-27 Flanker (the OG one)---------------------------------------------------------------------------------------
-geofs.addonAircraft.isSu27 = new Boolean(0)
+geofsAddonAircraft.isSu27 = new Boolean(0)
 geofs.debug.su27Instruments = new Boolean(0)
-geofs.addonAircraft.runSu27 = function(){
+geofsAddonAircraft.runSu27 = function(){
    geofs.aircraft.instance.change(18, 1)
 }
 flankerLi = document.createElement("li");
 flankerLi.innerHTML = '<div><img src="images/planes/su35_1.png">Sukhoi Su-27 Flanker</div>';
-flankerLi.addEventListener("click", geofs.addonAircraft.runSu27);
+flankerLi.addEventListener("click", geofsAddonAircraft.runSu27);
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(flankerLi)
 function runSu27() {
 if (geofs.aircraft.instance.id == 18 && geofs.aircraft.instance.liveryId == 1) {
-geofs.addonAircraft.isSu27 = 1
+geofsAddonAircraft.isSu27 = 1
 geofs.aircraft.instance.definition.airbrakesTravelTime = 1
 geofs.aircraft.instance.definition.accessoriesTravelTime = 0.1
 geofs.aircraft.instance.definition.parts[46].animations[0].ratio = 0.069;
@@ -1917,40 +1917,40 @@ if (geofs.animation.values.cobraMode == 1) {
 }
    } else {
 geofs.debug.su27Instruments = 0
-geofs.addonAircraft.isSu27 = 0
+geofsAddonAircraft.isSu27 = 0
 	}
 };
 Su27Int = setInterval(function(){runSu27()},100)
 //clearInterval(Su27Int)
 //-----E-7 Wedgetail AEW&C------------------------------------------------------------------------------------------------
-geofs.addonAircraft.isE7 = 0
-geofs.addonAircraft.runE7 = function(){
+geofsAddonAircraft.isE7 = 0
+geofsAddonAircraft.runE7 = function(){
    console.log("Loading E-7 Wedgetail AEW&C.")
 }
 e7Li = document.createElement("li");
 e7Li.innerHTML = '<div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/B737_AEW%26C_Wedgetail_cut_model.PNG/220px-B737_AEW%26C_Wedgetail_cut_model.PNG">E-7 Wedgetail AEW&C</div>';
-e7Li.addEventListener("click", geofs.addonAircraft.runE7);
+e7Li.addEventListener("click", geofsAddonAircraft.runE7);
 //this works actually
 e7Li.setAttribute("data-aircraft", 3292)
 e7Li.setAttribute("data-livery", 1)
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(e7Li)
 function runE7Wedgetail() {
    if (geofs.aircraft.instance.id == 3292 && geofs.aircraft.instance.liveryId == 1) {
-geofs.addonAircraft.isE7 = 1
+geofsAddonAircraft.isE7 = 1
 geofs.aircraft.instance.definition.mass = 75000
    } else {
-geofs.addonAircraft.isE7 = 0
+geofsAddonAircraft.isE7 = 0
 	}
 }
 e7int = setInterval(function(){runE7Wedgetail()},100)
 //-----MiG-21 Fishbed-----------------------------------------------------------------------------------------------------
-geofs.addonAircraft.runMig21 = function(){
+geofsAddonAircraft.runMig21 = function(){
 	console.log("Loading MiG-21 Fishbed. Model credit manilov.ap.")
 	controls.optionalAnimatedPart.target = 1
 }
 mig21Li = document.createElement("li");
 mig21Li.innerHTML = '<div><img src="http://atlas-content-cdn.pixelsquid.com/stock-images/russian-fighter-mig-21-fishbed-jet-q1ylV3E-600.jpg">Mikoyan-Gurevich MiG-21 "Fishbed"</div>';
-mig21Li.addEventListener("click", geofs.addonAircraft.runMig21);
+mig21Li.addEventListener("click", geofsAddonAircraft.runMig21);
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(mig21Li)
 mig21Li.setAttribute("data-aircraft", 7)
 mig21Li.setAttribute("data-livery", 1)
@@ -2006,7 +2006,7 @@ if (geofs.mig21instruments == 0) {
    geofs.mig21instruments = 1
 }
 setTimeout(() => {
-   geofs.addonAircraft.isMiG21 = 1
+   geofsAddonAircraft.isMiG21 = 1
  },5000)
 setTimeout(() => {
    geofs.aircraft.instance.definition.parts[0].animations[0] = {"type": "hide", "value": "rpm", "gt": -1}
@@ -2018,19 +2018,19 @@ if (geofs.animation.values.view == "cockpit") {
 	geofs.camera.currentDefinition.position[2] = geofs.aircraft.instance.definition.cameras.cockpit.position[2] - 0.15
    }
 } else {
-   geofs.addonAircraft.isMiG21 = 0
+   geofsAddonAircraft.isMiG21 = 0
 	geofs.mig21instruments = 0
 }
 }
 mig21Interval = setInterval(function(){runMiG21()},100)
 //-----Morane-Saulneir "G"-----------------------------------------------------------------------------------------------------
-geofs.addonAircraft.isMsG = 0
-geofs.addonAircraft.runMsG = function(){
+geofsAddonAircraft.isMsG = 0
+geofsAddonAircraft.runMsG = function(){
    console.log("Loading Morane-Saulnier G. Model credit manilov.ap")
 }
 MsGLi = document.createElement("li");
 MsGLi.innerHTML = '<div>Morane-Saulnier Type G</div>';
-MsGLi.addEventListener("click", geofs.addonAircraft.runMsG);
+MsGLi.addEventListener("click", geofsAddonAircraft.runMsG);
 MsGLi.setAttribute("data-aircraft", 8)
 MsGLi.setAttribute("data-livery", 3)
 document.getElementsByClassName("geofs-list geofs-toggle-panel geofs-aircraft-list")[0].appendChild(MsGLi)
@@ -2048,7 +2048,7 @@ if (geofs.aircraft.instance.id == 8 && geofs.aircraft.instance.liveryId == 3) {
 	geofs.aircraft.instance.definition.parts[11].area = 0.2
 	geofs.aircraft.instance.definition.dragFactor = 0.7
 	geofs.aircraft.instance.definition.autopilot = false
-   geofs.addonAircraft.isMSG = 1
+   geofsAddonAircraft.isMSG = 1
 	geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
 	geofs.aircraft.instance.definition.parts[0].animations[0].gt = -1
 	if (geofs.animation.values.view == "cockpit") {
@@ -2056,19 +2056,19 @@ if (geofs.aircraft.instance.id == 8 && geofs.aircraft.instance.liveryId == 3) {
 	geofs.aircraft.instance.cockpitSetup.parts[0].animations[0].gt = -1
 	}
 } else {
-geofs.addonAircraft.isMSG = 0	
+geofsAddonAircraft.isMSG = 0	
 }
 }
 msgInterval = setInterval(function(){runMsG()},100)
 //----- F-117 -------------------------------------------------------------------------------------------------------------
-geofs.addonAircraft.isF117 = 0;
+geofsAddonAircraft.isF117 = 0;
 geofs.debug.F117Instruments = 0;
-geofs.addonAircraft.runF117 = function(){
+geofsAddonAircraft.runF117 = function(){
    console.log("Loading F-117. Model credit manilov.ap")
 }
 f117Li = document.createElement("li");
 f117Li.innerHTML = '<div><img src="https://cdn.shopify.com/s/files/1/0277/5197/2966/products/HA5807-3_1200x789.jpg">Lockheed F-117 "Nighthawk"</div>';
-f117Li.addEventListener("click", geofs.addonAircraft.runF117);
+f117Li.addEventListener("click", geofsAddonAircraft.runF117);
 //this works actually
 f117Li.setAttribute("data-aircraft", 5)
 f117Li.setAttribute("data-livery", 1)
@@ -2086,7 +2086,7 @@ function runF117() {
 	geofs.aircraft.instance.definition.parts[48].animations[0].lt = -1
    geofs.aircraft.instance.definition.parts[8].area = 5
 setTimeout(() => {
-	geofs.addonAircraft.isF117 = 1
+	geofsAddonAircraft.isF117 = 1
 },5000)
 setTimeout(() => {
 	geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
@@ -2128,7 +2128,7 @@ if (geofs.animation.values.view == "cockpit") {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    } else {
 geofs.debug.F117Instruments = 0
-geofs.addonAircraft.isF117 = 0
+geofsAddonAircraft.isF117 = 0
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //Stealth technology goes here (haven't been able to develop it)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2136,14 +2136,14 @@ geofs.addonAircraft.isF117 = 0
 }
 f117Int = setInterval(function(){runF117()},100)
 //-----Grumman F-14A-----------------------------------------------------------------------------------------------------
-geofs.addonAircraft.isF14A = 0
-geofs.addonAircraft.F14AInstruments = 0
-geofs.addonAircraft.runF14A = function(){
+geofsAddonAircraft.isF14A = 0
+geofsAddonAircraft.F14AInstruments = 0
+geofsAddonAircraft.runF14A = function(){
    console.log("Loading F-14A Tomcat. Model credit manilov.ap")
 }
 F14ALi = document.createElement("li");
 F14ALi.innerHTML = '<div><img src="http://atlas-content-cdn.pixelsquid.com/stock-images/f-14-airplane-tomcat-fighter-jet-ENB74k2-600.jpg">Grumman F-14A Tomcat</div>';
-F14ALi.addEventListener("click", geofs.addonAircraft.runF14A);
+F14ALi.addEventListener("click", geofsAddonAircraft.runF14A);
 //this works actually
 F14ALi.setAttribute("data-aircraft", 18)
 F14ALi.setAttribute("data-livery", 6)
@@ -2207,12 +2207,12 @@ geofs.camera.currentDefinition.position[2] = 1.08
                 {"value": "view", "type": "show", "eq": "cockpit"}
             ]
 	}
-if (geofs.addonAircraft.F14AInstruments == 0) {
+if (geofsAddonAircraft.F14AInstruments == 0) {
 	instruments.init(geofs.aircraft.instance.setup.instruments)
-   geofs.addonAircraft.F14AInstruments = 1
+   geofsAddonAircraft.F14AInstruments = 1
 }
 //Tailhook
-geofs.addonAircraft.runAddonTailhook()
+geofsAddonAircraft.runAddonTailhook()
 //Replacing the tires lol
 geofs.aircraft.instance.definition.contactProperties = {
         "wheel": {
@@ -2246,7 +2246,7 @@ if (geofs.animation.values.airbrakesTarget > 0) {
    geofs.aircraft.instance.definition.dragFactor = 1.5
 }
 setTimeout(() => {
-   geofs.addonAircraft.isF14A = 1
+   geofsAddonAircraft.isF14A = 1
 },5000)
 setTimeout(() => {
 	geofs.aircraft.instance.definition.parts[0].animations[0].value = "rpm"
@@ -2254,8 +2254,8 @@ setTimeout(() => {
 	 geofs.aircraft.instance.definition.parts[50].animations[0].gt = 100000
 	 geofs.aircraft.instance.definition.parts[55].animations[0].gt = 100000
 },10000)} else {
-   geofs.addonAircraft.isF14A = 0
-   geofs.addonAircraft.F14AInstruments = 0
+   geofsAddonAircraft.isF14A = 0
+   geofsAddonAircraft.F14AInstruments = 0
 }
 }
 f14aInterval = setInterval(function(){runF14A()},10)
