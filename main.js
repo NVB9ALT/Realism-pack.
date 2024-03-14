@@ -722,8 +722,6 @@ setInterval(
         }
     
     //---------------------------------------------------------------------------------------------------------------------------------------------------------
-    //Most of this is not related to the realism pack. This stuff loads 4 models directly related to the realism pack,
-    //while the rest is for the addon aircraft (in a separate addon in my repository list).
     
     var droptankF16 = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/370_gal_drop_tank.glb"
     var condensationConesLarge = "https://142420819-645052386429616373.preview.editmysite.com/uploads/1/4/2/4/142420819/concones.glb"
