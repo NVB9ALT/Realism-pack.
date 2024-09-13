@@ -50,7 +50,11 @@ Currently includes 8 new aircraft:
 - Morane-Saulnier Type G.
 - Lockheed F-117. Does not have working stealth.
 - F-14A Tomcat. Not the same as the F-14B. Has a much more realistic physics model.
-
+<br>
+** Paddle switch/Cobra button: " (your apostrophe/quotation mark) **
+<br>
+<br>
+<br>
 *Spoilers arming*<br>
 This allows you to "arm" the spoilers so they automatically deploy on touchdown. The key for this is Shift.
 
